@@ -1,0 +1,22 @@
+[tool.black]
+line-length = 79
+skip-string-normalization = true
+target_version = ['cpy35']
+include = '\.pyi?$'
+# exclude a few common directories in the root of the project.
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | venv
+  )/
+)
+'''
