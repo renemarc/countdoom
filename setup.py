@@ -3,19 +3,17 @@
 
 """The setup script."""
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open('README.rst') as readme_file:
-    readme = readme_file.read()
+    README = readme_file.read()
 
 with open('HISTORY.rst') as history_file:
-    history = history_file.read()
+    HISTORY = history_file.read()
 
-requirements = ['Click>=6.0']
-
-setup_requirements = ['pytest-runner']
-
-test_requirements = ['pytest']
+REQUIREMENTS = ['Click>=6.0']
+REQUIREMENTS_SETUP = ['pytest-runner']
+REQUIREMENTS_TEST = ['pytest']
 
 setup(
     author="René-Marc Simard",
@@ -34,16 +32,16 @@ setup(
     entry_points={
         'console_scripts': ['doomsday_clock=doomsday_clock.cli:main']
     },
-    install_requires=requirements,
+    install_requires=REQUIREMENTS,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=README + '\n\n' + HISTORY,
     include_package_data=True,
     keywords='doomsday_clock',
     name='doomsday_clock',
     packages=find_packages(include=['doomsday_clock']),
-    setup_requires=setup_requirements,
+    setup_requires=REQUIREMENTS_SETUP,
     test_suite='tests',
-    tests_require=test_requirements,
+    tests_require=REQUIREMENTS_TEST,
     url='https://github.com/renemarc/doomsday_clock',
     version='0.1.0',
     zip_safe=False,

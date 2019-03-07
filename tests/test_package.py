@@ -1,30 +1,27 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""
-Tests for `doomsday_clock` package.
-"""
+"""Tests for `doomsday_clock` package."""
 
-# import argparse
-# from argparse import ArgumentError
-# from unittest import mock
-#
-# import pytest
-#
-# import doomsday_clock
-# from doomsday_clock import cli
+import subprocess
 
-# from doomsday_clock import parse_args
+import doomsday_clock
 
 
-#
-# def test_package_main(capfd) -> None:
-#     """Test the CLI."""
-#
-#     import doomsday_clock as module
-#     with mock.patch.object(module, "main", return_value=42):
-#         with mock.patch.object(module, "__name__", "__main__"):
-#             with mock.patch.object(module.sys, 'exit') as mock_exit:
-#                 module.main()
-#
-#                 assert mock_exit.call_args[0][0] == 42
+def test_package_main() -> None:
+    """
+    Test package usage.
+
+    This check uses a subprocess to validate the package, since the
+    package's __main__.py cannot be imported for tests.
+    """
+    process = subprocess.Popen(
+        ['python', '-m', 'doomsday_clock', '--version'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    stdout = process.communicate()[0]
+
+    assert 'doomsday_clock {}'.format(doomsday_clock.__version__) in str(
+        stdout
+    )

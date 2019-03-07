@@ -76,17 +76,27 @@ repos:
     -   id: isort
         description: "Sorts Python imports."
 
+-   repo: https://github.com/pre-commit/mirrors-pylint
+    rev: v2.3.0
+    hooks:
+    -   id: pylint
+        description: "Checks for errors in Python code, tries to enforce a coding standard and looks for code smells."
+        args:
+            - --disable=E0401
+        exclude: ^(docs/conf\.py)
+
 -   repo: https://github.com/Lucas-C/pre-commit-hooks-safety
     rev: v1.1.0
     hooks:
     -   id: python-safety-dependencies-check
         description: "Analyzes your Python requirements for known security vulnerabilities."
 
-#-   repo: https://github.com/Lucas-C/pre-commit-hooks-markup
-#    rev: v1.0.0
-#    hooks:
-#    -   id: rst-linter
-#        description: "Checks .rst files with the same linter used by pypi.org."
+-   repo: https://github.com/PyCQA/bandit
+    rev: master
+    hooks:
+    -   id: bandit
+        description: "Finds common security issues in Python code."
+        exclude: ^(tests)/
 
 -   repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.2.0
@@ -106,21 +116,17 @@ repos:
     -   id: git-dirty
         description: "Detects if git tree contains modified, staged, or untracked files."
 
-#-   repo: https://gitlab.com/pycqa/bandit
-#    rev: 1.5.1
-#    hooks:
-#    -   id: bandit
+-   repo: https://github.com/pycqa/pydocstyle
+    rev: master
+    hooks:
+    -   id: pydocstyle
+        description: "Checks compliance with Python docstring conventions."
 
-#-   repo: https://gitlab.com/pycqa/pydocstyle
-#    rev: 2.0.0
+#-   repo: https://github.com/Lucas-C/pre-commit-hooks-markup
+#    rev: v1.0.0
 #    hooks:
-#    -   id: pydocstyle
-
-#
-#-   repo: https://github.com/pre-commit/mirrors-pylint
-#    rev: v2.3.0
-#    hooks:
-#    -   id: pylint
+#    -   id: rst-linter
+#        description: "Checks .rst files with the same linter used by pypi.org."
 
 #-   repo: https://github.com/asottile/add-trailing-comma
 #    rev: v0.7.1

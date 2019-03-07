@@ -29,7 +29,7 @@ BROWSER := python -c "$$BROWSER_PYSCRIPT"
 help:
 	@printf "\n"
 	@printf " 11 12   \n"
-	@printf "10 \|    \e[0;1mDoomsday Py\e[0m\n"
+	@printf "10 \|    \e[0;1mDoomsday Clock\e[0m\n"
 	@printf "9   @    \e[0;1mMakefile\e[0m\n"
 	@printf "\n"
 	@printf "\e[4mUsage\e[0m\n"

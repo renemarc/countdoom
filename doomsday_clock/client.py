@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Main module."""
+"""Client module."""
 import datetime
 import logging
 import re
@@ -14,9 +14,9 @@ from bs4 import BeautifulSoup
 _LOGGER = logging.getLogger('doomsday_clock')
 
 
-class DoomsdayClock:
+class DoomsdayClient:
     """
-    Doomsday Clock Client
+    Doomsday Clock client.
 
     Convert data into parsable time from the Timeline page at
     https://thebulletin.org/doomsday-clock/past-announcements/
@@ -37,7 +37,7 @@ class DoomsdayClock:
 
     def __init__(self, timeout: int = REQUEST_TIMEOUT) -> None:
         """
-        Create a DoomsdayClock object.
+        Create a DoomsdayClient object.
 
         :param timeout: Connection/request timeout
         """
@@ -116,16 +116,12 @@ class DoomsdayClock:
         }
 
     async def _get_session(self) -> None:
-        """
-        Create an HTTP client session.
-        """
+        """Create an HTTP client session."""
         if self._session is None:
             self._session = aiohttp.ClientSession()
 
     async def _fetch_html(self) -> None:
-        """
-        Read the posted Doomsday Clock value.
-        """
+        """Read the posted Doomsday Clock value."""
         self.html = await self._fetch(self.CLOCK_URL)
 
     async def _fetch(self, url: str, timeout: int = None) -> str:
@@ -137,29 +133,29 @@ class DoomsdayClock:
 
         :return: Web page HTML body
 
-        :raises DoomsdayClockError: If URL is not found
-        :raises DoomsdayClockError: If server connection fails
+        :raise DoomsdayClientError: If URL is not found
+        :raise DoomsdayClientError: If server connection fails
         """
         try:
             async with async_timeout.timeout(timeout):
                 async with self._session.get(url, timeout=timeout) as resp:
-                    assert resp.status == 200
+                    if resp.status != 200:
+                        raise AssertionError
                     return await resp.text()
         except AssertionError:
             await self.close()
-            raise DoomsdayClockError("Page not found.")
+            raise DoomsdayClientError("Page not found.")
         except OSError:
             await self.close()
-            raise DoomsdayClockError("Cannot connect to website. Check URL.")
+            raise DoomsdayClientError("Cannot connect to website. Check URL.")
 
     async def _extract_sentence(self) -> None:
         """
         Read the posted Doomsday Clock value.
 
-        :raises DoomsdayClockError: If no sentence is found
-        :raises DoomsdayClockError: If empty sentence is found
+        :raise DoomsdayClientError: If no sentence is found
+        :raise DoomsdayClientError: If empty sentence is found
         """
-
         html = BeautifulSoup(self.html, features='html.parser')
 
         # Find the first match, which is the current Doomsday Clock value.
@@ -174,20 +170,18 @@ class DoomsdayClock:
                 "website design changes.",
                 self.SELECTOR,
             )
-            raise DoomsdayClockError("No sentence found.")
+            raise DoomsdayClientError("No sentence found.")
         except ValueError:
             _LOGGER.error(
                 "Empty sentence found using selector %s. Check for source "
                 "website design changes.",
                 self.SELECTOR,
             )
-            raise DoomsdayClockError("Empty sentence found.")
+            raise DoomsdayClientError("Empty sentence found.")
         _LOGGER.debug("Sentence found: %s", self._sentence)
 
     async def close(self) -> None:
-        """
-        Close the HTTP connection.
-        """
+        """Close the HTTP connection."""
         if self._session is None:
             return
         if not self._session.closed:
@@ -198,7 +192,7 @@ class DoomsdayClock:
         """
         Convert the Doomsday Clock sentence into a countdown to midnight.
 
-        :raises DoomsdayClockError: When sentence is not parsable
+        :raise DoomsdayClientError: When sentence is not parsable
         """
         try:
             self._countdown = self.sentence_to_countdown(self._sentence)
@@ -206,7 +200,7 @@ class DoomsdayClock:
             _LOGGER.error(
                 "Regex pattern yielded no result for : %s", self._sentence
             )
-            raise DoomsdayClockError("Sentence not parsable.")
+            raise DoomsdayClientError("Sentence not parsable.")
         _LOGGER.debug("Countdown value: %s", self._countdown)
 
     @classmethod
@@ -216,9 +210,9 @@ class DoomsdayClock:
 
         :param sentence: Doomsday Clock sentence
 
-        :returns: A countdown to midnight
+        :return: A countdown to midnight
 
-        :raises AttributeError: If sentence is not matched by regex pattern
+        :raise AttributeError: If sentence is not matched by regex pattern
         """
         pattern = (
             r"(?:(?P<integer>\d+)"
@@ -296,7 +290,5 @@ class DoomsdayClock:
         return (midnight - delta).strftime(time_format)
 
 
-class DoomsdayClockError(Exception):
-    """
-    Doomsday Clock general error.
-    """
+class DoomsdayClientError(Exception):
+    """Doomsday Clock client general error."""

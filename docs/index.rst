@@ -1,5 +1,5 @@
-Welcome to Doomsday Py's documentation!
-=======================================
+Welcome to Doomsday Clock's documentation!
+==========================================
 
 .. include:: ../README.rst
 
