@@ -1,7 +1,7 @@
 [tool.black]
 line-length = 79
 skip-string-normalization = true
-target_version = ['cpy35']
+target_version = ['py36']
 include = '\.pyi?$'
 # exclude a few common directories in the root of the project.
 exclude = '''

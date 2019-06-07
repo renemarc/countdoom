@@ -10,7 +10,7 @@ fail_fast: false
 
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.1.0
+    rev: v2.2.3
     hooks:
     -   id: check-added-large-files
         description: "Prevents giant files from being committed."
@@ -59,7 +59,7 @@ repos:
         types: [python]
 
 -   repo: https://github.com/asottile/blacken-docs
-    rev: v0.4.0
+    rev: v1.0.0
     hooks:
     -   id: blacken-docs
         description: "Runs `black` on python code blocks in documentation files."
@@ -71,13 +71,13 @@ repos:
         description: "Enforces style consistency across Python projects."
 
 -   repo: https://github.com/pre-commit/mirrors-isort
-    rev: v4.3.9
+    rev: v4.3.20
     hooks:
     -   id: isort
         description: "Sorts Python imports."
 
 -   repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v2.3.0
+    rev: v2.3.1
     hooks:
     -   id: pylint
         description: "Checks for errors in Python code, tries to enforce a coding standard and looks for code smells."
@@ -92,19 +92,21 @@ repos:
         description: "Analyzes your Python requirements for known security vulnerabilities."
 
 -   repo: https://github.com/PyCQA/bandit
-    rev: master
+    rev: 1.6.0
     hooks:
     -   id: bandit
         description: "Finds common security issues in Python code."
         exclude: ^(tests)/
 
 -   repo: https://github.com/pre-commit/pygrep-hooks
-    rev: v1.2.0
+    rev: v1.4.0
     hooks:
     -   id: python-check-blanket-noqa
         description: "Enforces that `noqa` annotations always occur with specific codes."
     -   id: python-check-mock-methods
         description: "Prevents a common mistake of `assert mck.not_called()` or `assert mck.called_once_with(...)`."
+    -   id: python-no-eval
+        description: "Checks for the eval() built-in function."
     -   id: python-no-log-warn
         description: "Checks for the deprecated `.warn()` method of python loggers."
     -   id: rst-backticks
@@ -123,12 +125,8 @@ repos:
         description: "Checks compliance with Python docstring conventions."
 
 #-   repo: https://github.com/Lucas-C/pre-commit-hooks-markup
-#    rev: v1.0.0
+#    rev: master
 #    hooks:
 #    -   id: rst-linter
 #        description: "Checks .rst files with the same linter used by pypi.org."
-
-#-   repo: https://github.com/asottile/add-trailing-comma
-#    rev: v0.7.1
-#    hooks:
-#    -   id: add-trailing-comma
+#        exclude: ^(docs)/

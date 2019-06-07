@@ -10,6 +10,10 @@ Doomsday Clock
         :target: https://pypi.python.org/pypi/doomsday_clock
         :alt: Python Package Index
 
+.. image:: https://img.shields.io/pypi/pyversions/doomsday_clock.svg
+        :target: https://pypi.org/project/doomsday_clock/
+        :alt: Python Versions
+
 .. image:: https://img.shields.io/travis/com/renemarc/doomsday-clock.svg?logo=travis-ci&logoColor=White
         :target: https://travis-ci.com/renemarc/doomsday-clock
         :alt: Travis CI

@@ -1,3 +1,8 @@
+#
+# Requirements file for pip (Python Package Installer)
+# for development dependencies
+#
+
 aioresponses>=0.6.0
 bandit>=1.5.1
 bumpversion==0.5.3
