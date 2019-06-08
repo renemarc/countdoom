@@ -65,6 +65,85 @@ Features
 .. _TheBulletin.org: https://thebulletin.org/
 
 
+Installation
+------------
+Doomsday Clock is distributed on PyPI. The best way to install it is with pip:
+
+
+Create a virtual environment (optional)::
+
+    virtualenv doomsday-clock-env
+
+Install Doomsday Clock::
+
+    pip install doomsday-clock
+    # Or if you're working with a Python 3 project
+    pip3 install doomsday-clock
+
+Run Doomsday Clock::
+
+    doomsday-clock
+
+
+Doomsday Clock can also be installed from source. To do so, download the source
+tarball from PyPI, then install it::
+
+    python setup.py install
+    # Or if you're on a system that supports makefiles
+    make install
+
+
+Usage
+-----
+Example usage::
+
+    doomsday-clock
+
+Example usage using a single format (e.g. clock)::
+
+    doomsday-clock --format clock
+
+Usage::
+
+    $ doomsday_clock -h
+
+     11 12   ️
+    10 \|     Doomsday Clock 0.1.0 🤯 🌊 ☢️  ☠
+    9   @     World threat assessment from TheBulletin.org
+
+    usage: doomsday_clock [--format {sentence,clock,time,countdown,all,json}]
+                          [--timeout TIMEOUT] [--v] [-h]
+
+    optional arguments:
+      --format {sentence,clock,time,countdown,all,json}
+                            return data format (default: all).
+      --timeout TIMEOUT     connection/request timeout in seconds (default: 10).
+      --v, --version        show program's version number and exit
+      -h, --help            show this help message and exit
+
+    Be the change you want to see in the world.
+
+
+Contributing
+------------
+Contributions to Doomsday Clock are always welcome!
+
+The best way to get started with Doomsday Clock is to grab the source::
+
+    git clone https://github.com/renemarc/doomsday-clock.git
+
+You can test any changes with makefile::
+
+    pip install -r requirements_dev.txt
+    make test-all
+    make coverage
+
+Please make PR requests using your own branch, and not master::
+
+    git checkout -b mybranch
+    git push origin mybranch
+
+
 Credits
 -------
 
