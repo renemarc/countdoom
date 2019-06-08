@@ -1,4 +1,4 @@
-.. highlight:: shell
+3.. highlight:: shell
 
 ============
 Contributing
@@ -45,7 +45,8 @@ articles, and such.
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/renemarc/doomsday_clock/issues.
+The best way to send feedback is to file an issue at
+https://github.com/renemarc/doomsday_clock/issues.
 
 If you are proposing a feature:
 
@@ -57,14 +58,17 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `doomsday_clock` for local development.
+Ready to contribute? Here's how to set up ``doomsday_clock`` for local
+development.
 
-1. Fork the `doomsday_clock` repo on GitHub.
+1. Fork the ``doomsday_clock`` repo on GitHub.
 2. Clone your fork locally::
 
     $ git clone git@github.com:your_name_here/doomsday_clock.git
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
+3. Install your local copy into a virtualenv. Assuming you have
+   virtualenvwrapper installed, this is how you set up your fork for local
+   development::
 
     $ mkvirtualenv doomsday_clock
     $ cd doomsday_clock/
@@ -102,8 +106,8 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy. Check
-   https://travis-ci.org/renemarc/doomsday_clock/pull_requests
+3. The pull request should work for Python 3.5, 3.6 and 3.7, and for PyPy.
+   Check https://travis-ci.org/renemarc/doomsday_clock/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Tips
