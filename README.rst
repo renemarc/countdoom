@@ -44,7 +44,8 @@ Doomsday Clock
 
 
 
-Fetch the current `Doomsday Clock`_ world threat assessment from `TheBulletin.org`_.
+Fetch the current `Doomsday Clock`_ world threat assessment from
+`TheBulletin.org`_.
 
 
 * Free software: MIT license
@@ -54,8 +55,10 @@ Fetch the current `Doomsday Clock`_ world threat assessment from `TheBulletin.or
 Features
 --------
 
-* Fetches the current `Doomsday Clock`_ world threat assessment from `TheBulletin.org`_.
-* Converts the Doomsday Clock sentence into countdown (1 minute), clock (11:59), and time (23:59:00).
+* Fetches the current `Doomsday Clock`_ world threat assessment from
+  `TheBulletin.org`_.
+* Converts the Doomsday Clock sentence into countdown (1 minute), clock
+  (11:59), and time (23:59:00).
 * Offers a command-line interface.
 * Uses async IO.
 * Python 3.5+ compatible.
@@ -72,17 +75,17 @@ Doomsday Clock is distributed on PyPI. The best way to install it is with pip:
 
 Create a virtual environment (optional)::
 
-    virtualenv doomsday-clock-env
+    virtualenv doomsday_clock-env
 
 Install Doomsday Clock::
 
-    pip install doomsday-clock
+    pip install doomsday_clock
     # Or if you're working with a Python 3 project
-    pip3 install doomsday-clock
+    pip3 install doomsday_clock
 
 Run Doomsday Clock::
 
-    doomsday-clock
+    doomsday_clock
 
 
 Doomsday Clock can also be installed from source. To do so, download the source
@@ -97,11 +100,11 @@ Usage
 -----
 Example usage::
 
-    doomsday-clock
+    doomsday_clock
 
 Example usage using a single format (e.g. clock)::
 
-    doomsday-clock --format clock
+    doomsday_clock --format clock
 
 Usage::
 
@@ -147,9 +150,12 @@ Please make PR requests using your own branch, and not master::
 Credits
 -------
 
-* The `Bulletin of the Atomic Scientists`_ for keeping the world in check since 1947.
-* `Matt Bierner`_ for the inspiration from his MinutesToMidnight_ Node.js library.
-* This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+* The `Bulletin of the Atomic Scientists`_ for keeping the world in check
+  since 1947.
+* `Matt Bierner`_ for the inspiration from his MinutesToMidnight_ Node.js
+  library.
+* Cookiecutter_ for the package creation and `audreyr/cookiecutter-pypackage`_
+  for the project template.
 
 .. _Bulletin of the Atomic Scientists: https://thebulletin.org/doomsday-clock/past-statements/
 .. _Matt Bierner: https://github.com/mattbierner
