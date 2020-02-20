@@ -5,11 +5,10 @@
 
 import json
 
-import pytest
-from aioresponses import aioresponses
-
 import doomsday_clock
+import pytest
 from _pytest.capture import CaptureFixture
+from aioresponses import aioresponses
 from doomsday_clock import DoomsdayClient, cli
 
 
@@ -175,7 +174,7 @@ async def test_cli_request_countdown(capsys: CaptureFixture) -> None:
         await cli.main(['--format', 'countdown'])
         output = capsys.readouterr()
 
-        assert '1.0' in output[0]
+        assert '60.0' in output[0]
 
 
 @pytest.mark.asyncio

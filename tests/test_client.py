@@ -7,38 +7,72 @@ from typing import Union
 
 import pytest
 import requests
+from doomsday_clock.client import DoomsdayClient, DoomsdayClientError
 from pytest_httpserver import HTTPServer
 from requests import Response
 
-from doomsday_clock.client import DoomsdayClient, DoomsdayClientError
-
 SENTENCES_VALID = [
-    ("IT IS 16 MINUTES TO MIDNIGHT", 16, '11:44', '23:44:00'),
-    ("IT IS EIGHT MINUTES TO MIDNIGHT", 8, '11:52', '23:52:00'),
-    ("IT IS 3 AND A HALF MINUTES TO MIDNIGHT", 3.5, '11:56:30', '23:56:30'),
-    ("IT IS STILL 4 MINUTES TO MIDNIGHT", 4, '11:56', '23:56:00'),
+    ("IT IS 16 MINUTES TO MIDNIGHT", 16 * 60, '11:44', '23:44:00'),
+    ("IT IS EIGHT MINUTES TO MIDNIGHT", 8 * 60, '11:52', '23:52:00'),
+    (
+        "IT IS 3 AND A HALF MINUTES TO MIDNIGHT",
+        3.5 * 60,
+        '11:56:30',
+        '23:56:30',
+    ),
+    ("IT IS STILL 4 MINUTES TO MIDNIGHT", 4 * 60, '11:56', '23:56:00'),
     (
         "IT IS STILL 4 AND A HALF MINUTES TO MIDNIGHT",
-        4.5,
+        4.5 * 60,
         '11:55:30',
         '23:55:30',
     ),
     (
         "IT IS THREE AND A HALF MINUTES TO MIDNIGHT",
-        3.5,
+        3.5 * 60,
         '11:56:30',
         '23:56:30',
     ),
     (
         "IT IS STILL ONE AND A HALF MINUTES TO MIDNIGHT",
-        1.5,
+        1.5 * 60,
         '11:58:30',
         '23:58:30',
     ),
-    ("IT IS 1 MINUTE TO MIDNIGHT", 1, '11:59', '23:59:00'),
-    ("IT IS ONE MINUTE TO MIDNIGHT", 1, '11:59', '23:59:00'),
+    ("IT IS 1 MINUTE TO MIDNIGHT", 1 * 60, '11:59', '23:59:00'),
+    ("IT IS ONE MINUTE TO MIDNIGHT", 1 * 60, '11:59', '23:59:00'),
+    (
+        "IT IS 0 AND A HALF MINUTES TO MIDNIGHT",
+        0.5 * 60,
+        '11:59:30',
+        '23:59:30',
+    ),
+    (
+        "IT IS ZERO AND A HALF MINUTES TO MIDNIGHT",
+        0.5 * 60,
+        '11:59:30',
+        '23:59:30',
+    ),
+    ("IT IS ZERO MINUTES TO MIDNIGHT", 0, '12:00', '00:00:00'),
     ("IT IS 0 MINUTES TO MIDNIGHT", 0, '12:00', '00:00:00'),
-    ("IT IS 0 AND A HALF MINUTES TO MIDNIGHT", 0.5, '11:59:30', '23:59:30'),
+    ("IT IS 80 SECONDS TO MIDNIGHT", 80, '11:58:40', '23:58:40'),
+    ("IT IS STILL 80 SECONDS TO MIDNIGHT", 80, '11:58:40', '23:58:40'),
+    ("IT IS 60 SECONDS TO MIDNIGHT", 60, '11:59', '23:59:00'),
+    ("IT IS 30 SECONDS TO MIDNIGHT", 30, '11:59:30', '23:59:30'),
+    ("IT IS 1 SECOND TO MIDNIGHT", 1, '11:59:59', '23:59:59'),
+    ("IT IS STILL 1 SECOND TO MIDNIGHT", 1, '11:59:59', '23:59:59'),
+    ("IT IS 1 AND A HALF SECOND TO MIDNIGHT", 1.5, '11:59:58', '23:59:58'),
+    (
+        "IT IS STILL 1 AND A HALF SECOND TO MIDNIGHT",
+        1.5,
+        '11:59:58',
+        '23:59:58',
+    ),
+    ("IT IS HALF A SECOND TO MIDNIGHT", 0.5, '11:59:59', '23:59:59'),
+    ("IT IS STILL HALF A SECOND TO MIDNIGHT", 0.5, '11:59:59', '23:59:59'),
+    ("IT IS ZERO AND A HALF SECOND TO MIDNIGHT", 0.5, '11:59:59', '23:59:59'),
+    ("IT IS ZERO SECONDS TO MIDNIGHT", 0, '12:00', '00:00:00'),
+    ("IT IS 0 SECONDS TO MIDNIGHT", 0, '12:00', '00:00:00'),
 ]
 SENTENCES_INVALID = [
     ("IT IS DOOMSDAY MINUTES TO MIDNIGHT", None, None, None),
