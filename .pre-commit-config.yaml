@@ -10,7 +10,7 @@ fail_fast: false
 
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.2.3
+    rev: v2.5.0
     hooks:
     -   id: check-added-large-files
         description: "Prevents giant files from being committed."
@@ -26,6 +26,8 @@ repos:
         description: "Checks json files for parsable syntax."
     -   id: check-merge-conflict
         description: "Check for files that contain merge conflict strings."
+    -   id: check-toml
+        description: "Checks toml files for parsable syntax."
     -   id: check-yaml
         description: "Checks yaml files for parsable syntax."
     -   id: debug-statements
@@ -59,25 +61,25 @@ repos:
         types: [python]
 
 -   repo: https://github.com/asottile/blacken-docs
-    rev: v1.0.0
+    rev: v1.5.0
     hooks:
     -   id: blacken-docs
         description: "Runs `black` on python code blocks in documentation files."
 
 -   repo: https://gitlab.com/pycqa/flake8
-    rev: 3.7.7
+    rev: 3.7.9
     hooks:
     -   id: flake8
         description: "Enforces style consistency across Python projects."
 
 -   repo: https://github.com/pre-commit/mirrors-isort
-    rev: v4.3.20
+    rev: v4.3.21
     hooks:
     -   id: isort
         description: "Sorts Python imports."
 
 -   repo: https://github.com/pre-commit/mirrors-pylint
-    rev: v2.3.1
+    rev: v2.4.4
     hooks:
     -   id: pylint
         description: "Checks for errors in Python code, tries to enforce a coding standard and looks for code smells."
@@ -99,7 +101,7 @@ repos:
         exclude: ^(tests)/
 
 -   repo: https://github.com/pre-commit/pygrep-hooks
-    rev: v1.4.0
+    rev: v1.5.1
     hooks:
     -   id: python-check-blanket-noqa
         description: "Enforces that `noqa` annotations always occur with specific codes."
@@ -111,9 +113,11 @@ repos:
         description: "Checks for the deprecated `.warn()` method of python loggers."
     -   id: rst-backticks
         description: "Detects common mistake of using single backticks when writing rst."
+    -   id: text-unicode-replacement-char
+        description: "Forbids files which have a UTF-8 Unicode replacement character."
 
 -   repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 1.11.0
+    rev: 1.11.2
     hooks:
     -   id: git-dirty
         description: "Detects if git tree contains modified, staged, or untracked files."
