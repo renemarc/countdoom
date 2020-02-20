@@ -12,6 +12,7 @@ import doomsday_clock
 from .client import DoomsdayClient, DoomsdayClientError
 
 BASIC_FORMATS = ('sentence', 'clock', 'time', 'countdown')
+MINUTE_FRACTIONS = (0, 30)
 
 HEADER = """
  11 12   ️
@@ -136,6 +137,13 @@ def print_results(data: dict, args: Namespace) -> None:
     elif args.format == 'json':
         print(json.dumps(data, indent=4))
     else:
+        unit = 'second'
+        if (
+            data['countdown'] >= 60
+            and data['countdown'] % 60 in MINUTE_FRACTIONS
+        ):
+            data['countdown'] = round(data['countdown'] / 60, 2)
+            unit = 'minute'
         if data['countdown'].is_integer():
             data['countdown'] = int(data['countdown'])
         print_header()
@@ -143,8 +151,8 @@ def print_results(data: dict, args: Namespace) -> None:
         print("Clock: {}".format(data['clock']))
         print("Time: {}".format(data['time']))
         print(
-            "Countdown: {} minute{}".format(
-                data['countdown'], 's' if data['countdown'] != 1 else ''
+            "Countdown: {} {}{}".format(
+                data['countdown'], unit, 's' if data['countdown'] != 1 else ''
             )
         )
         print('')
