@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 
 """Top-level module for Doomsday Clock."""
+import asyncio
+import os
+import sys
 
 
 def main() -> None:  # pragma: no cover
     """Run Doomsday Clock client when package is called directly."""
-    import sys
-    import asyncio
-    import os
-
     sys.path.append(os.getcwd())
-    from doomsday_clock import cli
+    from doomsday_clock import cli  # pylint: disable=C0415
 
     loop = asyncio.get_event_loop()
     try:

@@ -4,7 +4,8 @@ init-hook="from pylint.config import find_pylintrc; import os, sys; sys.path.app
 [pre-commit-hook]
 # C0122: Misplaced comparison constant (Yoda conditions).
 # C0330: Wrong hanging indentation (conflicts with `black`).
-# C0412: Imports from package argparse are not grouped (conflicts with `isort`).
+# C0412: Imports from package are not grouped (conflicts with `isort`).
+# C0415: Import outside toplevel (dynamic loading)
 # W0621: Redefining name from outer scope (conflicts with pytest fixtures).
-disable=C0122,C0330,C0412,W0621
+disable=C0122,C0330,W0621
 limit=10.0

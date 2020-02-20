@@ -5,10 +5,11 @@
 
 import json
 
-import doomsday_clock
 import pytest
 from _pytest.capture import CaptureFixture
 from aioresponses import aioresponses
+
+import doomsday_clock
 from doomsday_clock import DoomsdayClient, cli
 
 

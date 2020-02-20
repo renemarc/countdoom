@@ -3,13 +3,16 @@
 
 """Tests for `client` module."""
 
+import random
 from typing import Union
 
 import pytest
 import requests
-from doomsday_clock.client import DoomsdayClient, DoomsdayClientError
+from bs4 import BeautifulSoup
 from pytest_httpserver import HTTPServer
 from requests import Response
+
+from doomsday_clock.client import DoomsdayClient, DoomsdayClientError
 
 SENTENCES_VALID = [
     ("IT IS 16 MINUTES TO MIDNIGHT", 16 * 60, '11:44', '23:44:00'),
@@ -125,8 +128,6 @@ def test_live_server_exists(response: Response) -> None:
 
     :param response: Server response
     """
-    from bs4 import BeautifulSoup
-
     assert (
         'Timeline'
         in BeautifulSoup(response.content, features="html.parser").title.string
@@ -311,8 +312,6 @@ async def test_invalid_selector(httpserver: HTTPServer) -> None:
     httpserver.expect_request('/{}'.format(path)).respond_with_data(
         prefix + string + suffix
     )
-
-    import random
 
     client = DoomsdayClient()
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))

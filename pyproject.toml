@@ -21,9 +21,10 @@ exclude = '''
 )
 '''
 
-#[tool.isort]
-#multi_line_output = 3
-#include_trailing_comma = true
-#force_grid_wrap = 0
-#combine_as_imports = true
-#line_length = 79
+[tool.isort]
+combine_as_imports = true
+force_grid_wrap = 0
+include_trailing_comma = true
+known_third_party = ["_pytest", "aiohttp", "aioresponses", "async_timeout", "bs4", "pytest", "pytest_httpserver", "requests", "setuptools"]
+line_length = 79
+multi_line_output = 3

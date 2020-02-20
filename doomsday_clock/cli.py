@@ -12,13 +12,14 @@ import doomsday_clock
 from .client import DoomsdayClient, DoomsdayClientError
 
 BASIC_FORMATS = ('sentence', 'clock', 'time', 'countdown')
-MINUTE_FRACTIONS = (0, 30)
 
 HEADER = """
  11 12   ️
 10 \\|     Doomsday Clock {} 🤯 🌊 ☢️  ☠
 9   @     World threat assessment from TheBulletin.org
 """
+
+MINUTE_FRACTIONS = (0, 30)
 
 
 async def main(args=None):
@@ -39,7 +40,7 @@ async def main(args=None):
         data = await doomsday_client.fetch_data()
     except DoomsdayClientError as err:
         print(err, file=sys.stderr)
-        exit(1)
+        sys.exit(1)
     # loop = asyncio.get_event_loop()
     # task = loop.create_task(doomsday_client.fetch_data())
     # try:
