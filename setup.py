@@ -11,9 +11,19 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     HISTORY = history_file.read()
 
-REQUIREMENTS = ['Click>=7.0']
+REQUIREMENTS = [
+    'aiohttp==3.6.2',
+    'async-timeout==3.0.1',
+    'beautifulsoup4==4.8.2',
+    'Click==7.0',
+]
 REQUIREMENTS_SETUP = ['pytest-runner']
-REQUIREMENTS_TEST = ['pytest']
+REQUIREMENTS_TEST = [
+    'pytest',
+    'pytest-asyncio',
+    'pytest-httpserver',
+    'requests',
+]
 
 setup(
     author="René-Marc Simard",
