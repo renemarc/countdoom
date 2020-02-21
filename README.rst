@@ -80,8 +80,6 @@ Create a virtual environment (optional)::
 Install Doomsday Clock::
 
     pip install doomsday_clock
-    # Or if you're working with a Python 3 project
-    pip3 install doomsday_clock
 
 Run Doomsday Clock::
 

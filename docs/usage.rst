@@ -9,11 +9,11 @@ To use Doomsday Clock in a project::
 
 .. literalinclude:: ../example.py
    :language: python
-   :lines: 7-24
+   :lines: 5-21
    :linenos:
 
 
 .. literalinclude:: ../example.py
    :language: python
-   :lines: 9-13,27-35
+   :lines: 5-10,24-32
    :linenos:
