@@ -15,71 +15,96 @@ from requests import Response
 from doomsday_clock.client import DoomsdayClient, DoomsdayClientError
 
 SENTENCES_VALID = [
-    ("IT IS 16 MINUTES TO MIDNIGHT", 16 * 60, '11:44', '23:44:00'),
-    ("IT IS EIGHT MINUTES TO MIDNIGHT", 8 * 60, '11:52', '23:52:00'),
+    ("IT IS 16 MINUTES TO MIDNIGHT", 16, 16 * 60, '11:44', '23:44:00'),
+    ("IT IS EIGHT MINUTES TO MIDNIGHT", 8, 8 * 60, '11:52', '23:52:00'),
     (
         "IT IS 3 AND A HALF MINUTES TO MIDNIGHT",
+        3.5,
         3.5 * 60,
         '11:56:30',
         '23:56:30',
     ),
-    ("IT IS STILL 4 MINUTES TO MIDNIGHT", 4 * 60, '11:56', '23:56:00'),
+    ("IT IS STILL 4 MINUTES TO MIDNIGHT", 4, 4 * 60, '11:56', '23:56:00'),
     (
         "IT IS STILL 4 AND A HALF MINUTES TO MIDNIGHT",
+        4.5,
         4.5 * 60,
         '11:55:30',
         '23:55:30',
     ),
     (
         "IT IS THREE AND A HALF MINUTES TO MIDNIGHT",
+        3.5,
         3.5 * 60,
         '11:56:30',
         '23:56:30',
     ),
     (
         "IT IS STILL ONE AND A HALF MINUTES TO MIDNIGHT",
+        1.5,
         1.5 * 60,
         '11:58:30',
         '23:58:30',
     ),
-    ("IT IS 1 MINUTE TO MIDNIGHT", 1 * 60, '11:59', '23:59:00'),
-    ("IT IS ONE MINUTE TO MIDNIGHT", 1 * 60, '11:59', '23:59:00'),
+    ("IT IS 1 MINUTE TO MIDNIGHT", 1, 1 * 60, '11:59', '23:59:00'),
+    ("IT IS ONE MINUTE TO MIDNIGHT", 1, 1 * 60, '11:59', '23:59:00'),
     (
         "IT IS 0 AND A HALF MINUTES TO MIDNIGHT",
+        0.5,
         0.5 * 60,
         '11:59:30',
         '23:59:30',
     ),
     (
         "IT IS ZERO AND A HALF MINUTES TO MIDNIGHT",
+        0.5,
         0.5 * 60,
         '11:59:30',
         '23:59:30',
     ),
-    ("IT IS ZERO MINUTES TO MIDNIGHT", 0, '12:00', '00:00:00'),
-    ("IT IS 0 MINUTES TO MIDNIGHT", 0, '12:00', '00:00:00'),
-    ("IT IS 80 SECONDS TO MIDNIGHT", 80, '11:58:40', '23:58:40'),
-    ("IT IS STILL 80 SECONDS TO MIDNIGHT", 80, '11:58:40', '23:58:40'),
-    ("IT IS 60 SECONDS TO MIDNIGHT", 60, '11:59', '23:59:00'),
-    ("IT IS 30 SECONDS TO MIDNIGHT", 30, '11:59:30', '23:59:30'),
-    ("IT IS 1 SECOND TO MIDNIGHT", 1, '11:59:59', '23:59:59'),
-    ("IT IS STILL 1 SECOND TO MIDNIGHT", 1, '11:59:59', '23:59:59'),
-    ("IT IS 1 AND A HALF SECOND TO MIDNIGHT", 1.5, '11:59:58', '23:59:58'),
+    ("IT IS ZERO MINUTES TO MIDNIGHT", 0, 0, '12:00', '00:00:00'),
+    ("IT IS 0 MINUTES TO MIDNIGHT", 0, 0, '12:00', '00:00:00'),
+    ("IT IS 80 SECONDS TO MIDNIGHT", 1.33, 80, '11:58:40', '23:58:40'),
+    ("IT IS STILL 80 SECONDS TO MIDNIGHT", 1.33, 80, '11:58:40', '23:58:40'),
+    ("IT IS 60 SECONDS TO MIDNIGHT", 1, 60, '11:59', '23:59:00'),
+    ("IT IS 30 SECONDS TO MIDNIGHT", 0.5, 30, '11:59:30', '23:59:30'),
+    ("IT IS 1 SECOND TO MIDNIGHT", 0.02, 1, '11:59:59', '23:59:59'),
+    ("IT IS STILL 1 SECOND TO MIDNIGHT", 0.02, 1, '11:59:59', '23:59:59'),
     (
-        "IT IS STILL 1 AND A HALF SECOND TO MIDNIGHT",
+        "IT IS 1 AND A HALF SECOND TO MIDNIGHT",
+        0.03,
         1.5,
         '11:59:58',
         '23:59:58',
     ),
-    ("IT IS HALF A SECOND TO MIDNIGHT", 0.5, '11:59:59', '23:59:59'),
-    ("IT IS STILL HALF A SECOND TO MIDNIGHT", 0.5, '11:59:59', '23:59:59'),
-    ("IT IS ZERO AND A HALF SECOND TO MIDNIGHT", 0.5, '11:59:59', '23:59:59'),
-    ("IT IS ZERO SECONDS TO MIDNIGHT", 0, '12:00', '00:00:00'),
-    ("IT IS 0 SECONDS TO MIDNIGHT", 0, '12:00', '00:00:00'),
+    (
+        "IT IS STILL 1 AND A HALF SECOND TO MIDNIGHT",
+        0.03,
+        1.5,
+        '11:59:58',
+        '23:59:58',
+    ),
+    ("IT IS HALF A SECOND TO MIDNIGHT", 0.01, 0.5, '11:59:59', '23:59:59'),
+    (
+        "IT IS STILL HALF A SECOND TO MIDNIGHT",
+        0.01,
+        0.5,
+        '11:59:59',
+        '23:59:59',
+    ),
+    (
+        "IT IS ZERO AND A HALF SECOND TO MIDNIGHT",
+        0.01,
+        0.5,
+        '11:59:59',
+        '23:59:59',
+    ),
+    ("IT IS ZERO SECONDS TO MIDNIGHT", 0, 0, '12:00', '00:00:00'),
+    ("IT IS 0 SECONDS TO MIDNIGHT", 0, 0, '12:00', '00:00:00'),
 ]
 SENTENCES_INVALID = [
-    ("IT IS DOOMSDAY MINUTES TO MIDNIGHT", None, None, None),
-    ("APOCALYPSE YESTERDAY", None, None, None),
+    ("IT IS DOOMSDAY MINUTES TO MIDNIGHT", None, None, None, None),
+    ("APOCALYPSE YESTERDAY", None, None, None, None),
 ]
 
 
@@ -171,10 +196,35 @@ async def test_valid_sentence(httpserver: HTTPServer, sentence: str) -> None:
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize(
-    'sentence,countdown', [(x[0], x[1]) for x in SENTENCES_VALID]
+    'sentence,countdown', [(x[0], x[2]) for x in SENTENCES_VALID]
 )
 async def test_valid_countdown(
     httpserver: HTTPServer, sentence: str, countdown: Union[int, float]
+) -> None:
+    """
+    Test parser for countdown generation from valid sentences.
+
+    :param httpserver: HTTP Server
+    :param sentence: Doomsday Clock sentence
+    :param countdown: Seconds to midnight
+    """
+    _setup_servers(httpserver)
+
+    client = DoomsdayClient()
+    path = _get_path(sentence)
+    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    data = await client.fetch_data()
+
+    assert data is not None
+    assert countdown == data['countdown']
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    'sentence,minutes', [(x[0], x[1]) for x in SENTENCES_VALID]
+)
+async def test_valid_minutes(
+    httpserver: HTTPServer, sentence: str, minutes: Union[int, float]
 ) -> None:
     """
     Test parser for countdown generation from valid sentences.
@@ -191,12 +241,12 @@ async def test_valid_countdown(
     data = await client.fetch_data()
 
     assert data is not None
-    assert countdown == data['countdown']
+    assert minutes == data['minutes']
 
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize(
-    'sentence,clock', [(x[0], x[2]) for x in SENTENCES_VALID]
+    'sentence,clock', [(x[0], x[3]) for x in SENTENCES_VALID]
 )
 async def test_valid_clock(
     httpserver: HTTPServer, sentence: str, clock: str
@@ -222,7 +272,7 @@ async def test_valid_clock(
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize(
-    'sentence,time', [(x[0], x[3]) for x in SENTENCES_VALID]
+    'sentence,time', [(x[0], x[4]) for x in SENTENCES_VALID]
 )
 async def test_valid_time(
     httpserver: HTTPServer, sentence: str, time: str
@@ -244,6 +294,32 @@ async def test_valid_time(
     assert data is not None
     assert time == data['time']
     assert time == client.time()
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    'sentence,minutes', [(x[0], x[1]) for x in SENTENCES_INVALID]
+)
+async def test_invalid_minutes(
+    httpserver: HTTPServer, sentence: str, minutes: Union[int, float]
+) -> None:
+    """
+    Test parser for minutes generation from invalid sentences.
+
+    :param httpserver: HTTP Server
+    :param sentence: Doomsday Clock sentence
+    :param minutes: umber of minutes to midnight
+    """
+    _setup_servers(httpserver)
+
+    client = DoomsdayClient()
+    path = _get_path(sentence)
+    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    with pytest.raises(DoomsdayClientError) as err:
+        await client.fetch_data()
+
+    assert "Sentence not parsable." == str(err.value)
+    assert minutes == client.minutes()
 
 
 @pytest.mark.asyncio
@@ -274,7 +350,7 @@ async def test_invalid_clock(
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize(
-    'sentence,time', [(x[0], x[3]) for x in SENTENCES_INVALID]
+    'sentence,time', [(x[0], x[4]) for x in SENTENCES_INVALID]
 )
 async def test_invalid_time(
     httpserver: HTTPServer, sentence: str, time: str

@@ -11,11 +11,11 @@ import doomsday_clock
 
 from .client import DoomsdayClient, DoomsdayClientError
 
-BASIC_FORMATS = ('sentence', 'clock', 'time', 'countdown')
+BASIC_FORMATS = ('sentence', 'clock', 'time', 'minutes', 'countdown')
 
 HEADER = """
  11 12   ️
-10 \\|     Doomsday Clock {} 🤯 🌊 ☢️  ☠
+10 \\|     Doomsday Clock {} 🤯 🌊 ☢️ ☠
 9   @     World threat assessment from TheBulletin.org
 """
 
@@ -63,7 +63,8 @@ def create_parser() -> ArgumentParser:
     parser = argparse.ArgumentParser(
         prog='doomsday_clock',
         add_help=False,
-        epilog="Be the change you want to see in the world.",
+        epilog='"Be the change you want to see in the world." \
+            —Gandhi/Arleen Lorrance',
     )
 
     def check_positive(value) -> int:
@@ -151,6 +152,8 @@ def print_results(data: dict, args: Namespace) -> None:
         print("Sentence: {}".format(data['sentence']))
         print("Clock: {}".format(data['clock']))
         print("Time: {}".format(data['time']))
+        print("Minutes: {}".format(data['minutes']))
+        print("Seconds: {}".format(data['countdown']))
         print(
             "Countdown: {} {}{}".format(
                 data['countdown'], unit, 's' if data['countdown'] != 1 else ''

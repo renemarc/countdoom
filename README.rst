@@ -57,8 +57,8 @@ Features
 
 * Fetches the current `Doomsday Clock`_ world threat assessment from
   `TheBulletin.org`_.
-* Converts the Doomsday Clock sentence into countdown (60 seconds), clock
-  (11:59), and time (23:59:00).
+* Converts the Doomsday Clock sentence into countdown (60 seconds), minutes,
+  clock (11:59), and time (23:59:00).
 * Offers a command-line interface.
 * Uses async IO.
 * Python 3.5+ compatible.
@@ -111,10 +111,10 @@ Usage::
     $ doomsday_clock -h
 
      11 12   ️
-    10 \|     Doomsday Clock 0.1.0 🤯 🌊 ☢️  ☠
+    10 \|     Doomsday Clock 0.1.0 🤯 🌊 ☢️ ☠
     9   @     World threat assessment from TheBulletin.org
 
-    usage: doomsday_clock [--format {sentence,clock,time,countdown,all,json}]
+    usage: doomsday_clock [--format {sentence,clock,time,minutes,countdown,all,json}]
                           [--timeout TIMEOUT] [--v] [-h]
 
     optional arguments:
@@ -124,7 +124,7 @@ Usage::
       --v, --version        show program's version number and exit
       -h, --help            show this help message and exit
 
-    Be the change you want to see in the world.
+    "Be the change you want to see in the world." —Gandhi/Arleen Lorrance
 
 
 Contributing

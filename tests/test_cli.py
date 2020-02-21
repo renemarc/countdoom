@@ -164,6 +164,21 @@ async def test_cli_request_time(capsys: CaptureFixture) -> None:
 
 
 @pytest.mark.asyncio
+async def test_cli_request_minutes(capsys: CaptureFixture) -> None:
+    """
+    Test the CLI output for `minutes` format.
+
+    :param capsys: System-level capture fixture
+    """
+    with aioresponses() as mocked:
+        _setup_mock_server(mocked)
+        await cli.main(['--format', 'minutes'])
+        output = capsys.readouterr()
+
+        assert '1' in output[0]
+
+
+@pytest.mark.asyncio
 async def test_cli_request_countdown(capsys: CaptureFixture) -> None:
     """
     Test the CLI output for `countdown` format.
@@ -194,6 +209,7 @@ async def test_cli_request_json(capsys: CaptureFixture) -> None:
         assert 'sentence' in json_data
         assert 'clock' in json_data
         assert 'time' in json_data
+        assert 'minutes' in json_data
         assert 'countdown' in json_data
 
 
@@ -212,6 +228,7 @@ async def test_cli_request_all(capsys: CaptureFixture) -> None:
         assert 'Sentence:' in output[0]
         assert 'Clock:' in output[0]
         assert 'Time:' in output[0]
+        assert 'Minutes:' in output[0]
         assert 'Countdown:' in output[0]
 
         _setup_mock_server(mocked)
@@ -221,6 +238,7 @@ async def test_cli_request_all(capsys: CaptureFixture) -> None:
         assert 'Sentence:' in output[0]
         assert 'Clock:' in output[0]
         assert 'Time:' in output[0]
+        assert 'Minutes:' in output[0]
         assert 'Countdown:' in output[0]
 
 

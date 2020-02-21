@@ -79,6 +79,20 @@ class DoomsdayClient:
         )
         return self.countdown_to_time(self._countdown, clock_format)
 
+    def minutes(self) -> Optional[float]:
+        """
+        Convert countdown to midnight into minutes representation.
+
+        :return: Number of minutes to midnight
+        """
+        if self._countdown is None:
+            return None
+        minutes = float(self._countdown // 60)
+        seconds = self._countdown % 60 / 60
+        if seconds:
+            minutes += round(seconds, 2)
+        return minutes
+
     def time(self, time_format: str = TIME_FORMAT) -> Optional[str]:
         """
         Convert countdown to midnight into a time representation.
@@ -111,6 +125,7 @@ class DoomsdayClient:
             'sentence': self.sentence,
             'clock': self.clock(),
             'time': self.time(),
+            'minutes': self.minutes(),
             'countdown': self.countdown,
         }
 
