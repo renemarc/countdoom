@@ -19,6 +19,7 @@ REQUIREMENTS = [
 ]
 REQUIREMENTS_SETUP = ['pytest-runner']
 REQUIREMENTS_TEST = [
+    'aioresponses',
     'pytest',
     'pytest-asyncio',
     'pytest-httpserver',
