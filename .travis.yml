@@ -18,7 +18,7 @@ install:
 # Command to run tests, e.g. python setup.py test
 script:
     - pylint ./doomsday_clock/ ./tests/*.py
-    - flake8 ./doomsday_clock/
+    - if [[ $TRAVIS_PYTHON_VERSION != '3.8' ]]; then (flake8 .); fi
     - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then (black --check --diff .); fi
     - tox
 
