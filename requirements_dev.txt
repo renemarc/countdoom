@@ -22,6 +22,7 @@ requests==2.23.0
 setuptools>=40.8.0
 sphinx-autodoc-typehints>=1.6.0
 Sphinx>=2.1
+sphinx_rtd_theme>=0.4.3
 tox==3.14.5
 twine==1.15.0
 watchdog==0.10.2

@@ -57,7 +57,7 @@ Features
 
 * Fetches the current `Doomsday Clock`_ world threat assessment from
   `TheBulletin.org`_.
-* Converts the Doomsday Clock sentence into countdown (60 seconds), minutes,
+* Converts the Doomsday Clock sentence into countdown (60 seconds), minutes (1),
   clock (11:59), and time (23:59:00).
 * Offers a command-line interface.
 * Uses async IO.

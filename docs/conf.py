@@ -61,7 +61,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Doomsday Clock'
-copyright = u"2019, René-Marc Simard"
+copyright = u"2019-present, René-Marc Simard"
 author = u"René-Marc Simard"
 
 # The version info for the project you're documenting, acts as replacement

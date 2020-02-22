@@ -8,23 +8,23 @@ doomsday\_clock.cli module
 --------------------------
 
 .. automodule:: doomsday_clock.cli
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-doomsday\_clock.doomsday\_clock module
---------------------------------------
+doomsday\_clock.client module
+-----------------------------
 
-.. automodule:: doomsday_clock.doomsday_clock
-    :members:
-    :undoc-members:
-    :show-inheritance:
+.. automodule:: doomsday_clock.client
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
 Module contents
 ---------------
 
 .. automodule:: doomsday_clock
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:
