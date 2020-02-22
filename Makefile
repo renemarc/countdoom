@@ -29,7 +29,7 @@ BROWSER := python -c "$$BROWSER_PYSCRIPT"
 help:
 	@printf "\n"
 	@printf " 11 12   \n"
-	@printf "10 \|    \e[0;1mDoomsday Clock\e[0m\n"
+	@printf "10 \|    \e[0;1mCountdoom\e[0m\n"
 	@printf "9   @    \e[0;1mMakefile\e[0m\n"
 	@printf "\n"
 	@printf "\e[4mUsage\e[0m\n"
@@ -64,10 +64,10 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	flake8 doomsday_clock tests
+	flake8 countdoom tests
 
 secure: ## check code for security issues
-	bandit --recursive doomsday_clock docs
+	bandit --recursive countdoom docs
 
 test: ## run tests quickly with the default Python
 	py.test
@@ -76,15 +76,15 @@ test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source doomsday_clock -m pytest
+	coverage run --source countdoom -m pytest
 	coverage report -m
 	# coverage html
 	# $(BROWSER) htmlcov/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/doomsday_clock.rst
+	rm -f docs/countdoom.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc --output-dir docs/ doomsday_clock
+	sphinx-apidoc --output-dir docs/ countdoom
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html
@@ -114,4 +114,4 @@ install: clean ## install the package to the active Python's site-packages
 uninstall: _uninstall clean ## uninstall the package from the active Python's site-packages
 
 _uninstall:
-	pip uninstall -y doomsday_clock
+	pip uninstall -y countdoom

@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 
-"""Console script for doomsday_clock."""
+"""Console script for Countdoom."""
 import argparse
 import asyncio
 import json
 import sys
 from argparse import ArgumentParser, Namespace
 
-import doomsday_clock
+import countdoom
 
-from .client import DoomsdayClient, DoomsdayClientError
+from .client import CountdoomClient, CountdoomClientError
 
 BASIC_FORMATS = ('sentence', 'clock', 'time', 'minutes', 'countdown')
 
 HEADER = """
  11 12   ️
-10 \\|     Doomsday Clock {} 🤯 🌊 ☢️ ☠
+10 \\|     Countdoom: Doomsday Clock 🤯 🌊 ☢️  ☠️
 9   @     World threat assessment from TheBulletin.org
 """
 
@@ -23,7 +23,7 @@ MINUTE_FRACTIONS = (0, 30)
 
 
 async def main(args=None):
-    """Console script for doomsday_clock."""
+    """Console script for countdoom."""
     # Handle command-line interface
     parser = create_parser()
     args = parse_args(parser, args)
@@ -35,17 +35,17 @@ async def main(args=None):
         return
 
     # Get current Doomsday Clock value
-    doomsday_client = DoomsdayClient(timeout=args.timeout)
+    countdoom_client = CountdoomClient(timeout=args.timeout)
     try:
-        data = await doomsday_client.fetch_data()
-    except DoomsdayClientError as err:
+        data = await countdoom_client.fetch_data()
+    except CountdoomClientError as err:
         print(err, file=sys.stderr)
         sys.exit(1)
     # loop = asyncio.get_event_loop()
-    # task = loop.create_task(doomsday_client.fetch_data())
+    # task = loop.create_task(countdoom_client.fetch_data())
     # try:
     #     data = loop.run_until_complete(task)
-    # except DoomsdayClientError as err:
+    # except CountdoomClientError as err:
     #     print(err)
     #     return
 
@@ -61,7 +61,7 @@ def create_parser() -> ArgumentParser:
     :return: Argument parser
     """
     parser = argparse.ArgumentParser(
-        prog='doomsday_clock',
+        prog='countdoom',
         add_help=False,
         epilog='"Be the change you want to see in the world." \
             —Gandhi/Arleen Lorrance',
@@ -95,7 +95,7 @@ def create_parser() -> ArgumentParser:
         '--timeout',
         required=False,
         type=check_positive,
-        default=DoomsdayClient.REQUEST_TIMEOUT,
+        default=CountdoomClient.REQUEST_TIMEOUT,
         help="connection/request timeout in seconds (default: %(default)s).",
     )
     parser.add_argument(
@@ -124,7 +124,7 @@ def parse_args(parser: ArgumentParser, args: list) -> Namespace:
 
 def print_header() -> None:
     """Display a stylized header."""
-    print(HEADER.format(doomsday_clock.__version__))
+    print(HEADER.format(countdoom.__version__))
 
 
 def print_results(data: dict, args: Namespace) -> None:

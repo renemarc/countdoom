@@ -110,8 +110,8 @@ repos:
 -   repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.5.1
     hooks:
-    -   id: python-check-blanket-noqa
-        description: "Enforces that `noqa` annotations always occur with specific codes."
+    # -   id: python-check-blanket-noqa
+    #     description: "Enforces that `noqa` annotations always occur with specific codes."
     -   id: python-check-mock-methods
         description: "Prevents a common mistake of `assert mck.not_called()` or `assert mck.called_once_with(...)`."
     -   id: python-no-eval

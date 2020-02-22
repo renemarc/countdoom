@@ -9,8 +9,8 @@ import pytest
 from _pytest.capture import CaptureFixture
 from aioresponses import aioresponses
 
-import doomsday_clock
-from doomsday_clock import DoomsdayClient, cli
+import countdoom
+from countdoom import CountdoomClient, cli
 
 
 def _setup_mock_server(mocked: aioresponses) -> None:
@@ -19,11 +19,11 @@ def _setup_mock_server(mocked: aioresponses) -> None:
 
     :param mocked: aiohttp response
     """
-    prefix = '<h3 class="{}">'.format(DoomsdayClient.SELECTOR[1:])
+    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
     suffix = '</h3>'
     string = "IT IS 1 MINUTE TO MIDNIGHT"
     mocked.get(
-        DoomsdayClient.CLOCK_URL, status=200, body=prefix + string + suffix
+        CountdoomClient.CLOCK_URL, status=200, body=prefix + string + suffix
     )
 
 
@@ -37,7 +37,7 @@ def test_cli_parser_help() -> None:
 
 def test_cli_parser_timeout() -> None:
     """Test the CLI parser for `timeout` argument."""
-    timeout = DoomsdayClient.REQUEST_TIMEOUT - 1
+    timeout = CountdoomClient.REQUEST_TIMEOUT - 1
     parser = cli.create_parser()
     args = cli.parse_args(parser, ['--timeout', str(timeout)])
 
@@ -51,7 +51,7 @@ def test_cli_parser_timeout_default() -> None:
     args = cli.parse_args(parser, [])
 
     assert 'timeout' in args
-    assert args.timeout == DoomsdayClient.REQUEST_TIMEOUT
+    assert args.timeout == CountdoomClient.REQUEST_TIMEOUT
 
 
 def test_cli_parser_timeout_non_positive(capsys: CaptureFixture) -> None:
@@ -115,7 +115,7 @@ async def test_cli_request_version(capsys: CaptureFixture) -> None:
 
     assert exception.type == SystemExit
     assert exception.value.code == 0
-    assert "doomsday_clock {}".format(doomsday_clock.__version__) in output[0]
+    assert "countdoom {}".format(countdoom.__version__) in output[0]
 
 
 @pytest.mark.asyncio
@@ -267,11 +267,13 @@ async def test_cli_request_internal_error(capsys: CaptureFixture) -> None:
     :param capsys: System-level capture fixture
     """
     with aioresponses() as mocked:
-        prefix = '<h3 class="{}">'.format(DoomsdayClient.SELECTOR[1:])
+        prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
         suffix = '</h3>'
         string = ' '
         mocked.get(
-            DoomsdayClient.CLOCK_URL, status=200, body=prefix + string + suffix
+            CountdoomClient.CLOCK_URL,
+            status=200,
+            body=prefix + string + suffix,
         )
         with pytest.raises(SystemExit) as exception:
             await cli.main(['--format', 'clock'])

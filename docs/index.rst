@@ -1,5 +1,5 @@
-Welcome to Doomsday Clock's documentation!
-==========================================
+Welcome to Countdoom's documentation!
+=====================================
 
 .. include:: ./README.rst
 
@@ -24,9 +24,6 @@ Indices and tables
 
 .. todo::
    Simplify index page.
-
-.. todo::
-   Rename project to **Doomsday Py**.
 
 .. todo::
    Add logo.

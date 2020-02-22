@@ -2,15 +2,15 @@
 Usage
 =====
 
-To use Doomsday Clock in a project::
+To use Countdoom in a project::
 
     import asyncio
-    import doomsday_clock
+    import countdoom
 
 
 .. literalinclude:: ../examples/example.py
    :language: python
-   :lines: 5-21
+   :lines: 6-21
    :linenos:
 
 

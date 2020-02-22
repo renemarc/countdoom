@@ -1,4 +1,4 @@
 [report]
 show_missing = True
 omit =
-    doomsday_clock/__main__.py
+    countdoom/__main__.py

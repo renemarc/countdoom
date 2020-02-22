@@ -17,7 +17,7 @@ install:
 
 # Command to run tests, e.g. python setup.py test
 script:
-    - pylint ./doomsday_clock/ ./tests/*.py
+    - pylint ./countdoom/ ./tests/*.py
     - if [[ $TRAVIS_PYTHON_VERSION != '3.8' ]]; then (flake8 .); fi
     - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then (black --check --diff .); fi
     - tox
@@ -34,5 +34,5 @@ script:
 #    secure: PLEASE_REPLACE_ME
 #  on:
 #    tags: true
-#    repo: renemarc/doomsday_clock
+#    repo: renemarc/countdoom
 #    python: 3.6

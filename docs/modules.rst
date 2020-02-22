@@ -1,7 +1,7 @@
-doomsday_clock
-==============
+countdoom
+=========
 
 .. toctree::
    :maxdepth: 4
 
-   doomsday_clock
+   countdoom

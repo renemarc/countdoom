@@ -10,14 +10,14 @@ import aiohttp
 import async_timeout
 from bs4 import BeautifulSoup
 
-_LOGGER = logging.getLogger('doomsday_clock')
+_LOGGER = logging.getLogger('countdoom')
 
 
-class DoomsdayClient:
+class CountdoomClient:
     """
-    Doomsday Clock client.
+    Countdoom client.
 
-    Convert data into parsable time from the Timeline page at
+    Convert Doomsday Clock data into parsable time from the Timeline page at
     https://thebulletin.org/doomsday-clock/past-announcements/
 
     Based on prior Node.js work by Matt Bierner.
@@ -36,7 +36,7 @@ class DoomsdayClient:
 
     def __init__(self, timeout: int = REQUEST_TIMEOUT) -> None:
         """
-        Create a DoomsdayClient object.
+        Create a CountdoomClient object.
 
         :param timeout: Connection/request timeout
         """
@@ -81,7 +81,7 @@ class DoomsdayClient:
 
     def minutes(self) -> Optional[float]:
         """
-        Convert countdown to midnight into minutes representation.
+        Convert countdown to midnight into minutes to midnight representation.
 
         :return: Number of minutes to midnight
         """
@@ -147,8 +147,8 @@ class DoomsdayClient:
 
         :return: Web page HTML body
 
-        :raise DoomsdayClientError: If URL is not found
-        :raise DoomsdayClientError: If server connection fails
+        :raise CountdoomClientError: If URL is not found
+        :raise CountdoomClientError: If server connection fails
         """
         try:
             async with async_timeout.timeout(timeout):
@@ -158,17 +158,17 @@ class DoomsdayClient:
                     return await resp.text()
         except AssertionError:
             await self.close()
-            raise DoomsdayClientError("Page not found.")
+            raise CountdoomClientError("Page not found.")
         except OSError:
             await self.close()
-            raise DoomsdayClientError("Cannot connect to website. Check URL.")
+            raise CountdoomClientError("Cannot connect to website. Check URL.")
 
     async def _extract_sentence(self) -> None:
         """
         Read the posted Doomsday Clock value.
 
-        :raise DoomsdayClientError: If no sentence is found
-        :raise DoomsdayClientError: If empty sentence is found
+        :raise CountdoomClientError: If no sentence is found
+        :raise CountdoomClientError: If empty sentence is found
         """
         html = BeautifulSoup(self.html, features='html.parser')
 
@@ -184,14 +184,14 @@ class DoomsdayClient:
                 "website design changes.",
                 self.SELECTOR,
             )
-            raise DoomsdayClientError("No sentence found.")
+            raise CountdoomClientError("No sentence found.")
         except ValueError:
             _LOGGER.error(
                 "Empty sentence found using selector %s. Check for source "
                 "website design changes.",
                 self.SELECTOR,
             )
-            raise DoomsdayClientError("Empty sentence found.")
+            raise CountdoomClientError("Empty sentence found.")
         _LOGGER.debug("Sentence found: %s", self._sentence)
 
     async def close(self) -> None:
@@ -206,7 +206,7 @@ class DoomsdayClient:
         """
         Convert the Doomsday Clock sentence into a countdown to midnight.
 
-        :raise DoomsdayClientError: When sentence is not parsable
+        :raise CountdoomClientError: When sentence is not parsable
         """
         try:
             self._countdown = self.sentence_to_countdown(self._sentence)
@@ -214,7 +214,7 @@ class DoomsdayClient:
             _LOGGER.error(
                 "Regex pattern yielded no result for : %s", self._sentence
             )
-            raise DoomsdayClientError("Sentence not parsable.")
+            raise CountdoomClientError("Sentence not parsable.")
         _LOGGER.debug("Countdown value: %s", self._countdown)
 
     @classmethod
@@ -311,5 +311,5 @@ class DoomsdayClient:
         return (midnight - delta).strftime(time_format)
 
 
-class DoomsdayClientError(Exception):
-    """Doomsday Clock client general error."""
+class CountdoomClientError(Exception):
+    """Countdoom client general error."""

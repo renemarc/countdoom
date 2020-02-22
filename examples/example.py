@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-"""Usage examples for Doomsday Clock."""
+"""Usage examples for Countdoom."""
 
 import asyncio
 from typing import Dict, Union
 
-from doomsday_clock import DoomsdayClient
+from countdoom import CountdoomClient
 
 
 def get_doomsday_clock() -> Dict[str, Union[str, float]]:
@@ -14,7 +14,7 @@ def get_doomsday_clock() -> Dict[str, Union[str, float]]:
 
     :return: Dictionary of Doomsday Clock representation styles
     """
-    client = DoomsdayClient()
+    client = CountdoomClient()
     loop = asyncio.get_event_loop()
     task = loop.create_task(client.fetch_data())
     data = loop.run_until_complete(task)
@@ -27,6 +27,6 @@ async def async_get_doomsday_clock() -> Dict[str, Union[str, float]]:
 
     :return: Dictionary of Doomsday Clock representation styles
     """
-    client = DoomsdayClient()
+    client = CountdoomClient()
     data = await client.fetch_data()
     return data

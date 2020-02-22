@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install Doomsday Clock, run this command in your terminal:
+To install Countdoom, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install doomsday_clock
+    $ pip install countdoom
 
-This is the preferred method to install Doomsday Clock, as it will always install the most recent stable release.
+This is the preferred method to install Countdoom, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for Doomsday Clock can be downloaded from the `Github repo`_.
+The sources for Countdoom can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/renemarc/doomsday_clock
+    $ git clone git://github.com/renemarc/countdoom
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/renemarc/doomsday_clock/tarball/master
+    $ curl  -OL https://github.com/renemarc/countdoom/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/renemarc/doomsday_clock
-.. _tarball: https://github.com/renemarc/doomsday_clock/tarball/master
+.. _Github repo: https://github.com/renemarc/countdoom
+.. _tarball: https://github.com/renemarc/countdoom/tarball/master

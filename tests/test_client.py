@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from pytest_httpserver import HTTPServer
 from requests import Response
 
-from doomsday_clock.client import DoomsdayClient, DoomsdayClientError
+from countdoom.client import CountdoomClient, CountdoomClientError
 
 SENTENCES_VALID = [
     ("IT IS 16 MINUTES TO MIDNIGHT", 16, 16 * 60, '11:44', '23:44:00'),
@@ -115,7 +115,7 @@ def response() -> Response:
 
     :return: Request response
     """
-    return requests.get(DoomsdayClient.CLOCK_URL)
+    return requests.get(CountdoomClient.CLOCK_URL)
 
 
 def _get_path(string: str) -> str:
@@ -135,7 +135,7 @@ def _setup_servers(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(DoomsdayClient.SELECTOR[1:])
+    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
     suffix = '</h3>'
 
     sentences = SENTENCES_VALID + SENTENCES_INVALID
@@ -167,7 +167,7 @@ async def test_live_server(response: Response) -> None:
 
     :param response: Server response
     """
-    client = DoomsdayClient()
+    client = CountdoomClient()
     client.html = response.content
     data = await client.fetch_data()
 
@@ -185,7 +185,7 @@ async def test_valid_sentence(httpserver: HTTPServer, sentence: str) -> None:
     """
     _setup_servers(httpserver)
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     path = _get_path(sentence)
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
     data = await client.fetch_data()
@@ -210,7 +210,7 @@ async def test_valid_countdown(
     """
     _setup_servers(httpserver)
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     path = _get_path(sentence)
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
     data = await client.fetch_data()
@@ -231,11 +231,11 @@ async def test_valid_minutes(
 
     :param httpserver: HTTP Server
     :param sentence: Doomsday Clock sentence
-    :param countdown: Minutes to midnight
+    :param minutes: Minutes to midnight
     """
     _setup_servers(httpserver)
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     path = _get_path(sentence)
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
     data = await client.fetch_data()
@@ -260,7 +260,7 @@ async def test_valid_clock(
     """
     _setup_servers(httpserver)
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     path = _get_path(sentence)
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
     data = await client.fetch_data()
@@ -286,7 +286,7 @@ async def test_valid_time(
     """
     _setup_servers(httpserver)
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     path = _get_path(sentence)
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
     data = await client.fetch_data()
@@ -312,10 +312,10 @@ async def test_invalid_minutes(
     """
     _setup_servers(httpserver)
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     path = _get_path(sentence)
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
-    with pytest.raises(DoomsdayClientError) as err:
+    with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
     assert "Sentence not parsable." == str(err.value)
@@ -338,10 +338,10 @@ async def test_invalid_clock(
     """
     _setup_servers(httpserver)
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     path = _get_path(sentence)
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
-    with pytest.raises(DoomsdayClientError) as err:
+    with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
     assert "Sentence not parsable." == str(err.value)
@@ -364,10 +364,10 @@ async def test_invalid_time(
     """
     _setup_servers(httpserver)
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     path = _get_path(sentence)
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
-    with pytest.raises(DoomsdayClientError) as err:
+    with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
     assert "Sentence not parsable." == str(err.value)
@@ -381,7 +381,7 @@ async def test_invalid_selector(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(DoomsdayClient.SELECTOR[1:])
+    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
     suffix = '</h3>'
     string = "IT IS 1 AND A HALF MINUTE TO MIDNIGHT"
     path = 'test_invalid_selector'
@@ -389,10 +389,10 @@ async def test_invalid_selector(httpserver: HTTPServer) -> None:
         prefix + string + suffix
     )
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
     client.SELECTOR = '.wrong-id-' + str(random.randint(0, 100000000))
-    with pytest.raises(DoomsdayClientError) as err:
+    with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
     assert "No sentence found." == str(err.value)
@@ -405,7 +405,7 @@ async def test_htmlized_sentence(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(DoomsdayClient.SELECTOR[1:])
+    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
     suffix = '</h3>'
     string = " IT  IS <em>STILL</em> 1 <b>MINUTE</b> TO  MIDNIGHT"
     path = 'test_htmlized_sentence'
@@ -413,7 +413,7 @@ async def test_htmlized_sentence(httpserver: HTTPServer) -> None:
         prefix + string + suffix
     )
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
     data = await client.fetch_data()
 
@@ -429,7 +429,7 @@ async def test_empty_sentence(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(DoomsdayClient.SELECTOR[1:])
+    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
     suffix = '</h3>'
     string = ' '
     path = 'test_empty_sentence'
@@ -437,9 +437,9 @@ async def test_empty_sentence(httpserver: HTTPServer) -> None:
         prefix + string + suffix
     )
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
-    with pytest.raises(DoomsdayClientError) as err:
+    with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
     assert "Empty sentence found." == str(err.value)
@@ -447,7 +447,7 @@ async def test_empty_sentence(httpserver: HTTPServer) -> None:
 
 def test_empty_clock() -> None:
     """Test clock result when sentence processing has not been performed."""
-    client = DoomsdayClient()
+    client = CountdoomClient()
     clock = client.clock()
 
     assert clock is None
@@ -455,7 +455,7 @@ def test_empty_clock() -> None:
 
 def test_empty_time() -> None:
     """Test time result when sentence processing has not been performed."""
-    client = DoomsdayClient()
+    client = CountdoomClient()
     time = client.clock()
 
     assert time is None
@@ -468,7 +468,7 @@ async def test_formatted_time(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(DoomsdayClient.SELECTOR[1:])
+    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
     suffix = '</h3>'
     string = "IT IS 16 MINUTES TO MIDNIGHT"
     path = 'test_formatted_time'
@@ -476,7 +476,7 @@ async def test_formatted_time(httpserver: HTTPServer) -> None:
         prefix + string + suffix
     )
 
-    client = DoomsdayClient()
+    client = CountdoomClient()
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
     data = await client.fetch_data()
 
@@ -492,9 +492,9 @@ async def test_url_not_found(httpserver: HTTPServer) -> None:
     :param httpserver: HTTP Server
     """
     path = 'test_url_not_found'
-    client = DoomsdayClient()
+    client = CountdoomClient()
     client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
-    with pytest.raises(DoomsdayClientError) as err:
+    with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
     assert "Page not found." == str(err.value)
@@ -503,9 +503,9 @@ async def test_url_not_found(httpserver: HTTPServer) -> None:
 @pytest.mark.asyncio
 async def test_server_not_found() -> None:
     """Test fetching wrong server."""
-    client = DoomsdayClient()
+    client = CountdoomClient()
     client.CLOCK_URL = 'http://website.that-should.never-resolve'
-    with pytest.raises(DoomsdayClientError) as err:
+    with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
     assert "Cannot connect to website. Check URL." == str(err.value)

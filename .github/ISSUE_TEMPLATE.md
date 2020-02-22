@@ -1,4 +1,4 @@
-* Doomsday Clock version:
+* Countdoom version:
 * Python version:
 * Operating System:
 

@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=doomsday_clock
+set SPHINXPROJ=countdoom
 
 if "%1" == "" goto help
 
