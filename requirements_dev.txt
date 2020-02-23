@@ -17,7 +17,7 @@ pylint>=2.3.0
 pytest-asyncio==0.10.0
 pytest-httpserver==0.3.4
 pytest-runner==5.2
-pytest<5.0.0
+pytest==5.3.5
 pytoml>=0.1.20
 requests==2.23.0
 setuptools>=40.8.0
