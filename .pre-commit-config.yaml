@@ -84,6 +84,7 @@ repos:
     -   id: isort
         description: "Sorts Python imports."
         additional_dependencies: [toml]
+        exclude: ^(docs/conf\.py)
 
 -   repo: https://github.com/pre-commit/mirrors-pylint
     rev: v2.4.4

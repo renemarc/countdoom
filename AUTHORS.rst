@@ -2,10 +2,10 @@
 Credits
 =======
 
-Development Lead
+Development lead
 ----------------
 
-* René-Marc Simard <renemarc@gmail.com>
+* `René-Marc Simard <https://renemarc.com/>`_: `renemarc\@gmail.com <mailto:renemarc\@gmail.com>`_, `@renemarc <https://twitter.com/renemarc>`_
 
 Contributors
 ------------

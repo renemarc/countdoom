@@ -31,7 +31,7 @@ Countdoom
         :alt: Code style: black
 
 .. image:: https://img.shields.io/github/license/renemarc/countdoom.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE3LjgsMjBDMTcuNCwyMS4yIDE2LjMsMjIgMTUsMjJINUMzLjMsMjIgMiwyMC43IDIsMTlWMThINUwxNC4yLDE4QzE0LjYsMTkuMiAxNS43LDIwIDE3LDIwSDE3LjhNMTksMkMyMC43LDIgMjIsMy4zIDIyLDVWNkgyMFY1QzIwLDQuNCAxOS42LDQgMTksNEMxOC40LDQgMTgsNC40IDE4LDVWMThIMTdDMTYuNCwxOCAxNiwxNy42IDE2LDE3VjE2SDVWNUM1LDMuMyA2LjMsMiA4LDJIMTlNOCw2VjhIMTVWNkg4TTgsMTBWMTJIMTRWMTBIOFoiIGZpbGw9IiNmZmZmZmYiIC8+PC9zdmc+Cg==&maxAge=86400
-        :target: ./LICENSE
+        :target: https://github.com/renemarc/countdoom/blob/master/LICENSE
         :alt: License
 
 .. image:: https://img.shields.io/badge/pull_requests-welcome-brightgreen.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYsM0EzLDMgMCAwLDEgOSw2QzksNy4zMSA4LjE3LDguNDIgNyw4LjgzVjE1LjE3QzguMTcsMTUuNTggOSwxNi42OSA5LDE4QTMsMyAwIDAsMSA2LDIxQTMsMyAwIDAsMSAzLDE4QzMsMTYuNjkgMy44MywxNS41OCA1LDE1LjE3VjguODNDMy44Myw4LjQyIDMsNy4zMSAzLDZBMywzIDAgMCwxIDYsM002LDVBMSwxIDAgMCwwIDUsNkExLDEgMCAwLDAgNiw3QTEsMSAwIDAsMCA3LDZBMSwxIDAgMCwwIDYsNU02LDE3QTEsMSAwIDAsMCA1LDE4QTEsMSAwIDAsMCA2LDE5QTEsMSAwIDAsMCA3LDE4QTEsMSAwIDAsMCA2LDE3TTIxLDE4QTMsMyAwIDAsMSAxOCwyMUEzLDMgMCAwLDEgMTUsMThDMTUsMTYuNjkgMTUuODMsMTUuNTggMTcsMTUuMTdWN0gxNVYxMC4yNUwxMC43NSw2TDE1LDEuNzVWNUgxN0EyLDIgMCAwLDEgMTksN1YxNS4xN0MyMC4xNywxNS41OCAyMSwxNi42OSAyMSwxOE0xOCwxN0ExLDEgMCAwLDAgMTcsMThBMSwxIDAgMCwwIDE4LDE5QTEsMSAwIDAsMCAxOSwxOEExLDEgMCAwLDAgMTgsMTdaIiBmaWxsPSIjZmZmZmZmIiAvPjwvc3ZnPgo=&maxAge=86400
@@ -39,24 +39,22 @@ Countdoom
         :alt: PRs welcome
 
 .. image:: https://img.shields.io/twitter/url/http/shields.io.svg?style=social&maxAge=86400
-        :target: https://twitter.com/intent/tweet?text=Doomsday%20Clock%20client%20package%20for%20Python&url=https://github.com/renemarc/countdoom&via=renemarc&hashtags=Radon,Airthings-Wave,MQTT,balena,Docker,RaspberryPi,IoT,SmartHome
+        :target: https://twitter.com/intent/tweet?text=Doomsday%20Clock%20client%20package%20for%20Python&url=https://github.com/renemarc/countdoom&via=renemarc&hashtags=Doomsday,Clock,Nuclear,BulletinAtomic,Python
         :alt: Twitter
 
 
+Python package to fetch and digest the current `Doomsday Clock`_ world threat assessment
+from `TheBulletin.org <https://thebulletin.org/>`_.
 
-Fetch the current `Doomsday Clock`_ world threat assessment from
-`TheBulletin.org`_.
-
-
-* Free software: MIT license
+* Free software: `MIT license <https://github.com/renemarc/countdoom/blob/master/LICENSE>`_
 * Documentation: https://countdoom.readthedocs.io
 
 
-Features
---------
+Features ✅
+-----------
 
-* Fetches the current `Doomsday Clock`_ world threat assessment from
-  `TheBulletin.org`_.
+* Fetches the current `Doomsday Clock`_ world threat assessment from the
+  `Bulletin of the Atomic Scientists <https://thebulletin.org/>`__.
 * Converts the Doomsday Clock sentence into countdown (60 seconds), minutes (1),
   clock (11:59), and time (23:59:00).
 * Offers a command-line interface.
@@ -65,12 +63,12 @@ Features
 * Complete code coverage.
 
 .. _Doomsday Clock: https://thebulletin.org/doomsday-clock/
-.. _TheBulletin.org: https://thebulletin.org/
 
 
-Installation
-------------
-Countdoom is distributed on PyPI. The best way to install it is with pip:
+Installation 💻
+---------------
+Countdoom is distributed on PyPI. The best way to install it is with
+`pip <https://packaging.python.org/tutorials/installing-packages/>`_:
 
 
 Create a virtual environment (optional)::
@@ -86,25 +84,39 @@ Run Countdoom::
     countdoom
 
 
-Countdoom can also be installed from source. To do so, download the source
-tarball from PyPI, then install it::
+Countdoom can also be installed from source. To do so, `download the source
+tarball from PyPI <https://pypi.org/project/countdoom/>`_, then install it::
 
     python setup.py install
-    # Or if you're on a system that supports makefiles
+
+    # Or if you're on a system that supports makefiles:
     make install
 
 
-Usage
------
+Usage 📘
+--------
 Example usage::
 
-    countdoom
+    $ countdoom
+
+     11 12   ️
+    10 \|     Countdoom: Doomsday Clock 🤯 🌊 ☢️  ☠️
+    9   @     World threat assessment from TheBulletin.org
+
+    Sentence: IT IS 2 MINUTES TO MIDNIGHT
+    Clock: 11:58
+    Time: 23:58:00
+    Minutes: 2
+    Seconds: 120
+    Countdown: 120 seconds
 
 Example usage using a single format (e.g. clock)::
 
-    countdoom --format clock
+    $ countdoom --format clock
 
-Usage::
+    11:58
+
+Built-in help::
 
     $ countdoom -h
 
@@ -125,28 +137,32 @@ Usage::
     "Be the change you want to see in the world." —Gandhi/Arleen Lorrance
 
 
-Contributing
-------------
-Contributions to Countdoom are always welcome!
+Contributing ✨
+---------------
+Contributions to Countdoom `are always welcome`_! 😃
+
+.. _are always welcome: ./CONTRIBUTING.rst
 
 The best way to get started with Countdoom is to grab the source::
 
     git clone https://github.com/renemarc/countdoom.git
 
-You can test any changes with makefile::
+You can test any changes with `makefile
+<https://www.gnu.org/software/make/manual/make.html>`_::
 
-    pip install -r requirements_dev.txt
+    pip install -r requirements.txt -r requirements_dev.txt
     make test-all
     make coverage
 
-Please make PR requests using your own branch, and not master::
+Please `make pull requests <https://github.com/renemarc/countdoom/pulls>`_
+using your own branch, and not master::
 
     git checkout -b mybranch
     git push origin mybranch
 
 
-Credits
--------
+Thanks 💕
+---------
 
 * The `Bulletin of the Atomic Scientists`_ for keeping the world in check
   since 1947.

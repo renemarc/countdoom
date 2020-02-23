@@ -1,32 +1,21 @@
-Welcome to Countdoom's documentation!
-=====================================
+Countdoom: 🕚 Doomsday Clock client
+===================================
 
-.. include:: ./README.rst
+.. include:: ./readme.rst
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :hidden:
+   :caption: Table of contents
 
    installation
    usage
-   modules
+   Code explorer <modules>
    contributing
    authors
    history
 
-Indices and tables
-==================
+General Indices
+---------------
 * :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
-
-
-.. todo::
-   Simplify index page.
-
-.. todo::
-   Add logo.
-
-.. todo::
-   Link to **Read The Docs**.
+* :ref:`Index of Documented Public Modules <modindex>`
