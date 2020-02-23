@@ -46,7 +46,7 @@ setup(
     license="MIT license",
     long_description=README + '\n\n' + HISTORY,
     include_package_data=True,
-    keywords='countdoom',
+    keywords='Doomsday,Clock',
     name='countdoom',
     packages=find_packages(include=['countdoom']),
     setup_requires=REQUIREMENTS_SETUP,

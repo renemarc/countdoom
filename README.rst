@@ -22,7 +22,7 @@ Countdoom
         :target: https://countdoom.readthedocs.io/en/latest/
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/renemarc/countdoom/shield.svg
+.. image:: https://pyup.io/repos/github/renemarc/countdoom/shield.svg?logo=python&logoColor=White&maxAge=21600
         :target: https://pyup.io/repos/github/renemarc/countdoom/
         :alt: Updates
 
@@ -39,7 +39,7 @@ Countdoom
         :alt: PRs welcome
 
 .. image:: https://img.shields.io/twitter/url/http/shields.io.svg?style=social&maxAge=86400
-        :target: https://twitter.com/intent/tweet?text=Doomsday%20Clock%20client%20package%20for%20Python&url=https://github.com/renemarc/countdoom&via=renemarc&hashtags=Radon,Airthings-Wave,MQTT,balena,Docker,RaspberryPi,IoT,SmartHome
+        :target: https://twitter.com/intent/tweet?text=Doomsday%20Clock%20client%20package%20for%20Python&url=https://github.com/renemarc/countdoom&via=renemarc&hashtags=Doomsday,Clock,Nuclear,BulletinAtomic,Python
         :alt: Twitter
 
 
@@ -145,8 +145,8 @@ Please make PR requests using your own branch, and not master::
     git push origin mybranch
 
 
-Credits
--------
+Thanks
+------
 
 * The `Bulletin of the Atomic Scientists`_ for keeping the world in check
   since 1947.

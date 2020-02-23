@@ -4,7 +4,6 @@ Usage
 
 To use Countdoom in a project::
 
-    import asyncio
     import countdoom
 
 
