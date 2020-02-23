@@ -70,14 +70,14 @@ secure: ## check code for security issues
 	bandit --recursive countdoom docs
 
 test: ## run tests quickly with the default Python
-	py.test
+	pytest
 
 test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source countdoom -m pytest
-	coverage report -m
+	coverage run --source countdoom --module pytest;
+	coverage report --show-missing
 	# coverage html
 	# $(BROWSER) htmlcov/index.html
 

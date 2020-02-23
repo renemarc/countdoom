@@ -1,7 +1,11 @@
 #
-# Config file for automatic testing at travis-ci.org
+# Config file for automatic testing at Travis-CI.com
+#
+# Once tests are performed, a coverage report is sent out to CodeClimate.com
+# See https://docs.codeclimate.com/docs/travis-ci-test-coverage
 #
 
+# Setup environment for Python builds.
 dist: xenial
 language: python
 python:
@@ -10,17 +14,39 @@ python:
   - 3.6
   - 3.5
 
-# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install:
-    - pip install --upgrade tox-travis --requirement requirements.txt --requirement requirements_dev.txt
-    - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then travis_retry pip install black; fi
+# Declare required variables for Code Climate
+env:
+  global:
+    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+    - CC_TEST_REPORTER_ID=eb5a902253f7a3dfa19e6c4507825f5911142de119b037a27d276510845ed588
 
-# Command to run tests, e.g. python setup.py test
+before_install:
+    # Download Code Climate test reporter.
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
+before_script:
+    # Warn Code Climate that a test is about to run.
+  - ./cc-test-reporter before-build
+
+# Install dependencies.
+install:
+  - pip install --upgrade tox-travis --requirement requirements.txt --requirement requirements_dev.txt
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then travis_retry pip install black; fi
+
+# Run tests.
 script:
-    - pylint ./countdoom/ ./tests/*.py
-    - if [[ $TRAVIS_PYTHON_VERSION != '3.8' ]]; then (flake8 .); fi
-    - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then (black --check --diff .); fi
-    - tox
+  # - python setup.py test
+  - pylint ./countdoom/ ./tests/*.py
+  - if [[ $TRAVIS_PYTHON_VERSION != '3.8' ]]; then (flake8 .); fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then (black --check --diff .); fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then (coverage run --source countdoom --module pytest; coverage xml); fi
+  - tox
+
+after_script:
+  # Submit test results to Code Climate.
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then ./cc-test-reporter format-coverage --input-type coverage.py; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' && "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
 
 # Assuming you have installed the travis-ci CLI tool, after you
 # create the Github repo and add it to Travis, run the
