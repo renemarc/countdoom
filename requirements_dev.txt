@@ -4,6 +4,7 @@
 #
 
 aioresponses>=0.6.0
+argh=0.26.2
 bandit>=1.5.1
 bumpversion==0.5.3
 check-manifest>=0.40

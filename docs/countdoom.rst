@@ -1,4 +1,4 @@
-Countdoom package
+countdoom package
 =================
 
 Submodules
