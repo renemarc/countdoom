@@ -1,15 +1,5 @@
-* Countdoom version:
-* Python version:
-* Operating System:
+# No Template
 
-### Description
+👉 Please follow one of the issue templates provided by the repo - if you are seeing this message, it means you haven't.
 
-Describe what you were trying to get done.
-Tell us what happened, what went wrong, and what you expected to happen.
-
-### What I Did
-
-```
-Paste the command(s) you ran and the output.
-If there was a crash, please include the traceback here.
-```
+If you don't follow the issue template, we may immediately close it. 😱
