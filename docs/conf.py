@@ -105,8 +105,6 @@ autodoc_default_options = {
     'exclude-members': '__dict__,__module__,__weakref__',
 }
 
-# autodoc_docstring_signature = True
-
 
 # -- Options for HTML output -------------------------------------------
 
@@ -125,9 +123,6 @@ html_theme_options = {'collapse_navigation': False}
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
-# custom
-# html_use_smartypants = False
 
 
 # -- Options for HTMLHelp output ---------------------------------------
@@ -225,6 +220,7 @@ def linkcode_resolve(domain, info):
         obj = sys.modules[info['module']]
         for part in info['fullname'].split('.'):
             obj = getattr(obj, part)
+
         import inspect
 
         func = inspect.getsourcefile(obj)
@@ -234,6 +230,7 @@ def linkcode_resolve(domain, info):
 
     if domain != 'py' or not info['module']:
         return None
+
     try:
         filename = '%s/%s#L%d-L%d' % find_source()
     except Exception:

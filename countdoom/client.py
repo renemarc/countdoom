@@ -254,9 +254,10 @@ class CountdoomClient:
         if result.group('half') or result.group('and'):
             countdown += 0.5
         # Unit type.
-        multiplier = 1
         if re.search('min', result.group('unit'), re.M | re.I):
             multiplier = 60
+        else:
+            multiplier = 1
         countdown = countdown * multiplier
 
         return countdown

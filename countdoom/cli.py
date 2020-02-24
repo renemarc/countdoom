@@ -15,8 +15,8 @@ BASIC_FORMATS = ('sentence', 'clock', 'time', 'minutes', 'countdown')
 
 HEADER = """
  11 12   ️
-10 \\|     Countdoom: Doomsday Clock 🤯 🌊 ☢️  ☠️
-9   @     World threat assessment from TheBulletin.org
+10 \\|      Countdoom: Doomsday Clock 🤯 🌊 ☢️  ☠️
+9   @      World threat assessment from TheBulletin.org
 """
 
 MINUTE_FRACTIONS = (0, 30)
@@ -41,16 +41,8 @@ async def main(args=None):
     except CountdoomClientError as err:
         print(err, file=sys.stderr)
         sys.exit(1)
-    # loop = asyncio.get_event_loop()
-    # task = loop.create_task(countdoom_client.fetch_data())
-    # try:
-    #     data = loop.run_until_complete(task)
-    # except CountdoomClientError as err:
-    #     print(err)
-    #     return
 
     print_results(data, args)
-
     return
 
 
@@ -136,30 +128,47 @@ def print_results(data: dict, args: Namespace) -> None:
     """
     if args.format in BASIC_FORMATS:
         print(data[args.format])
-    elif args.format == 'json':
+        return
+
+    if args.format == 'json':
         print(json.dumps(data, indent=4))
+        return
+
+    data['seconds'] = data['countdown']
+    if data['countdown'] >= 60 and data['countdown'] % 60 in MINUTE_FRACTIONS:
+        data['countdown'] = round(data['countdown'] / 60, 2)
+        unit = 'minute'
     else:
         unit = 'second'
-        if (
-            data['countdown'] >= 60
-            and data['countdown'] % 60 in MINUTE_FRACTIONS
-        ):
-            data['countdown'] = round(data['countdown'] / 60, 2)
-            unit = 'minute'
-        if data['countdown'].is_integer():
-            data['countdown'] = int(data['countdown'])
-        print_header()
-        print("Sentence: {}".format(data['sentence']))
-        print("Clock: {}".format(data['clock']))
-        print("Time: {}".format(data['time']))
-        print("Minutes: {}".format(data['minutes']))
-        print("Seconds: {}".format(data['countdown']))
-        print(
-            "Countdown: {} {}{}".format(
-                data['countdown'], unit, 's' if data['countdown'] != 1 else ''
-            )
-        )
-        print('')
+
+    if data['countdown'].is_integer():
+        data['countdown'] = int(data['countdown'])
+
+    if data['seconds'].is_integer():
+        data['seconds'] = int(data['seconds'])
+
+    seperator = "\n"
+    segments = (
+        ' Sentence: {sentence}',
+        '    Clock: {clock}',
+        '     Time: {time}',
+        '  Minutes: {minutes}',
+        '  Seconds: {countdown}',
+        'Countdown: {countdown} {unit}{plural}',
+    )
+    output = seperator.join(segments)
+    output = output.format(
+        sentence=data['sentence'],
+        clock=data['clock'],
+        time=data['time'],
+        minutes=data['minutes'],
+        seconds=data['seconds'],
+        countdown=data['countdown'],
+        unit=unit,
+        plural='s' if data['countdown'] != 1 else '',
+    )
+    print_header()
+    print(output)
 
 
 if __name__ == "__main__":  # pragma: no cover

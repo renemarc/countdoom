@@ -112,14 +112,14 @@ Example usage::
     $ countdoom
 
      11 12   ️
-    10 \|     Countdoom: Doomsday Clock 🤯 🌊 ☢️  ☠️
-    9   @     World threat assessment from TheBulletin.org
+    10 \|      Countdoom: Doomsday Clock 🤯 🌊 ☢️  ☠️
+    9   @      World threat assessment from TheBulletin.org
 
-    Sentence: IT IS 2 MINUTES TO MIDNIGHT
-    Clock: 11:58
-    Time: 23:58:00
-    Minutes: 2
-    Seconds: 120
+     Sentence: IT IS 2 MINUTES TO MIDNIGHT
+        Clock: 11:58
+         Time: 23:58:00
+      Minutes: 2
+      Seconds: 120
     Countdown: 120 seconds
 
 Example usage using a single format (e.g. clock)::
@@ -133,8 +133,8 @@ Built-in help::
     $ countdoom -h
 
      11 12   ️
-    10 \|     Countdoom: Doomsday Clock 🤯 🌊 ☢️  ☠️
-    9   @     World threat assessment from TheBulletin.org
+    10 \|      Countdoom: Doomsday Clock 🤯 🌊 ☢️  ☠️
+    9   @      World threat assessment from TheBulletin.org
 
     usage: countdoom [--format {sentence,clock,time,minutes,countdown,all,json}]
                      [--timeout TIMEOUT] [--v] [-h]
