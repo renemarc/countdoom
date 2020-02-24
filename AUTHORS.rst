@@ -10,4 +10,5 @@ Development lead
 Contributors
 ------------
 
-None yet. Why not be the first?
+None yet. Why not
+`be the first <https://countdoom.readthedocs.io/en/latest/contributing.html>`_?

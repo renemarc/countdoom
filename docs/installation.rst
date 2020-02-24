@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install Countdoom, run this command in your terminal:
+To install |Countdoom|, run this command in your terminal:
 
 .. code-block:: console
 
     $ pip install countdoom
 
-This is the preferred method to install Countdoom, as it will always install the most recent stable release.
+This is the preferred method to install |Countdoom|, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,7 +26,7 @@ you through the process.
 From sources
 ------------
 
-The sources for Countdoom can be downloaded from the `Github repo`_.
+The sources for |Countdoom| can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 

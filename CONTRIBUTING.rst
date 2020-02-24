@@ -37,8 +37,8 @@ and ``help wanted`` is open to whoever wants to implement it.
 Write documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Countdoom could always use more documentation, whether as part of the official
-Countdoom docs, in docstrings, or even on the web in blog posts, articles, and
+|Countdoom| could always use more documentation, whether as part of the official
+|Countdoom| docs, in docstrings, or even on the web in blog posts, articles, and
 such.
 
 Submit feedback
@@ -57,10 +57,10 @@ If you are proposing a feature:
 Get started!
 ------------
 
-Ready to contribute? Here's how to set up ``countdoom`` for local
+Ready to contribute? Here's how to set up |Countdoom| for local
 development.
 
-1. Fork the ``countdoom`` repo on GitHub.
+1. Fork the |Countdoom| `repo on GitHub <https://github.com/renemarc/countdoom/>`_.
 2. Clone your fork locally::
 
     $ git clone git@github.com:your_name_here/countdoom.git
@@ -136,3 +136,6 @@ $ git push --tags
 `PyPI.org <https://pypi.org/project/countdoom/>`_ if tests pass.
 
 .. _GitHub issues: https://github.com/renemarc/countdoom/issues
+
+
+.. |Countdoom| replace:: **Countdoom**

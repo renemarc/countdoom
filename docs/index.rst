@@ -1,5 +1,5 @@
-Countdoom: 🕚 Doomsday Clock client
-===================================
+🤯 Countdoom: a Doomsday Clock client 🕚
+========================================
 
 .. include:: ./readme.rst
 
@@ -8,9 +8,10 @@ Countdoom: 🕚 Doomsday Clock client
    :hidden:
    :caption: Table of contents
 
+   Home <self>
    installation
    usage
-   Code explorer <modules>
+   Package documentation <countdoom>
    contributing
    authors
    history
