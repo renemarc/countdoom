@@ -4,7 +4,7 @@ Contributing
 
 Contributions are welcome, and they are greatly appreciated! Every little bit
 helps, and `credit will always be given
-<https://github.com/renemarc/countdoom/blob/master/AUTHORS.rst>`_.
+<https://github.com/renemarc/countdoom/blob/master/AUTHORS.md>`_.
 
 You can contribute in many ways:
 

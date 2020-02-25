@@ -47,6 +47,7 @@ extensions = [
     'sphinx.ext.linkcode',
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
+    'm2r',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -56,7 +57,7 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = 'index'
@@ -194,7 +195,7 @@ texinfo_documents = [
 ]
 
 
-# -- Intersphynx configuration --------------------------------------------
+# -- Intersphynx configuration -----------------------------------------
 
 # Names and locations of other projects that should be linked to in this doc.
 intersphinx_mapping = {'python': ('https://docs.python.org/3/', None)}
@@ -242,6 +243,12 @@ def linkcode_resolve(domain, info):
         filename = info['module'].replace('.', '/') + '.py'
     tag = 'master' if 'dev' in release else ('v' + release)
     return "%s/blob/%s/%s" % (repo, tag, filename)
+
+
+# -- M2R configuration -------------------------------------------------
+
+# Parse relative links into ref and doc directives.
+m2r_parse_relative_links = True
 
 
 # -- Todos configuration -----------------------------------------------

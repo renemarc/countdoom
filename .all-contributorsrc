@@ -1,0 +1,29 @@
+{
+  "badgeTemplate": "\n[badge-contributors]:https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?logo=github&maxAge=21600",
+  "commit": false,
+  "contributorsPerLine": 7,
+  "contributorsSortAlphabetically": false,
+  "files": [
+    ".github/README.md",
+    "AUTHORS.md"
+  ],
+  "imageSize": 100,
+  "projectName": "countdoom",
+  "projectOwner": "renemarc",
+  "repoHost": "https://github.com",
+  "repoType": "github",
+  "skipCi": "true",
+  "contributors": [
+    {
+      "login": "renemarc",
+      "name": "René-Marc Simard",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/13276793?v=4",
+      "profile": "https://renemarc.com/",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    }
+  ]
+}

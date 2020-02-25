@@ -2,10 +2,13 @@
 🤯 Countdoom or; How I Learned to Stop Worrying and Love the Doomsday Clock 🕚
 ==============================================================================
 
-|badge-repo| |badge-price| |badge-pypi| |badge-python| |badge-travis| |badge-docs| |badge-updates| |badge-cc-coverage| |badge-cc-maintain| |badge-black| |badge-license| |badge-contribute| |badge-twitter|
+|badge-release| |badge-price| |badge-pypi| |badge-python| |badge-travis| |badge-docs| |badge-updates| |badge-cc-coverage| |badge-cc-maintain| |badge-black| |badge-license| |badge-contributors| |badge-contribute| |badge-twitter|
 
-.. |badge-repo| image:: https://img.shields.io/github/release/renemarc/countdoom/all.svg?logo=git&logoColor=white&maxAge=21600
-        :target: https://github.com/renemarc/countdoom
+.. |badge-contributors| image:: https://img.shields.io/badge/all_contributors-1-orange.svg?logo=github&maxAge=21600
+        :target: #contributors-
+        :alt: All Contributors
+.. |badge-release| image:: https://img.shields.io/github/release/renemarc/countdoom/all.svg?logo=git&logoColor=white&maxAge=21600
+        :target: https://github.com/renemarc/countdoom/releases/latest
         :alt: Release
 .. |badge-price| image:: https://img.shields.io/badge/FREE_as_in-SPEECH-success.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xNS40MSwyMkMxNS4zNSwyMiAxNS4yOCwyMiAxNS4yMiwyMkMxNS4xLDIxLjk1IDE1LDIxLjg1IDE0Ljk2LDIxLjczTDEyLjc0LDE1LjkzQzEyLjY1LDE1LjY5IDEyLjc3LDE1LjQyIDEzLDE1LjMyQzEzLjcxLDE1LjA2IDE0LjI4LDE0LjUgMTQuNTgsMTMuODNDMTUuMjIsMTIuNCAxNC41OCwxMC43MyAxMy4xNSwxMC4wOUMxMS43Miw5LjQ1IDEwLjA1LDEwLjA5IDkuNDEsMTEuNUM5LjExLDEyLjIxIDkuMDksMTMgOS4zNiwxMy42OUM5LjY2LDE0LjQzIDEwLjI1LDE1IDExLDE1LjI4QzExLjI0LDE1LjM3IDExLjM3LDE1LjY0IDExLjI4LDE1Ljg5TDksMjEuNjlDOC45NiwyMS44MSA4Ljg3LDIxLjkxIDguNzUsMjEuOTZDOC42MywyMiA4LjUsMjIgOC4zOSwyMS45NkMzLjI0LDE5Ljk3IDAuNjcsMTQuMTggMi42Niw5LjAzQzQuNjUsMy44OCAxMC40NCwxLjMxIDE1LjU5LDMuM0MxOC4wNiw0LjI2IDIwLjA1LDYuMTUgMjEuMTMsOC41N0MyMi4yMiwxMSAyMi4yOSwxMy43NSAyMS4zMywxNi4yMkMyMC4zMiwxOC44OCAxOC4yMywyMSAxNS41OCwyMkMxNS41LDIyIDE1LjQ3LDIyIDE1LjQxLDIyTTEyLDMuNTlDNy4wMywzLjQ2IDIuOSw3LjM5IDIuNzcsMTIuMzZDMi42OCwxNi4wOCA0Ljg4LDE5LjQ3IDguMzIsMjAuOUwxMC4yMSwxNkM4LjM4LDE1IDcuNjksMTIuNzIgOC42OCwxMC44OUM5LjY3LDkuMDYgMTEuOTYsOC4zOCAxMy43OSw5LjM2QzE1LjYyLDEwLjM1IDE2LjMxLDEyLjY0IDE1LjMyLDE0LjQ3QzE0Ljk3LDE1LjEyIDE0LjQ0LDE1LjY1IDEzLjc5LDE2TDE1LjY4LDIwLjkzQzE3Ljg2LDE5Ljk1IDE5LjU3LDE4LjE2IDIwLjQ0LDE1LjkzQzIyLjI4LDExLjMxIDIwLjA0LDYuMDggMTUuNDIsNC4yM0MxNC4zMywzLjggMTMuMTcsMy41OCAxMiwzLjU5WiIgLz4KPC9zdmc+&maxAge=86400
         :target: https://github.com/renemarc/countdoom/blob/master/LICENSE
@@ -43,7 +46,6 @@
 .. |badge-twitter| image:: https://img.shields.io/twitter/url/http/shields.io.svg?style=social&maxAge=86400
         :target: https://twitter.com/intent/tweet?text=Doomsday%20Clock%20client%20package%20for%20Python&url=https://github.com/renemarc/countdoom&via=renemarc&hashtags=Doomsday,Clock,Nuclear,BulletinAtomic,Python
         :alt: Twitter
-
 
 Python package to fetch and digest the current `Doomsday Clock`_ world threat assessment
 from `TheBulletin.org <https://thebulletin.org/>`_.
@@ -173,6 +175,7 @@ using your own branch, and not master::
     git checkout -b mybranch
     git push origin mybranch
 
+This project follows the `all-contributors <https://allcontributors.org>`_ specification (`emoji key available here <https://allcontributors.org/docs/en/emoji-key>`_). Found a bug, want to suggest an idea or share some improvements? `Contributions of any kind are welcome! <./CONTRIBUTING.md>`_) 😃
 
 Thanks 💕
 ---------

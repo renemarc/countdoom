@@ -1,6 +1,7 @@
 recursive-include docs *.rst conf.py Makefile make.bat *.jpg *.png *.gif
 recursive-include examples *.py
 recursive-include tests *
+include *.md
 include *.py
 include *.rst
 include *.txt

@@ -45,6 +45,7 @@ setup(
     install_requires=REQUIREMENTS,
     license="MIT license",
     long_description=README + '\n\n' + HISTORY,
+    long_description_content_type="text/x-rst",
     include_package_data=True,
     keywords='Doomsday,Clock',
     name='countdoom',
