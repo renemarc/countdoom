@@ -91,7 +91,10 @@ def create_parser() -> ArgumentParser:
         help="connection/request timeout in seconds (default: %(default)s).",
     )
     parser.add_argument(
-        '--v', '--version', action='version', version='%(prog)s 0.1.0'
+        '--v',
+        '--version',
+        action='version',
+        version='%(prog)s {version}'.format(version=countdoom.__version__),
     )
     parser.add_argument(
         '-h',
