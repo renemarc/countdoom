@@ -135,11 +135,11 @@ def print_results(data: dict, args: Namespace) -> None:
         return
 
     data['seconds'] = data['countdown']
+    unit = 'second'
+
     if data['countdown'] >= 60 and data['countdown'] % 60 in MINUTE_FRACTIONS:
         data['countdown'] = round(data['countdown'] / 60, 2)
         unit = 'minute'
-    else:
-        unit = 'second'
 
     if data['countdown'].is_integer():
         data['countdown'] = int(data['countdown'])
