@@ -8,6 +8,16 @@ Installation
 Stable release
 --------------
 
+|Countdoom| is distributed on the `Python Package Index (PyPI)
+<https://pypi.org/project/countdoom/>`_. The best way to install it is with
+`pip <https://packaging.python.org/tutorials/installing-packages/>`__:
+
+(Optional) Create a virtual environment:
+
+.. code-block:: console
+
+    $ virtualenv countdoom-env
+
 To install |Countdoom|, run this command in your terminal:
 
 .. code-block:: console
@@ -45,6 +55,12 @@ Once you have a copy of the source, you can install it with:
 .. code-block:: console
 
     $ python setup.py install
+
+Or if you're on a system that supports makefiles:
+
+.. code-block:: console
+
+    $ make install
 
 
 .. _Github repo: https://github.com/renemarc/countdoom

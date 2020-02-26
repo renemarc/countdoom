@@ -1,11 +1,7 @@
-🤯 Countdoom: a Doomsday Clock client 🕚
-========================================
-
 .. include:: ./readme.rst
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+   :maxdepth: 2
    :caption: Table of contents
 
    Home <self>
@@ -15,8 +11,11 @@
    contributing
    authors
    history
+   indices
 
-General Indices
----------------
-* :ref:`genindex`
-* :ref:`Index of Documented Public Modules <modindex>`
+.. raw:: html
+
+    <div style="position:relative; overflow:hidden; max-width:100%; height:394px;">
+        <iframe src="https://www.youtube.com/embed/jCnWPbn-ZKo?rel=0" frameborder="0" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+    </div>
+    <p></p>

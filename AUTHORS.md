@@ -14,4 +14,4 @@
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 <br>This project follows the [all-contributors](https://allcontributors.org)
-specification ([emoji key available here](https://allcontributors.org/docs/en/emoji-key)). Found a bug, want to suggest an idea or share some improvements? [Contributions of any kind are welcome!](./contributing.rst) 😃
+specification ([emoji key available here](https://allcontributors.org/docs/en/emoji-key)). Found a bug? Want to suggest an idea? Want to share some improvements? [Contributions of any kind are welcome!](./contributing.rst) 😃

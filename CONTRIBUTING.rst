@@ -2,9 +2,9 @@
 Contributing
 ============
 
-Contributions are welcome, and they are greatly appreciated! Every little bit
+Contributions are welcome, and they are greatly appreciated! 😃 Every little bit
 helps, and `credit will always be given
-<https://github.com/renemarc/countdoom/blob/master/AUTHORS.md>`_.
+<https://github.com/renemarc/countdoom#contributors->`_. ✨
 
 You can contribute in many ways:
 
@@ -14,7 +14,7 @@ Types of contributions
 Report bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/renemarc/countdoom/issues.
+Please report bugs at https://github.com/renemarc/countdoom/issues.
 
 If you are reporting a bug, please include:
 
@@ -61,40 +61,66 @@ Ready to contribute? Here's how to set up |Countdoom| for local
 development.
 
 1. Fork the |Countdoom| `repo on GitHub <https://github.com/renemarc/countdoom/>`_.
-2. Clone your fork locally::
+2. Clone your fork locally:
 
-    $ git clone git@github.com:your_name_here/countdoom.git
+  .. code-block:: console
+
+    $ git clone git@github.com:YOUR_USERNAME_HERE/countdoom.git
 
 3. Install your local copy into a virtualenv. Assuming you have
    `virtualenvwrapper <https://virtualenvwrapper.readthedocs.io/>`_ installed,
-   this is how you set up your fork for local development::
+   this is how you set up your fork for local development:
 
-    $ mkvirtualenv countdoom
-    $ cd countdoom/
-    $ python setup.py develop
+  .. code-block:: console
 
-4. Create a branch for local development::
+        $ mkvirtualenv countdoom
+        $ cd countdoom/
+        $ pip install -r requirements.txt -r requirements_dev.txt
 
-    $ git checkout -b name-of-your-bugfix-or-feature
+  Alternatively, you can also use ``setup.py`` to install the above requirements:
 
-   Now you can make your changes locally.
+  .. code-block:: console
 
-5. When you're done making changes, check that your changes pass
-`flake8 <https://flake8.pycqa.org/>`_ and the `tests
+        $ python setup.py develop
+
+4. Create a branch for local development:
+
+  .. code-block:: console
+
+        $ git checkout -b name-of-your-bugfix-or-feature
+
+  Now you can make your changes locally!
+
+5. When you're done making changes, you can test the results with `makefile
+<https://www.gnu.org/software/make/manual/make.html>`_. This will verify that
+your changes pass `flake8 <https://flake8.pycqa.org/>`_ and the `tests
 <https://docs.pytest.org/en/latest/>`_, including testing other
-Python versions with `tox <https://tox.readthedocs.io/>`_::
+Python versions with `tox <https://tox.readthedocs.io/>`_:
 
-    $ flake8 countdoom tests
-    $ python setup.py test or py.test
-    $ tox
+  .. code-block:: console
 
-   To get flake8 and tox, just pip install them into your virtualenv.
+        $ make test-all
+        $ make coverage
 
-6. Commit your changes and push your branch to GitHub::
+  Alternatively, you can run the test suites individually:
 
-    $ git add .
-    $ git commit -m "Your detailed description of your changes."
-    $ git push origin name-of-your-bugfix-or-feature
+  .. code-block:: console
+
+        $ flake8 countdoom tests
+        $ pytest
+        $ tox -em py35
+        $ tox -em py36
+        $ tox -em py37
+        $ tox -em py38
+
+6. Commit your changes using `Conventional Commits
+<https://www.conventionalcommits.org/>`_ style and push your branch to GitHub:
+
+  .. code-block:: console
+
+        $ git add .
+        $ git commit -m "type(scope): detailed description of your changes."
+        $ git push origin name-of-your-bugfix-or-feature
 
 7. `Submit a pull request
 <https://github.com/renemarc/countdoom/pulls>`_ through the GitHub website.
@@ -107,7 +133,7 @@ Before you submit a pull request, check that it meets these guidelines:
 1. The pull request should include tests.
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
-   feature to the list in README.rst.
+   feature to the list in ``README.md`` (repo) and ``README.rst`` (docs).
 3. The pull request should work for Python 3.5, 3.6, 3.7, 3.8, and for PyPy.
    Check https://travis-ci.com/renemarc/countdoom/pull_requests
    and make sure that the tests pass for all supported Python versions.
@@ -115,9 +141,11 @@ Before you submit a pull request, check that it meets these guidelines:
 Tips
 ----
 
-To run a subset of tests::
+To run a subset of tests:
 
-$ py.test tests.test_countdoom
+.. code-block:: console
+
+    $ pytest tests.test_countdoom
 
 
 Deploying
@@ -126,14 +154,16 @@ Deploying
 A reminder for the maintainers on how to deploy.
 Make sure all your changes are committed (including an entry in `HISTORY.rst
 <https://github.com/renemarc/countdoom/blob/master/HISTORY.rst>`_).
-Then run::
+Then run:
 
-$ bumpversion patch # possible: major / minor / patch
-$ git push
-$ git push --tags
+.. code-block:: console
 
-`Travis CI <https://travis-ci.com/renemarc/countdoom>`_ will then deploy to
-`PyPI.org <https://pypi.org/project/countdoom/>`_ if tests pass.
+    $ bumpversion patch # possible: major / minor / patch
+    $ git push
+    $ git push --tags
+
+`Travis CI <https://travis-ci.com/renemarc/countdoom>`__ will then deploy to
+the `Python Package Index <https://pypi.org/project/countdoom/>`__ if tests pass.
 
 .. _GitHub issues: https://github.com/renemarc/countdoom/issues
 

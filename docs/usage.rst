@@ -7,7 +7,9 @@ Usage
 Command-line interface
 ----------------------
 
-Example usage::
+Example usage:
+
+.. code-block:: console
 
     $ countdoom
 
@@ -22,13 +24,19 @@ Example usage::
       Seconds: 120
     Countdown: 120 seconds
 
-Example usage using a single format (e.g. clock)::
+
+Example usage using a single format (e.g. clock):
+
+.. code-block:: console
 
     $ countdoom --format clock
 
     11:58
 
-Built-in help::
+
+Built-in help:
+
+.. code-block:: console
 
     $ countdoom -h
 
@@ -52,13 +60,14 @@ Built-in help::
 Python import
 -------------
 
-To use |Countdoom| in a project::
+To use |Countdoom| in a project:
+
+.. code-block:: python
 
     import countdoom
 
 
-Get current Doomsday Clock value using the event loop:
-
+Get the current Doomsday Clock value using the event loop:
 
 .. literalinclude:: ../examples/example.py
    :language: python
@@ -66,13 +75,16 @@ Get current Doomsday Clock value using the event loop:
    :linenos:
 
 
-Get current Doomsday Clock value using an awaitable:
-
+Get the current Doomsday Clock value using an awaitable:
 
 .. literalinclude:: ../examples/example.py
    :language: python
    :lines: 6-10,24-32
    :linenos:
+
+
+Notes
+-----
 
 The `Doomsday Clock`_ doesn't change often, at most once a year, and offers no
 API. Since this package relies on web scraping of `TheBulletin.org`_, do

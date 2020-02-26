@@ -11,6 +11,7 @@ check-manifest>=0.40
 coverage==5.0.3
 flake8==3.7.9
 git-pylint-commit-hook>=2.5.1
+m2r==0.2.1
 pip>=18.1
 pre-commit>=1.14.4
 pylint>=2.3.0

@@ -17,8 +17,6 @@
 [![PRs Welcome][badge-contribute]][link-contribute]
 [![Tweet][badge-twitter]][link-twitter]
 
-
-
 Python package to fetch and digest the current [Doomsday Clock]() world
 threat assessment from [TheBulletin.org](https://thebulletin.org/).
 
@@ -26,7 +24,7 @@ threat assessment from [TheBulletin.org](https://thebulletin.org/).
     <p><strong>Be sure to <a href="#" title="star">⭐️</a> or <a href="#" title="fork">🔱</a> this repo if you find it useful! 😃</strong></p>
     <figure>
         <div>
-            <img src="../docs/screenshot.png" alt="Command-line interface output">
+            <img src="./docs/screenshot.png" alt="Command-line interface output">
         </div>
     </figure>
     <figcaption>
@@ -34,9 +32,21 @@ threat assessment from [TheBulletin.org](https://thebulletin.org/).
     </figcaption>
 </div>
 
-  - Free software: [MIT license](../LICENSE)
-  - Documentation: https://countdoom.readthedocs.io/
-  - PyPI project: https://pypi.org/project/countdoom/
+  - Free software: [MIT license](./LICENSE)
+  - Documentation: [Read the Docs](https://countdoom.readthedocs.io/)
+  - Source code: [GitHub](https://pypi.org/project/countdoom/)
+  - Python package: [PyPI](https://pypi.org/project/countdoom/)
+
+<p align="right"><a href="#top" title="Back to top">🔝</a></p>
+
+<div align="center">
+    <a href="#features-">Features</a> |
+    <a href="#installation-">Installation</a> |
+    <a href="#usage-">Usage</a> |
+    <a href="#contributors-">Contributors</a> |
+    <a href="#related-projects-">Related projects</a> |
+    <a href="#thanks-">Thanks</a>
+</div>
 
 ## Features ✅
 
@@ -54,33 +64,26 @@ threat assessment from [TheBulletin.org](https://thebulletin.org/).
 
 ## Installation 💻
 
-Countdoom is distributed on PyPI. The best way to install it is with
+**Countdoom** is distributed on the [Python Package Index (PyPI)](https://pypi.org/project/countdoom/). The best way to install it is with
 [pip](https://packaging.python.org/tutorials/installing-packages/):
 
 Create a virtual environment (optional):
 
     virtualenv countdoom-env
 
-Install Countdoom:
+Install **Countdoom**:
 
     pip install countdoom
 
-Run Countdoom:
+Run **Countdoom**:
 
     countdoom
 
-Countdoom can also be installed from source. To do so, [download the
-source tarball from PyPI](https://pypi.org/project/countdoom/), then
-install it:
-
-    python setup.py install
-
-    # Or if you're on a system that supports makefiles:
-    make install
+To install from source, please refer to the [online documentation 📘](https://countdoom.readthedocs.io/en/latest/installation.html).
 
 <p align="right"><a href="#top" title="Back to top">🔝</a></p>
 
-## Usage 📘
+## Usage 🕚
 
 Example usage:
 
@@ -123,8 +126,8 @@ Built-in help:
 
     "Be the change you want to see in the world." —Gandhi/Arleen Lorrance
 
-For programatic usage, please [refer to the
-documentation](https://countdoom.readthedocs.io/en/latest/usage.html).
+For programmatic usage, please [refer to the
+online documentation 📘](https://countdoom.readthedocs.io/en/latest/usage.html).
 
 <p align="right"><a href="#top" title="Back to top">🔝</a></p>
 
@@ -144,10 +147,15 @@ documentation](https://countdoom.readthedocs.io/en/latest/usage.html).
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://allcontributors.org)
-specification ([emoji key available here](https://allcontributors.org/docs/en/emoji-key)). Found a bug, want to suggest an idea or share some improvements? [Contributions of any kind are welcome!](../CONTRIBUTING.rst) 😃
+specification ([emoji key available here](https://allcontributors.org/docs/en/emoji-key)). Found a bug, want to suggest an idea or share some improvements? [Contributions of any kind are welcome!](./CONTRIBUTING.rst) 😃
 
 <p align="right"><a href="#top" title="Back to top">🔝</a></p>
 
+## Related projects 👫
+
+  - [Doomsday Clock sensor](https://github.com/renemarc/home-assistant-doomsday-clock): a [Home Assistant](https://www.home-assistant.io/) custom component for the [Community Store](https://hacs.xyz/).
+
+<p align="right"><a href="#top" title="Back to top">🔝</a></p>
 
 ## Thanks 💕
 
@@ -164,7 +172,7 @@ specification ([emoji key available here](https://allcontributors.org/docs/en/em
 
 <p align="right"><a href="#top" title="Back to top">🔝</a></p>
 
-<p align="center"><strong>Don't forget to <a href="#" title="star">⭐️</a> or <a href="#" title="fork">🔱</a> this repo! 😃<br/><sub>Assembled with <b title="love">❤️</b> in Montréal.</sub></strong></p>
+<p align="center"><strong>Don't forget to <a href="#" title="star">⭐️</a> or <a href="#" title="fork">🔱</a> this repo! 😃<br/><sub>Built with <b title="love">❤️</b> in Montréal.</sub></strong></p>
 
 
 [badge-black]:https://img.shields.io/badge/code%20style-black-000000.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xMiwyQTEwLDEwIDAgMCwxIDIyLDEyQTEwLDEwIDAgMCwxIDEyLDIyQTEwLDEwIDAgMCwxIDIsMTJBMTAsMTAgMCAwLDEgMTIsMk0xNSwxMC41VjlBMiwyIDAgMCwwIDEzLDdIOVYxN0gxM0EyLDIgMCAwLDAgMTUsMTVWMTMuNUMxNSwxMi43IDE0LjMsMTIgMTMuNSwxMkMxNC4zLDEyIDE1LDExLjMgMTUsMTAuNU0xMywxNUgxMVYxM0gxM1YxNU0xMywxMUgxMVY5SDEzVjExWiIgLz4KPC9zdmc+&maxAge=86400
@@ -198,16 +206,16 @@ specification ([emoji key available here](https://allcontributors.org/docs/en/em
 
 [badge-updates]:https://pyup.io/repos/github/renemarc/countdoom/shield.svg
 
-[link-black]:https://github.com/ambv/black/
+[link-black]:https://black.readthedocs.io/
 [link-cc-coverage]:https://codeclimate.com/github/renemarc/countdoom
 [link-cc-maintainability]:https://codeclimate.com/github/renemarc/countdoom
 [link-contribute]:./CONTRIBUTING.rst
 [link-contributors]:#contributors-
 [link-docs]:https://countdoom.readthedocs.io/
-[link-license]:../LICENSE
-[link-pypi]:https://pypi.python.org/pypi/countdoom/
-[link-python]:https://pypi.org/project/countdoom/
+[link-license]:./LICENSE
+[link-pypi]:https://pypi.org/project/countdoom/
+[link-python]:https://pypi.python.org/pypi/countdoom/
 [link-release]:./releases/latest
 [link-travis]:https://travis-ci.com/renemarc/countdoom
-[link-twitter]:https://twitter.com/intent/tweet?text=Doomsday%20Clock%20client%20package%20for%20Python&url=https://github.com/renemarc/countdoom&via=renemarc&hashtags=Doomsday,Clock,Nuclear,BulletinAtomic,Python
+[link-twitter]:https://twitter.com/intent/tweet?text=Countdoom%3A%20a%20Doomsday%20Clock%20client%20package%20for%20Python&url=https://github.com/renemarc/countdoom&via=renemarc&hashtags=Doomsday,Clock,Nuclear,BulletinAtomic,Python
 [link-updates]:https://pyup.io/repos/github/renemarc/countdoom/
