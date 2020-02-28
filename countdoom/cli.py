@@ -22,6 +22,15 @@ HEADER = """
 MINUTE_FRACTIONS = (0, 30)
 
 
+def cli():
+    """Run Countdoom client."""
+    loop = asyncio.get_event_loop()
+    try:
+        loop.run_until_complete(main(sys.argv[1:]))
+    finally:
+        loop.close()
+
+
 async def main(args=None):
     """Console script for countdoom."""
     # Handle command-line interface
