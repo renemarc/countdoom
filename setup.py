@@ -3,6 +3,7 @@
 
 """The setup script."""
 import sys
+from typing import Dict, List
 
 from setuptools import find_packages, setup
 
@@ -27,7 +28,7 @@ EXTRAS_REQUIRE = {
         'twine',
         'wheel',
     ],
-    'doc': [
+    'docs': [
         'argh',
         'm2r',
         'Sphinx',
@@ -35,7 +36,7 @@ EXTRAS_REQUIRE = {
         'sphinx_rtd_theme',
         'watchdog',
     ],
-    'lint': ['flake8', 'flake8-isort', 'isort', 'toml'],
+    'lint': ['flake8', 'flake8-isort', 'isort', 'mypy', 'toml'],
     'test': [
         'aioresponses',
         'coverage',
@@ -45,7 +46,7 @@ EXTRAS_REQUIRE = {
         'requests',
         'tox>=2.4',  # Support for `extras` command.
     ],
-}
+}  # type: Dict[str, List[str]]
 if sys.version_info >= (3, 6):
     EXTRAS_REQUIRE['lint'] += ['black']
 EXTRAS_REQUIRE['dev'] = sorted(
@@ -55,18 +56,18 @@ EXTRAS_REQUIRE['dev'] = sorted(
 INSTALL_REQUIRES = [
     'aiohttp<4.0',  # >=4 is incompatible with Python 3.5.
     'beautifulsoup4',
-]
+]  # type: List[str]
 if 'develop' in sys.argv:
     INSTALL_REQUIRES += EXTRAS_REQUIRE['dev']
 
-SETUP_REQUIRES = []
+SETUP_REQUIRES = []  # type: List[str]
 if 'develop' in sys.argv:
     INSTALL_REQUIRES += [
-        "pytest",
+        'pytest',
         # "setuptools",
-        "tox",
-        "twine",
-        "wheel",
+        'tox',
+        'twine',
+        'wheel',
     ]
 if 'test' in sys.argv:
     SETUP_REQUIRES += ["flake8", "flake8-import-order", "pytest-runner"]
@@ -77,7 +78,7 @@ TESTS_REQUIRE = [
     'pytest-asyncio',
     'pytest-httpserver',
     'requests',
-]
+]  # type: List[str]
 
 
 setup(

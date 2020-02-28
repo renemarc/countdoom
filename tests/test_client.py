@@ -4,7 +4,7 @@
 """Tests for `client` module."""
 
 import random
-from typing import Union
+from typing import List, Optional, Tuple, Union
 
 import pytest
 import requests
@@ -14,6 +14,9 @@ from requests import Response
 
 from countdoom.client import CountdoomClient, CountdoomClientError
 
+SencenceList = List[
+    Tuple[str, Optional[float], Optional[float], Optional[str], Optional[str]]
+]
 SENTENCES_VALID = [
     ("IT IS 16 MINUTES TO MIDNIGHT", 16, 16 * 60, '11:44', '23:44:00'),
     ("IT IS EIGHT MINUTES TO MIDNIGHT", 8, 8 * 60, '11:52', '23:52:00'),
@@ -101,11 +104,11 @@ SENTENCES_VALID = [
     ),
     ("IT IS ZERO SECONDS TO MIDNIGHT", 0, 0, '12:00', '00:00:00'),
     ("IT IS 0 SECONDS TO MIDNIGHT", 0, 0, '12:00', '00:00:00'),
-]
+]  # type: SencenceList
 SENTENCES_INVALID = [
     ("IT IS DOOMSDAY MINUTES TO MIDNIGHT", None, None, None, None),
     ("APOCALYPSE YESTERDAY", None, None, None, None),
-]
+]  # type: SencenceList
 
 
 @pytest.fixture(scope='module')
@@ -139,6 +142,9 @@ def _setup_servers(httpserver: HTTPServer) -> None:
     suffix = '</h3>'
 
     sentences = SENTENCES_VALID + SENTENCES_INVALID
+    # sentences = SENTENCES_VALID
+    # for sentence in SENTENCES_INVALID:
+    #     sentences.append(sentence)
     for sentence in sentences:
         path = _get_path(sentence[0])
         httpserver.expect_request('/{}'.format(path)).respond_with_data(
@@ -168,7 +174,7 @@ async def test_live_server(response: Response) -> None:
     :param response: Server response
     """
     client = CountdoomClient()
-    client.html = response.content
+    client.html = response.content.decode()
     data = await client.fetch_data()
 
     assert data is not None

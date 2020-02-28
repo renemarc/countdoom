@@ -8,7 +8,7 @@ from typing import Dict, Union
 from countdoom import CountdoomClient
 
 
-def get_doomsday_clock() -> Dict[str, Union[str, float]]:
+def get_doomsday_clock() -> Dict[str, Union[str, float, None]]:
     """
     Get current Doomsday Clock value.
 
@@ -21,7 +21,7 @@ def get_doomsday_clock() -> Dict[str, Union[str, float]]:
     return data
 
 
-async def async_get_doomsday_clock() -> Dict[str, Union[str, float]]:
+async def async_get_doomsday_clock() -> Dict[str, Union[str, float, None]]:
     """
     Get current Doomsday Clock value using AsyncIO.
 

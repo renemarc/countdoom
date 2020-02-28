@@ -23,6 +23,7 @@ absolute, like shown here.
 
 import os
 import sys
+from typing import Dict
 
 # Insert Countdoom's path into the system.
 sys.path.insert(0, os.path.abspath(".."))
@@ -152,7 +153,7 @@ latex_elements = {
     # Latex figure (float) alignment
     #
     # 'figure_align': 'htbp',
-}
+}  # type: Dict[str, str]
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass
@@ -230,7 +231,8 @@ def linkcode_resolve(domain, info):
         import inspect
 
         func = inspect.getsourcefile(obj)
-        func = os.path.relpath(func, start=os.path.dirname(file))
+        if func is not None:
+            func = os.path.relpath(func, start=os.path.dirname(file))
         source, lineno = inspect.getsourcelines(obj)
         return module, func, lineno, lineno + len(source) - 1
 

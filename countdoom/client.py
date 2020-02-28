@@ -105,11 +105,11 @@ class CountdoomClient:
             return None
         return self.countdown_to_time(self._countdown, time_format)
 
-    async def fetch_data(self) -> Dict[str, Union[str, float]]:
+    async def fetch_data(self) -> Dict[str, Union[str, float, None]]:
         """
         Retrieve the parsed Doomsday Clock.
 
-        :return: Extracted sentence, clock, time, and countdown
+        :return: Extracted sentence, clock, time, minutes, and countdown
         """
         try:
             if self.html is None:
@@ -147,9 +147,13 @@ class CountdoomClient:
 
         :return: Web page HTML body
 
+        :raise CountdoomClientError: If session is not started
         :raise CountdoomClientError: If URL is not found
         :raise CountdoomClientError: If server connection fails
         """
+        if self._session is None:
+            raise CountdoomClientError("Session not started.")
+
         try:
             async with async_timeout.timeout(timeout):
                 async with self._session.get(url, timeout=timeout) as resp:
@@ -206,8 +210,12 @@ class CountdoomClient:
         """
         Convert the Doomsday Clock sentence into a countdown to midnight.
 
+        :raise CountdoomClientError: When sentence is null
         :raise CountdoomClientError: When sentence is not parsable
         """
+        if self._sentence is None:
+            raise CountdoomClientError("Sentence is null.")
+
         try:
             self._countdown = self.sentence_to_countdown(self._sentence)
         except AttributeError:
