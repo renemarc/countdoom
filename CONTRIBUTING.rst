@@ -60,6 +60,9 @@ Get started!
 Ready to contribute? Here's how to set up |Countdoom| for local
 development.
 
+**Note:** While |Countdoom| runs on Python 3.5+, dev tools require Python 3.6+
+to run.
+
 1. Fork the |Countdoom| `repo on GitHub <https://github.com/renemarc/countdoom/>`_.
 2. Clone your fork locally:
 
@@ -67,23 +70,29 @@ development.
 
     $ git clone git@github.com:YOUR_USERNAME_HERE/countdoom.git
 
-3. Install your local copy into a virtualenv. Assuming you have
-   `virtualenvwrapper <https://virtualenvwrapper.readthedocs.io/>`_ installed,
-   this is how you set up your fork for local development:
+3. Create a `virtual environment
+<https://docs.python.org/3/tutorial/venv.html>`_ for local development:
 
   .. code-block:: console
 
-        $ mkvirtualenv countdoom
-        $ cd countdoom/
-        $ pip install -r requirements.txt -r requirements_dev.txt
+    $ cd countdoom/
+    $ python -m venv .venv
+    $ . .venv/bin/activate
+
+4. Install your local copy with all dependencies using pip:
+
+  .. code-block:: console
+
+        $ pip install -e .[dev]
 
   Alternatively, you can also use ``setup.py`` to install the above requirements:
 
   .. code-block:: console
 
+        $ pip install --upgrade setuptools
         $ python setup.py develop
 
-4. Create a branch for local development:
+5. Create a branch for local development:
 
   .. code-block:: console
 
@@ -91,7 +100,7 @@ development.
 
   Now you can make your changes locally!
 
-5. When you're done making changes, you can test the results with `makefile
+6. When you're done making changes, you can test the results with `makefile
 <https://www.gnu.org/software/make/manual/make.html>`_. This will verify that
 your changes pass `flake8 <https://flake8.pycqa.org/>`_ and the `tests
 <https://docs.pytest.org/en/latest/>`_, including testing other
@@ -112,8 +121,9 @@ Python versions with `tox <https://tox.readthedocs.io/>`_:
         $ tox -em py36
         $ tox -em py37
         $ tox -em py38
+        $ coverage
 
-6. Commit your changes using `Conventional Commits
+7. Commit your changes using `Conventional Commits
 <https://www.conventionalcommits.org/>`_ style and push your branch to GitHub:
 
   .. code-block:: console
@@ -122,7 +132,7 @@ Python versions with `tox <https://tox.readthedocs.io/>`_:
         $ git commit -m "type(scope): detailed description of your changes."
         $ git push origin name-of-your-bugfix-or-feature
 
-7. `Submit a pull request
+8. `Submit a pull request
 <https://github.com/renemarc/countdoom/pulls>`_ through the GitHub website.
 
 Pull request guidelines

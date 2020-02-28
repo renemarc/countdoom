@@ -1,8 +1,0 @@
-#
-# Requirements file for pip (Python Package Installer)
-#
-
-aiohttp==3.6.2
-async-timeout==3.0.1
-beautifulsoup4==4.8.2
-Click==7.0

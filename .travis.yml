@@ -31,7 +31,7 @@ before_script:
 
 # Install dependencies.
 install:
-  - pip install --upgrade tox-travis --requirement requirements.txt --requirement requirements_dev.txt
+  - pip install --upgrade tox-travis .[dev]
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then travis_retry pip install black; fi
 
 # Run tests.
