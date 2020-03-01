@@ -1,17 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """Top-level module for Countdoom."""
-import os
-import sys
+from countdoom import cli  # pylint: disable=C0415
 
-
-def main() -> None:  # pragma: no cover
-    """Run Countdoom client when package is called directly."""
-    sys.path.append(os.getcwd())
-
-    from countdoom import cli  # pylint: disable=C0415
-
+if __name__ == "__main__":
     cli.cli()
-
-
-main()  # pragma: no cover

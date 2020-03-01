@@ -8,4 +8,4 @@ __license__ = 'MIT'
 __url__ = 'https://github.com/renemarc/countdoom'
 __version__ = '0.1.0'
 
-from .client import CountdoomClient, CountdoomClientError  # NOQA
+from .client import CountdoomClient, CountdoomClientError  # noqa: F401

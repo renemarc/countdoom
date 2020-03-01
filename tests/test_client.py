@@ -451,6 +451,16 @@ async def test_empty_sentence(httpserver: HTTPServer) -> None:
     assert "Empty sentence found." == str(err.value)
 
 
+@pytest.mark.asyncio
+async def test_null_sentence() -> None:
+    """Test for sentence with None value."""
+    client = CountdoomClient()
+    with pytest.raises(CountdoomClientError) as err:
+        client._sentence_to_countdown()  # pylint: disable=W0212
+
+    assert "Sentence is null." == str(err.value)
+
+
 def test_empty_clock() -> None:
     """Test clock result when sentence processing has not been performed."""
     client = CountdoomClient()
@@ -515,3 +525,13 @@ async def test_server_not_found() -> None:
         await client.fetch_data()
 
     assert "Cannot connect to website. Check URL." == str(err.value)
+
+
+@pytest.mark.asyncio
+async def test_session_not_started() -> None:
+    """Test fetching without starting a session first."""
+    client = CountdoomClient()
+    with pytest.raises(CountdoomClientError) as err:
+        await client._fetch(client.CLOCK_URL)  # pylint: disable=W0212
+
+    assert "Session not started." == str(err.value)

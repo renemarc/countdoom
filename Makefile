@@ -61,10 +61,13 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
+	rm -fr .mypy_cache/
 	rm -fr .pytest_cache
 
-lint: ## check style with flake8
-	flake8 countdoom tests
+lint: ## check style with flake8,mypy, and pylint
+	flake8
+	mypy
+	pylint ./**/*.py
 
 secure: ## check code for security issues
 	bandit --recursive countdoom docs

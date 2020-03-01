@@ -6,6 +6,7 @@ import asyncio
 import json
 import sys
 from argparse import ArgumentParser, Namespace
+from typing import Any, Dict, List, Optional
 
 import countdoom
 
@@ -22,36 +23,54 @@ HEADER = """
 MINUTE_FRACTIONS = (0, 30)
 
 
-def cli():
-    """Run Countdoom client."""
+def cli(args: Optional[List[Any]] = None) -> None:  # pragma: no cover
+    """
+    Run Countdoom client.
+
+    :param args: list of arguments
+    """
+    if args is None:
+        args = sys.argv[1:]
     loop = asyncio.get_event_loop()
     try:
-        loop.run_until_complete(main(sys.argv[1:]))
+        loop.run_until_complete(main(args))
     finally:
         loop.close()
 
 
-async def main(args=None):
-    """Console script for countdoom."""
+async def main(args: Optional[List[Any]] = None) -> None:
+    """
+    Console script for Countdoom.
+
+    :param args: list of arguments
+
+    :raise CountdoomClientError: If an error is generated while fetching data
+    """
+    if args is None:
+        args = []
+
     # Handle command-line interface
     parser = create_parser()
-    args = parse_args(parser, args)
+    parsed = vars(parse_args(parser, args))
 
     # Print the overridden help
-    if args.help:
+    if parsed.get('help'):
         print_header()
         parser.print_help()
         return
 
     # Get current Doomsday Clock value
-    countdoom_client = CountdoomClient(timeout=args.timeout)
+    params = {}  # type: Dict[str, Any]
+    if 'timeout' in parsed:
+        params['timeout'] = parsed.get('timeout')
+    countdoom_client = CountdoomClient(**params)
     try:
         data = await countdoom_client.fetch_data()
     except CountdoomClientError as err:
         print(err, file=sys.stderr)
         sys.exit(1)
 
-    print_results(data, args)
+    print_results(data, parsed)
     return
 
 
@@ -131,18 +150,20 @@ def print_header() -> None:
     print(HEADER.format(countdoom.__version__))
 
 
-def print_results(data: dict, args: Namespace) -> None:
+def print_results(data: dict, args: Dict[str, Any]) -> None:
     """
     Display command results in a variety of formats.
 
     :param data: command results
     :param args: ArgumentParser Namespace object
     """
-    if args.format in BASIC_FORMATS:
-        print(data[args.format])
+    scheme = args.get('format')
+
+    if scheme in BASIC_FORMATS:
+        print(data[scheme])
         return
 
-    if args.format == 'json':
+    if scheme == 'json':
         print(json.dumps(data, indent=4))
         return
 
@@ -181,12 +202,3 @@ def print_results(data: dict, args: Namespace) -> None:
     )
     print_header()
     print(output)
-
-
-if __name__ == "__main__":  # pragma: no cover
-    LOOP = asyncio.get_event_loop()
-    try:
-        LOOP.run_until_complete(main())
-    finally:
-        LOOP.close()
-    sys.exit()

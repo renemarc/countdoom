@@ -232,7 +232,7 @@ async def test_cli_request_all(capsys: CaptureFixture) -> None:
         assert 'Countdown:' in output[0]
 
         _setup_mock_server(mocked)
-        await cli.main([])
+        await cli.main()
         output = capsys.readouterr()
 
         assert 'Sentence:' in output[0]

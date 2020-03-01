@@ -36,7 +36,7 @@ EXTRAS_REQUIRE = {
         'sphinx_rtd_theme',
         'watchdog',
     ],
-    'lint': ['flake8', 'flake8-isort', 'isort', 'mypy', 'toml'],
+    'lint': ['flake8', 'flake8-isort', 'isort', 'mypy', 'pylint', 'toml'],
     'test': [
         'aioresponses',
         'coverage',
