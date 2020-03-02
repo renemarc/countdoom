@@ -1,9 +1,10 @@
-#
+# -*-mode:yml-*- vim:ft=yaml
+
 # Config file for automatic testing at Travis-CI.com
 #
-# Once tests are performed, a coverage report is sent out to CodeClimate.com
+# Once tests are performed sucessfully, a coverage report is sent out to
+# CodeClimate.com and a completion signal is sent to CodeCov.io.
 # See https://docs.codeclimate.com/docs/travis-ci-test-coverage
-#
 
 # Setup environment for Python builds.
 dist: xenial
@@ -13,6 +14,8 @@ python:
   - "3.7"
   - "3.6"
   - "3.5"
+  # Disabled until typed_ast (used by pylint) is fixed.
+  # See https://github.com/python/typed_ast/issues/134
   # - "pypy3"
 
 # Declare required variables for Code Climate
@@ -21,13 +24,13 @@ env:
     - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
     - CC_TEST_REPORTER_ID=eb5a902253f7a3dfa19e6c4507825f5911142de119b037a27d276510845ed588
 
+# Download Code Climate test reporter.
 before_install:
-  # Download Code Climate test reporter.
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
 
+# Warn Code Climate that a test is about to run.
 before_script:
-  # Warn Code Climate that a test is about to run.
   - ./cc-test-reporter before-build
 
 # Install dependencies.
@@ -44,11 +47,10 @@ script:
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then (coverage run --source countdoom --module pytest; coverage xml); fi
   - tox
 
+# Submit test results to Code Climate and CodeCov.
 after_success:
-  # Submit test results to Code Climate.
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then ./cc-test-reporter format-coverage --input-type coverage.py; fi
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then ./cc-test-reporter upload-coverage; fi
-  # Submit test results to CodeCov.
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then codecov; fi
 
 # Assuming you have installed the travis-ci CLI tool, after you

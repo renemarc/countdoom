@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """Client module."""
+
 import datetime
 import logging
 import re

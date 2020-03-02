@@ -1,3 +1,10 @@
+# -*-mode:ini-*- vim:ft=dosini
+
+# Config file for Coverage.py tool
+#
+# Measures the amount of code covered by unit tests.
+# See https://coverage.readthedocs.io/
+
 [report]
 show_missing = True
 omit =

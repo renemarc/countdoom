@@ -1,6 +1,11 @@
+# -*-mode:toml-*- vim:ft=toml
+
+# Config file for automatic testing at DeepSource.io
 #
-# DeepSource.io code quality and security analyzer service
-#
+# Helps detect bug risks, anti-patterns and security vulnerabilities.
+# See:
+#   https://deepsource.io/docs/analyzers/python.html
+#   https://deepsource.io/gh/renemarc/countdoom/
 
 version = 1
 

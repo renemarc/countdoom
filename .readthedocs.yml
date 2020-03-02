@@ -1,5 +1,11 @@
-# Read the Docs configuration file
-# See https://docs.readthedocs.io/en/stable/config-file/v2.html
+# -*-mode:yml-*- vim:ft=yaml
+
+# Config file for documentation deployment on ReadTheDocs.org
+#
+# Compiles project repo documentation into web-accessible formats.
+# See:
+#   https://docs.readthedocs.io/en/stable/config-file/v2.html
+#   https://countdoom.readthedocs.io/
 
 version: 2
 

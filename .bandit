@@ -1,2 +1,9 @@
+# -*-mode:ini-*- vim:ft=dosini
+
+# Config file for Bandit security linter
+#
+# Helps find common security issues in Python code.
+# See https://github.com/PyCQA/bandit
+
 [bandit]
-exclude: /.venv,/tests,/venv
+exclude: /.tox,/.venv,/venv

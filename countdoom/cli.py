@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """Console script for Countdoom."""
+
 import argparse
 import asyncio
 import json

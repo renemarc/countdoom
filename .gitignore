@@ -1,3 +1,10 @@
+# -*-mode:gitignore-*- vim:ft=gitignore
+
+# Ignore globs list for Git
+#
+# Used by Git to determine the files and directories to ignore in this project.
+# See https://git-scm.com/docs/gitignore
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

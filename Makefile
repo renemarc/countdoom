@@ -1,3 +1,12 @@
+# -*-mode:makefile-*- vim:ft=makefile
+
+# Build assistant using make
+#
+# Contains a set of directives used by the make build automation tool to
+# generate targets/goals.
+# Type `make` to see usage information.
+# See https://www.gnu.org/software/make/manual/make.html
+
 .PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
 

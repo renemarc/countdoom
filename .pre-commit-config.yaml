@@ -1,10 +1,12 @@
+# -*-mode:yml-*- vim:ft=yaml
+
+# Config file for Pre-commit Git tool
 #
-# Pre-commit configuration file
+# Insures base-line quality and consistency in all modified files when
+# performing git commits.
+# See:
 #   https://pre-commit.com/
-#
-# Additional information:
-# - https://east.fm/posts/using-git-pre-commit-hooks/
-#
+#   https://east.fm/posts/using-git-pre-commit-hooks/
 
 fail_fast: false
 
@@ -142,11 +144,11 @@ repos:
     -   id: pydocstyle
         description: "Checks compliance with Python docstring conventions."
 
--   repo: https://github.com/mgedmin/check-manifest
-    rev: "0.40"
-    hooks:
-    -   id: check-manifest
-        description: "Checks the completeness of MANIFEST.in."
+# -   repo: https://github.com/mgedmin/check-manifest
+#     rev: "0.40"
+#     hooks:
+#     -   id: check-manifest
+#         description: "Checks the completeness of MANIFEST.in."
 
 -   repo: https://github.com/Lucas-C/pre-commit-hooks-markup
     rev: master

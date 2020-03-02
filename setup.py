@@ -2,10 +2,13 @@
 # -*- coding: utf-8 -*-
 
 """
-The setuptools setup script.
+Setup script for Setuptools.
 
-See https://github.com/pypa/sampleproject/blob/master/setup.py
+See:
+  https://setuptools.readthedocs.io/
+  https://github.com/pypa/sampleproject/blob/master/setup.py
 """
+
 import sys
 from typing import Dict, List
 

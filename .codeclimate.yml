@@ -1,11 +1,11 @@
-#
-# Code Climate Quality configuration file
+# -*-mode:yml-*- vim:ft=yaml
+
+# Config file for quality analysis at CodeClimate.com
 #
 # Helps keep code and documentation clean.
-#
-# Advanced configuration reference:
+# See:
 #   https://docs.codeclimate.com/docs/advanced-configuration
-#
+#   https://codeclimate.com/github/renemarc/countdoom
 
 version: 2
 
