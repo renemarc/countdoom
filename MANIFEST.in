@@ -1,15 +1,26 @@
-recursive-include docs *.rst conf.py Makefile make.bat *.png
-recursive-include examples *.py
-recursive-include tests *
+# -*-mode:text-*- vim:ft=text
+
+# Config file for Python source distribution using Distutils/Setuptools
+#
+# Defines which files to include/exclude from the package build.
+# See https://packaging.python.org/guides/using-manifest-in/
+
+# Includes
+graft docs
+graft examples
+graft tests
 include *.md
 include *.py
 include *.rst
 include *.txt
 include LICENSE
 include Makefile
+include MANIFEST.in
 include tox.ini
 
+# Excludes
+prune docs/_build
 exclude .*
-recursive-exclude * __pycache__
-recursive-exclude * *.py[co]
-recursive-exclude docs/_build *
+global-exclude *.py[co]
+global-exclude __pycache__
+global-exclude .DS_Store

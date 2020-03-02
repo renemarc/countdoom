@@ -144,11 +144,11 @@ repos:
     -   id: pydocstyle
         description: "Checks compliance with Python docstring conventions."
 
-# -   repo: https://github.com/mgedmin/check-manifest
-#     rev: "0.40"
-#     hooks:
-#     -   id: check-manifest
-#         description: "Checks the completeness of MANIFEST.in."
+-   repo: https://github.com/mgedmin/check-manifest
+    rev: "0.40"
+    hooks:
+    -   id: check-manifest
+        description: "Checks the completeness of MANIFEST.in."
 
 -   repo: https://github.com/Lucas-C/pre-commit-hooks-markup
     rev: master
