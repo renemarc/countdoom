@@ -8,9 +8,8 @@
 [![Python Versions][badge-python]][link-python]
 [![Travis CI][badge-travis]][link-travis]
 [![Documentation Status][badge-docs]][link-docs]
-[![Updates][badge-updates]][link-updates]
-[![Code Climate Coverage][badge-cc-coverage]][link-cc-coverage]
-[![Code Climate Maintainability][badge-cc-maintainability]][link-cc-maintainability]
+[![CodeCov Coverage][badge-codecov-coverage]][link-codecov-coverage]
+[![Code Climate Maintainability][badge-codeclimate-maintainability]][link-codeclimate-maintainability]
 [![Code style: black][badge-black]][link-black]
 [![License][badge-license]][link-license]
 [![All Contributors][badge-contributors]][link-contributors]
@@ -177,9 +176,9 @@ specification ([emoji key available here](https://allcontributors.org/docs/en/em
 
 [badge-black]:https://img.shields.io/badge/code%20style-black-000000.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xMiwyQTEwLDEwIDAgMCwxIDIyLDEyQTEwLDEwIDAgMCwxIDEyLDIyQTEwLDEwIDAgMCwxIDIsMTJBMTAsMTAgMCAwLDEgMTIsMk0xNSwxMC41VjlBMiwyIDAgMCwwIDEzLDdIOVYxN0gxM0EyLDIgMCAwLDAgMTUsMTVWMTMuNUMxNSwxMi43IDE0LjMsMTIgMTMuNSwxMkMxNC4zLDEyIDE1LDExLjMgMTUsMTAuNU0xMywxNUgxMVYxM0gxM1YxNU0xMywxMUgxMVY5SDEzVjExWiIgLz4KPC9zdmc+&maxAge=86400
 
-[badge-cc-coverage]:https://img.shields.io/codeclimate/coverage/renemarc/countdoom.svg?logo=code-climate&maxAge=300
+[badge-codeclimate-maintainability]:https://img.shields.io/codeclimate/maintainability/renemarc/countdoom.svg?logo=code-climate&maxAge=300
 
-[badge-cc-maintainability]:https://img.shields.io/codeclimate/maintainability/renemarc/countdoom.svg?logo=code-climate&maxAge=300
+[badge-codecov-coverage]:https://img.shields.io/codecov/c/github/renemarc/countdoom?logo=codecov&logoColor=white&maxAge=300
 
 [badge-contribute]:https://img.shields.io/badge/pull_requests-welcome-brightgreen.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYsM0EzLDMgMCAwLDEgOSw2QzksNy4zMSA4LjE3LDguNDIgNyw4LjgzVjE1LjE3QzguMTcsMTUuNTggOSwxNi42OSA5LDE4QTMsMyAwIDAsMSA2LDIxQTMsMyAwIDAsMSAzLDE4QzMsMTYuNjkgMy44MywxNS41OCA1LDE1LjE3VjguODNDMy44Myw4LjQyIDMsNy4zMSAzLDZBMywzIDAgMCwxIDYsM002LDVBMSwxIDAgMCwwIDUsNkExLDEgMCAwLDAgNiw3QTEsMSAwIDAsMCA3LDZBMSwxIDAgMCwwIDYsNU02LDE3QTEsMSAwIDAsMCA1LDE4QTEsMSAwIDAsMCA2LDE5QTEsMSAwIDAsMCA3LDE4QTEsMSAwIDAsMCA2LDE3TTIxLDE4QTMsMyAwIDAsMSAxOCwyMUEzLDMgMCAwLDEgMTUsMThDMTUsMTYuNjkgMTUuODMsMTUuNTggMTcsMTUuMTdWN0gxNVYxMC4yNUwxMC43NSw2TDE1LDEuNzVWNUgxN0EyLDIgMCAwLDEgMTksN1YxNS4xN0MyMC4xNywxNS41OCAyMSwxNi42OSAyMSwxOE0xOCwxN0ExLDEgMCAwLDAgMTcsMThBMSwxIDAgMCwwIDE4LDE5QTEsMSAwIDAsMCAxOSwxOEExLDEgMCAwLDAgMTgsMTdaIiBmaWxsPSIjZmZmZmZmIiAvPjwvc3ZnPgo=&maxAge=86400
 
@@ -207,8 +206,8 @@ specification ([emoji key available here](https://allcontributors.org/docs/en/em
 [badge-updates]:https://pyup.io/repos/github/renemarc/countdoom/shield.svg
 
 [link-black]:https://black.readthedocs.io/
-[link-cc-coverage]:https://codeclimate.com/github/renemarc/countdoom
-[link-cc-maintainability]:https://codeclimate.com/github/renemarc/countdoom
+[link-codeclimate-maintainability]:https://codeclimate.com/github/renemarc/countdoom
+[link-codecov-coverage]:https://codecov.io/gh/renemarc/countdoom
 [link-contribute]:./CONTRIBUTING.rst
 [link-contributors]:#contributors-
 [link-docs]:https://countdoom.readthedocs.io/

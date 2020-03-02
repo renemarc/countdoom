@@ -45,6 +45,7 @@ EXTRAS_REQUIRE = {
     'lint': ['flake8', 'flake8-isort', 'isort', 'mypy', 'pylint', 'toml'],
     'test': [
         'aioresponses',
+        'codecov',
         'coverage',
         'pytest',
         'pytest-asyncio',

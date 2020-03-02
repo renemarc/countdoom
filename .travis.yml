@@ -33,21 +33,23 @@ before_script:
 # Install dependencies.
 install:
   - pip install --upgrade tox-travis
-  - pip install .[dev]
+  - pip install .[lint]
+  - pip install .[test]
 
 # Run tests.
 script:
-  # - python setup.py test
   - pylint ./countdoom/ ./tests/*.py
   - if [[ $TRAVIS_PYTHON_VERSION != '3.8' ]]; then (flake8 .); fi
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then (black --check --diff .); fi
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then (coverage run --source countdoom --module pytest; coverage xml); fi
   - tox
 
-after_script:
+after_success:
   # Submit test results to Code Climate.
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then ./cc-test-reporter format-coverage --input-type coverage.py; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' && "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then ./cc-test-reporter upload-coverage; fi
+  # Submit test results to CodeCov.
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then codecov; fi
 
 # Assuming you have installed the travis-ci CLI tool, after you
 # create the Github repo and add it to Travis, run the

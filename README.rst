@@ -1,7 +1,7 @@
 🤯 Countdoom: a Doomsday Clock client 🕚
 ========================================
 
-|badge-release| |badge-price| |badge-pypi| |badge-python| |badge-travis| |badge-docs| |badge-updates| |badge-cc-coverage| |badge-cc-maintain| |badge-black| |badge-license| |badge-contribute| |badge-twitter|
+|badge-release| |badge-price| |badge-pypi| |badge-python| |badge-travis| |badge-docs| |badge-updates| |badge-codecov-coverage| |badge-codeclimate-maintain| |badge-black| |badge-license| |badge-contribute| |badge-twitter|
 
 Python package to fetch and digest the current `Doomsday Clock`_ world threat assessment
 from `TheBulletin.org <https://thebulletin.org/>`_.
@@ -36,13 +36,13 @@ Features
         :target: https://black.readthedocs.io/
         :alt: Code style: black
 
-.. |badge-cc-coverage| image:: https://img.shields.io/codeclimate/coverage/renemarc/countdoom.svg?logo=code-climate&maxAge=300
-        :target: https://codeclimate.com/github/renemarc/countdoom
-        :alt: Code Climate coverage
-
-.. |badge-cc-maintain| image:: https://img.shields.io/codeclimate/maintainability/renemarc/countdoom.svg?logo=code-climate&maxAge=300
+.. |badge-codeclimate-maintain| image:: https://img.shields.io/codeclimate/maintainability/renemarc/countdoom.svg?logo=code-climate&maxAge=300
         :target: https://codeclimate.com/github/renemarc/countdoom
         :alt: Code Climate maintainability
+
+.. |badge-codecov-coverage| image:: https://img.shields.io/codecov/c/github/renemarc/countdoom?logo=codecov&logoColor=white&maxAge=300
+        :target: https://codecov.io/gh/renemarc/countdoom
+        :alt: CodeCov coverage
 
 .. |badge-contribute| image:: https://img.shields.io/badge/pull_requests-welcome-brightgreen.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYsM0EzLDMgMCAwLDEgOSw2QzksNy4zMSA4LjE3LDguNDIgNyw4LjgzVjE1LjE3QzguMTcsMTUuNTggOSwxNi42OSA5LDE4QTMsMyAwIDAsMSA2LDIxQTMsMyAwIDAsMSAzLDE4QzMsMTYuNjkgMy44MywxNS41OCA1LDE1LjE3VjguODNDMy44Myw4LjQyIDMsNy4zMSAzLDZBMywzIDAgMCwxIDYsM002LDVBMSwxIDAgMCwwIDUsNkExLDEgMCAwLDAgNiw3QTEsMSAwIDAsMCA3LDZBMSwxIDAgMCwwIDYsNU02LDE3QTEsMSAwIDAsMCA1LDE4QTEsMSAwIDAsMCA2LDE5QTEsMSAwIDAsMCA3LDE4QTEsMSAwIDAsMCA2LDE3TTIxLDE4QTMsMyAwIDAsMSAxOCwyMUEzLDMgMCAwLDEgMTUsMThDMTUsMTYuNjkgMTUuODMsMTUuNTggMTcsMTUuMTdWN0gxNVYxMC4yNUwxMC43NSw2TDE1LDEuNzVWNUgxN0EyLDIgMCAwLDEgMTksN1YxNS4xN0MyMC4xNywxNS41OCAyMSwxNi42OSAyMSwxOE0xOCwxN0ExLDEgMCAwLDAgMTcsMThBMSwxIDAgMCwwIDE4LDE5QTEsMSAwIDAsMCAxOSwxOEExLDEgMCAwLDAgMTgsMTdaIiBmaWxsPSIjZmZmZmZmIiAvPjwvc3ZnPgo=&maxAge=86400
         :target: https://github.com/renemarc/countdoom/blob/master/CONTRIBUTING.rst
