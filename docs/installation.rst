@@ -65,3 +65,5 @@ Or if you're on a system that supports makefiles:
 
 .. _Github repo: https://github.com/renemarc/countdoom
 .. _tarball: https://github.com/renemarc/countdoom/tarball/master
+
+.. |Countdoom| replace:: **Countdoom**

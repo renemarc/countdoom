@@ -92,3 +92,5 @@ consider throttling/caching your requests.
 
 .. _Doomsday Clock: https://thebulletin.org/doomsday-clock/
 .. _TheBulletin.org: https://thebulletin.org/
+
+.. |Countdoom| replace:: **Countdoom**
