@@ -10,8 +10,8 @@
    Package documentation <countdoom>
    contributing
    authors
-   history
-   indices
+   changelog
+   Indices <indices>
 
 .. raw:: html
 
