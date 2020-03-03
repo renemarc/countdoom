@@ -90,32 +90,34 @@ test-all: ## run tests on every Python version with tox
 coverage: ## check code coverage quickly with the default Python
 	coverage run --source countdoom --module pytest;
 	coverage report --show-missing
-	# coverage html
-	# $(BROWSER) htmlcov/index.html
+	coverage html
+	$(BROWSER) htmlcov/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/countdoom.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc --output-dir docs/ countdoom
+	sphinx-apidoc --force --output-dir docs/ countdoom
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html
 
 docs-builder: ## build Sphinx HTML documentation
-	sphinx-build -b coverage docs/ docs/_build/coverage/
-#	sphinx-build -b html docs/ docs/_build/
-#	$(MAKE) -C docs clean
-#	$(MAKE) -C docs html
-#	$(BROWSER) docs/_build/html/index.html
-
+	sphinx-build -b html docs/ docs/_build/
+	$(MAKE) -C docs clean
+	$(MAKE) -C docs html
+	$(BROWSER) docs/_build/html/index.html
 
 servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
 release: dist ## package and upload a release
+	pip install --upgrade twine
 	twine upload dist/*
 
+release-test: dist ## package and upload a release to TestPyPI
+	pip install --upgrade twine
+	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
 dist: clean ## build source and wheel package
+	pip install --upgrade setuptools wheel
 	python setup.py sdist
 	python setup.py bdist_wheel
 	ls -l dist

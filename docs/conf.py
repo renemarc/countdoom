@@ -26,7 +26,7 @@ import sys
 from typing import Dict
 
 # Insert Countdoom's path into the system.
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, os.path.abspath('..'))
 
 import countdoom  # NOQA: E402
 
@@ -42,7 +42,6 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx_autodoc_typehints',
     'sphinx.ext.autosummary',
-    'sphinx.ext.coverage',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
     'sphinx.ext.linkcode',
@@ -75,7 +74,7 @@ author = u"René-Marc Simard"
 # The short X.Y version.
 version = '0.1.0'
 # The full version, including alpha/beta/rc tags.
-release = '0.1.0'
+release = version
 
 # Global include string included in the footer of all parsed files.
 rst_epilog = ''

@@ -59,6 +59,7 @@ EXTRAS_REQUIRE = {
 }  # type: Dict[str, List[str]]
 if sys.version_info >= (3, 6):
     EXTRAS_REQUIRE['lint'] += ['black']
+
 EXTRAS_REQUIRE['dev'] = sorted(
     {x for v in EXTRAS_REQUIRE.values() for x in v}, key=str.casefold
 )
