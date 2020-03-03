@@ -1,8 +1,8 @@
 # -*-mode:makefile-*- vim:ft=makefile
 
-# Minimal makefile for Sphinx documentation
+# Minimal makefile for Sphinx documentation generator
 #
-# See https://www.gnu.org/software/make/manual/make.html
+# See https://www.sphinx-doc.org/
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
