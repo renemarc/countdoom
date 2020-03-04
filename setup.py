@@ -86,6 +86,11 @@ TESTS_REQUIRE = [
     'requests',
 ]  # type: List[str]
 
+# Define URLs.
+DOCS_URL = 'https://countdoom.readthedocs.io/'
+HISTORY_URL = '{}en/latest/changelog.html'.format(DOCS_URL)
+REPO_URL = 'https://github.com/renemarc/countdoom'
+ISSUES_URL = '{}/issues'.format(REPO_URL)
 
 setup(
     author='René-Marc Simard',
@@ -118,16 +123,15 @@ setup(
     name='countdoom',
     packages=find_packages(include=['countdoom']),
     project_urls={
-        'Documentation': 'https://countdoom.readthedocs.io/',
-        'Changelog': 'https://countdoom.readthedocs.io/en/latest/history.html',
-        'Issue Tracker': 'https://github.com/renemarc/countdoom/issues',
-        'Source Code': 'https://github.com/renemarc/countdoom',
+        'Documentation': DOCS_URL,
+        'Changelog': HISTORY_URL,
+        'Issue Tracker': ISSUES_URL,
     },
     python_requires='>=3.5',
     setup_requires=SETUP_REQUIRES,
     test_suite='tests',
     tests_require=TESTS_REQUIRE,
-    url='https://github.com/renemarc/countdoom',
-    version='0.1.0',
+    url=REPO_URL,
+    version='0.2.0',
     zip_safe=False,
 )

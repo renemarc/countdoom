@@ -1,10 +1,11 @@
+########################################
 🤯 Countdoom: a Doomsday Clock client 🕚
-========================================
+########################################
 
 |badge-release| |badge-price| |badge-pypi| |badge-python| |badge-travis| |badge-docs| |badge-codecov| |badge-codeclimate-maintain| |badge-codefactor| |badge-black| |badge-license| |badge-codetriage| |badge-contributors| |badge-contribute| |badge-twitter|
 
-Python package to fetch and digest the current `Doomsday Clock`_ world threat assessment
-from `TheBulletin.org <https://thebulletin.org/>`_.
+Python package to fetch and digest the current `Doomsday Clock`_ world threat
+assessment from `TheBulletin.org <https://thebulletin.org/>`__.
 
 .. figure:: https://github.com/renemarc/countdoom/blob/master/docs/screenshot.png?raw=true
         :align: center
@@ -19,11 +20,12 @@ from `TheBulletin.org <https://thebulletin.org/>`_.
 * Python package: `PyPI <https://pypi.org/project/countdoom/>`_
 
 
+********
 Features
---------
+********
 
 * Fetches the current `Doomsday Clock`_ value from the
-  `Bulletin of the Atomic Scientists <https://thebulletin.org/>`__.
+  `Bulletin of the Atomic Scientists`_.
 * Converts the Doomsday Clock sentence into countdown seconds ``60``, countdown
   minutes ``1``, clock ``11:59``, and time ``23:59:00``.
 * Offers a command-line interface.
@@ -93,10 +95,5 @@ Features
         :alt: Twitter
 
 
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
-.. _are always welcome: ./CONTRIBUTING.rst
-.. _Bulletin of the Atomic Scientists: https://thebulletin.org/doomsday-clock/past-statements/
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _Bulletin of the Atomic Scientists: https://thebulletin.org/
 .. _Doomsday Clock: https://thebulletin.org/doomsday-clock/
-.. _Matt Bierner: https://github.com/mattbierner
-.. _MinutesToMidnight: https://github.com/mattbierner/MinutesToMidnight

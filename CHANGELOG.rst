@@ -1,6 +1,6 @@
-=========
+*********
 Changelog
-=========
+*********
 
 All notable changes to **Countdoom** will be documented in this list.
 
@@ -12,10 +12,14 @@ The format is based on `Keep a Changelog`_, and this project adheres to
 
 
 `Unreleased`_
--------------
+=============
+
+
+`v0.2.0`_ - 2020-03-03
+======================
 
 Added
-~~~~~
+-----
 
 - ``minutes`` as an output format option and in returned data set.
 - Repo-specific `Markdown README file`_.
@@ -35,7 +39,7 @@ Added
 - Support for `Probot's Welcome`_ greeting service app.
 
 Changed
-~~~~~~~
+-------
 
 - **BREAKING:** Return countdown in seconds instead of minutes.
 - **BREAKING:** Rename project to **Countdoom**.
@@ -53,12 +57,12 @@ Changed
   Help*, and *Agile User Story*.
 
 Fixed
-~~~~~
+-----
 
 - Revise sentence extraction logic to include seconds to midnight.
 
 Removed
-~~~~~~~
+-------
 
 - Files ``requirements.txt`` and ``requirements_dev.txt`` (now in ``setup.py``).
 - Support for `Pyup`_ dependency checker service.
@@ -80,10 +84,10 @@ Removed
 .. _Issue template: https://github.com/renemarc/countdoom/issues/new/choose
 
 `v0.1.0`_ - 2020-02-23
-----------------------
+======================
 
 Added
-~~~~~
+-----
 
 - Extraction of minutes to midnight from `TheBulletin.org`_.
 - Tests with `pytest`_.
@@ -127,5 +131,6 @@ Added
 .. _Travis-CI: https://travis-ci.com/renemarc/countdoom
 
 
-.. _Unreleased: https://github.com/renemarc/countdoom/compare/v0.1.0...HEAD
+.. _Unreleased: https://github.com/renemarc/countdoom/compare/v0.2.0...HEAD
+.. _v0.2.0: https://github.com/renemarc/countdoom/releases/tag/v0.2.0
 .. _v0.1.0: https://github.com/renemarc/countdoom/releases/tag/v0.1.0

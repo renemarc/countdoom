@@ -110,16 +110,20 @@ servedocs: docs ## compile the docs watching for changes
 
 release: dist ## package and upload a release
 	pip install --upgrade twine
+	twine check dist/*
 	twine upload dist/*
 
-release-test: dist ## package and upload a release to TestPyPI
+test-release: dist ## package and upload a release to TestPyPI
 	pip install --upgrade twine
-	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+	twine check dist/*
+	twine upload --verbose --repository-url https://test.pypi.org/legacy/ dist/*
 
 dist: clean ## build source and wheel package
 	pip install --upgrade setuptools wheel
+	pip install --upgrade twine
 	python setup.py sdist
 	python setup.py bdist_wheel
+	twine check dist/*
 	ls -l dist
 
 install: clean ## install the package to the active Python's site-packages
