@@ -1,21 +1,32 @@
-*********
-Changelog
-*********
+******************************************
+Changelog |badge-changelog| |badge-semver|
+******************************************
 
-All notable changes to **Countdoom** will be documented in this list.
-
-The format is based on `Keep a Changelog`_, and this project adheres to
+All notable changes to **Countdoom** will be documented in this list. The
+format is based on `Keep a Changelog`_, and this project adheres to
 `Semantic Versioning`_.
 
 .. _Keep a Changelog: https://keepachangelog.com/en/1.0.0/
 .. _Semantic Versioning: https://semver.org/spec/v2.0.0.html
 
+.. |badge-changelog| image:: https://img.shields.io/badge/keep%20a%20changelog-v1.0.0-%23E05735?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik01LDE1LjVMNy41LDIwSDIuNUw1LDE1LjVNOSwxOUgyMVYxN0g5VjE5TTUsOS41TDcuNSwxNEgyLjVMNSw5LjVNOSwxM0gyMVYxMUg5VjEzTTUsMy41TDcuNSw4SDIuNUw1LDMuNU05LDdIMjFWNUg5VjdaIiAvPgo8L3N2Zz4=&cacheSeconds=86400
+        :target: `Keep a Changelog`_
+        :alt: Keep a Changelog v1.0.0
+
+.. |badge-semver| image:: https://img.shields.io/badge/semver-v2.0.0-black?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xNC42LDE2LjZMMTkuMiwxMkwxNC42LDcuNEwxNiw2TDIyLDEyTDE2LDE4TDE0LjYsMTYuNk05LjQsMTYuNkw0LjgsMTJMOS40LDcuNEw4LDZMMiwxMkw4LDE4TDkuNCwxNi42WiIgLz4KPC9zdmc+&cacheSeconds=86400
+        :target: `Semantic Versioning`_
+        :alt: Semantic Versioning v2.0.0
 
 `Unreleased`_
 =============
 
+Fixed
+-----
 
-`v0.2.0`_ - 2020-03-03
+- Spelling, links and images in documentation.
+
+
+`v0.2.0`_ — 2020-03-03
 ======================
 
 Added
@@ -43,7 +54,7 @@ Changed
 
 - **BREAKING:** Return countdown in seconds instead of minutes.
 - **BREAKING:** Rename project to **Countdoom**.
-- Expand Tox test environments to include Python 3.5-3.8, Pypy3, formatter,
+- Expand Tox test environments to include Python 3.5–3.8, Pypy3, formatter,
   and linters.
 - Expand test coverage to cover seconds to midnight.
 - Improve type hints.
@@ -83,7 +94,7 @@ Removed
 .. _Probot's Welcome: https://probot.github.io/apps/welcome/
 .. _Issue template: https://github.com/renemarc/countdoom/issues/new/choose
 
-`v0.1.0`_ - 2020-02-23
+`v0.1.0`_ — 2020-02-23
 ======================
 
 Added
@@ -105,7 +116,7 @@ Added
 - Support for `isort`_ imports organizer.
 - Support for `pip`_ dependencies manager.
 - Support for `pre-commit`_ git hooks with linters, formatters, and validators.
-- Support for `Pylint`_ code analyser.
+- Support for `Pylint`_ code analyzer.
 - Support for `Pyup`_ dependency checker service.
 - Support for `Tox`_ automation integration.
 - Support for `Travis-CI`_ continuous integration service.

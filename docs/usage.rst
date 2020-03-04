@@ -25,7 +25,7 @@ Example usage:
     Countdown: 120 seconds
 
 
-Example usage using a single format (e.g. clock):
+Example usage using a single format (e.g. ``clock``):
 
 .. code-block:: console
 

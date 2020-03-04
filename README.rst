@@ -58,7 +58,7 @@ Features
         :target: https://countdoom.readthedocs.io/en/latest/contributing.html
         :alt: PRs welcome
 
-.. |badge-contributors| image:: https://img.shields.io/badge/all_contributors-welcome-orange.svg?logo=github
+.. |badge-contributors| image:: https://img.shields.io/badge/all_contributors-welcome-orange.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xNiAxN1YxOUgyVjE3UzIgMTMgOSAxMyAxNiAxNyAxNiAxN00xMi41IDcuNUEzLjUgMy41IDAgMSAwIDkgMTFBMy41IDMuNSAwIDAgMCAxMi41IDcuNU0xNS45NCAxM0E1LjMyIDUuMzIgMCAwIDEgMTggMTdWMTlIMjJWMTdTMjIgMTMuMzcgMTUuOTQgMTNNMTUgNEEzLjM5IDMuMzkgMCAwIDAgMTMuMDcgNC41OUE1IDUgMCAwIDEgMTMuMDcgMTAuNDFBMy4zOSAzLjM5IDAgMCAwIDE1IDExQTMuNSAzLjUgMCAwIDAgMTUgNFoiIC8+Cjwvc3ZnPg==&cacheSeconds=86400
         :target: https://countdoom.readthedocs.io/en/latest/authors.html
         :alt: All Contributors
 
@@ -74,7 +74,7 @@ Features
         :target: https://github.com/renemarc/countdoom/
         :alt: Price
 
-.. |badge-pypi| image:: https://img.shields.io/pypi/v/countdoom.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0yMSwxNi41QzIxLDE2Ljg4IDIwLjc5LDE3LjIxIDIwLjQ3LDE3LjM4TDEyLjU3LDIxLjgyQzEyLjQxLDIxLjk0IDEyLjIxLDIyIDEyLDIyQzExLjc5LDIyIDExLjU5LDIxLjk0IDExLjQzLDIxLjgyTDMuNTMsMTcuMzhDMy4yMSwxNy4yMSAzLDE2Ljg4IDMsMTYuNVY3LjVDMyw3LjEyIDMuMjEsNi43OSAzLjUzLDYuNjJMMTEuNDMsMi4xOEMxMS41OSwyLjA2IDExLjc5LDIgMTIsMkMxMi4yMSwyIDEyLjQxLDIuMDYgMTIuNTcsMi4xOEwyMC40Nyw2LjYyQzIwLjc5LDYuNzkgMjEsNy4xMiAyMSw3LjVWMTYuNU0xMiw0LjE1TDYuMDQsNy41TDEyLDEwLjg1TDE3Ljk2LDcuNUwxMiw0LjE1TTUsMTUuOTFMMTEsMTkuMjlWMTIuNThMNSw5LjIxVjE1LjkxTTE5LDE1LjkxVjkuMjFMMTMsMTIuNThWMTkuMjlMMTksMTUuOTFaIiAvPgo8L3N2Zz4=&cacheSeconds=86400
+.. |badge-pypi| image:: https://img.shields.io/pypi/v/countdoom.svg?logo=pypi&logoColor=white&cacheSeconds=21600
         :target: https://pypi.org/project/countdoom/
         :alt: Python Package Index
 
