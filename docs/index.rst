@@ -1,8 +1,8 @@
 .. include:: ./readme.rst
 
 .. toctree::
-   :maxdepth: 2
    :caption: Table of contents
+   :maxdepth: 2
 
    Home <self>
    installation

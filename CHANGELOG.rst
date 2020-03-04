@@ -6,19 +6,8 @@ All notable changes to **Countdoom** will be documented in this list. The
 format is based on `Keep a Changelog`_, and this project adheres to
 `Semantic Versioning`_.
 
-.. _Keep a Changelog: https://keepachangelog.com/en/1.0.0/
-.. _Semantic Versioning: https://semver.org/spec/v2.0.0.html
-
-.. |badge-changelog| image:: https://img.shields.io/badge/keep%20a%20changelog-v1.0.0-%23E05735?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik01LDE1LjVMNy41LDIwSDIuNUw1LDE1LjVNOSwxOUgyMVYxN0g5VjE5TTUsOS41TDcuNSwxNEgyLjVMNSw5LjVNOSwxM0gyMVYxMUg5VjEzTTUsMy41TDcuNSw4SDIuNUw1LDMuNU05LDdIMjFWNUg5VjdaIiAvPgo8L3N2Zz4=&cacheSeconds=86400
-        :target: `Keep a Changelog`_
-        :alt: Keep a Changelog v1.0.0
-
-.. |badge-semver| image:: https://img.shields.io/badge/semver-v2.0.0-black?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xNC42LDE2LjZMMTkuMiwxMkwxNC42LDcuNEwxNiw2TDIyLDEyTDE2LDE4TDE0LjYsMTYuNk05LjQsMTYuNkw0LjgsMTJMOS40LDcuNEw4LDZMMiwxMkw4LDE4TDkuNCwxNi42WiIgLz4KPC9zdmc+&cacheSeconds=86400
-        :target: `Semantic Versioning`_
-        :alt: Semantic Versioning v2.0.0
-
-`Unreleased`_
-=============
+`Unreleased`_ |badge-commits-since-release|
+===========================================
 
 Fixed
 -----
@@ -28,6 +17,11 @@ Fixed
 
 `v0.2.0`_ — 2020-03-03
 ======================
+
+Alpha release. Since the `Doomsday Clock
+<https://thebulletin.org/doomsday-clock/>`__ has (…unfortunately 😩) started
+counting in seconds for the first time since 1947, the code was adapted to also
+handle sub-minute values.
 
 Added
 -----
@@ -97,6 +91,8 @@ Removed
 `v0.1.0`_ — 2020-02-23
 ======================
 
+Inital release.
+
 Added
 -----
 
@@ -122,11 +118,7 @@ Added
 - Support for `Travis-CI`_ continuous integration service.
 
 
-.. _TheBulletin.org: https://thebulletin.org
-.. _pytest: https://docs.pytest.org/
 .. _Asyncio: https://docs.python.org/3/library/asyncio.html
-.. _Makefile: https://www.gnu.org/software/make/manual/make.html
-.. _Sphinx: https://www.sphinx-doc.org/
 .. _Badges: https://shields.io/
 .. _bandit: https://bandit.readthedocs.io/
 .. _Black: https://black.readthedocs.io/
@@ -134,14 +126,33 @@ Added
 .. _EditorConfig: https://editorconfig.org/
 .. _Flake8: https://flake8.pycqa.org/
 .. _isort: https://github.com/timothycrosley/isort
+.. _Keep a Changelog: https://keepachangelog.com/en/1.0.0/
+.. _Makefile: https://www.gnu.org/software/make/manual/make.html
 .. _pip: https://pip.pypa.io/
 .. _pre-commit: https://pre-commit.com/
 .. _Pylint: https://www.pylint.org/
+.. _pytest: https://docs.pytest.org/
 .. _Pyup: https://pyup.io/
+.. _Semantic Versioning: https://semver.org/spec/v2.0.0.html
+.. _Sphinx: https://www.sphinx-doc.org/
+.. _TheBulletin.org: https://thebulletin.org
 .. _Tox: https://tox.readthedocs.io/
 .. _Travis-CI: https://travis-ci.com/renemarc/countdoom
 
 
-.. _Unreleased: https://github.com/renemarc/countdoom/compare/v0.2.0...HEAD
+.. _Unreleased: https://github.com/renemarc/countdoom/compare/v0.2.0...master
 .. _v0.2.0: https://github.com/renemarc/countdoom/releases/tag/v0.2.0
 .. _v0.1.0: https://github.com/renemarc/countdoom/releases/tag/v0.1.0
+
+
+.. |badge-changelog| image:: https://img.shields.io/badge/keep%20a%20changelog-v1.0.0-%23E05735?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik01LDE1LjVMNy41LDIwSDIuNUw1LDE1LjVNOSwxOUgyMVYxN0g5VjE5TTUsOS41TDcuNSwxNEgyLjVMNSw5LjVNOSwxM0gyMVYxMUg5VjEzTTUsMy41TDcuNSw4SDIuNUw1LDMuNU05LDdIMjFWNUg5VjdaIiAvPgo8L3N2Zz4=&cacheSeconds=86400
+        :target: `Keep a Changelog`_
+        :alt: Keep a Changelog v1.0.0
+
+.. |badge-commits-since-release| image:: https://img.shields.io/github/commits-since/renemarc/countdoom/latest.svg?label=commits%20to%20be%20deployed&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KCTxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xMy41LDhIMTJWMTNMMTYuMjgsMTUuNTRMMTcsMTQuMzNMMTMuNSwxMi4yNVY4TTEzLDNBOSw5IDAgMCwwIDQsMTJIMUw0Ljk2LDE2LjAzTDksMTJINkE3LDcgMCAwLDEgMTMsNUE3LDcgMCAwLDEgMjAsMTJBNyw3IDAgMCwxIDEzLDE5QzExLjA3LDE5IDkuMzIsMTguMjEgOC4wNiwxNi45NEw2LjY0LDE4LjM2QzguMjcsMjAgMTAuNSwyMSAxMywyMUE5LDkgMCAwLDAgMjIsMTJBOSw5IDAgMCwwIDEzLDMiIC8+Cjwvc3ZnPgo=&cacheSeconds=300
+        :target: `Unreleased`_
+        :alt: Commits to be deployed
+
+.. |badge-semver| image:: https://img.shields.io/badge/semver-v2.0.0-black?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xNC42LDE2LjZMMTkuMiwxMkwxNC42LDcuNEwxNiw2TDIyLDEyTDE2LDE4TDE0LjYsMTYuNk05LjQsMTYuNkw0LjgsMTJMOS40LDcuNEw4LDZMMiwxMkw4LDE4TDkuNCwxNi42WiIgLz4KPC9zdmc+&cacheSeconds=86400
+        :target: `Semantic Versioning`_
+        :alt: Semantic Versioning v2.0.0

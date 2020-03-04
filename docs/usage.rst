@@ -2,7 +2,12 @@
 Usage
 =====
 
-.. _cli:
+.. note::
+
+    The `Doomsday Clock`_ doesn't change often — at most once a year — and
+    offers no API. Since this package relies on web scraping of
+    `TheBulletin.org`_, please do consider throttling/caching your requests.
+
 
 Command-line interface
 ----------------------
@@ -10,6 +15,7 @@ Command-line interface
 Example usage:
 
 .. code-block:: console
+   :emphasize-lines: 3-
 
     $ countdoom
 
@@ -28,6 +34,7 @@ Example usage:
 Example usage using a single format (e.g. ``clock``):
 
 .. code-block:: console
+   :emphasize-lines: 3-
 
     $ countdoom --format clock
 
@@ -37,6 +44,7 @@ Example usage using a single format (e.g. ``clock``):
 Built-in help:
 
 .. code-block:: console
+   :emphasize-lines: 3-
 
     $ countdoom -h
 
@@ -82,13 +90,6 @@ Get the current Doomsday Clock value using an awaitable:
    :lines: 6-10,24-32
    :linenos:
 
-
-Notes
------
-
-The `Doomsday Clock`_ doesn't change often, at most once a year, and offers no
-API. Since this package relies on web scraping of `TheBulletin.org`_, do
-consider throttling/caching your requests.
 
 .. _Doomsday Clock: https://thebulletin.org/doomsday-clock/
 .. _TheBulletin.org: https://thebulletin.org/

@@ -28,9 +28,6 @@ This is the preferred method to install |Countdoom|, as it will always install t
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
 
-.. _pip: https://pip.pypa.io
-.. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
-
 
 From sources |badge-github| |badge-release|
 -------------------------------------------
@@ -63,6 +60,8 @@ Or if you're on a system that supports makefiles:
 
 
 .. _Github repo: https://github.com/renemarc/countdoom
+.. _pip: https://pip.pypa.io
+.. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
 .. _tarball: https://github.com/renemarc/countdoom/tarball/master
 
 
