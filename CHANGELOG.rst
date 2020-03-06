@@ -9,6 +9,11 @@ format is based on `Keep a Changelog`_, and this project adheres to
 `Unreleased`_ |badge-commits-since-release|
 ===========================================
 
+Added
+-----
+
+- Continuous deployment to PyPI when new versions are pushed to the repo.
+
 Fixed
 -----
 

@@ -53,17 +53,17 @@ after_success:
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then ./cc-test-reporter upload-coverage; fi
   - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then codecov; fi
 
-# Assuming you have installed the travis-ci CLI tool, after you
-# create the Github repo and add it to Travis, run the
-# following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
-#deploy:
-#  provider: pypi
-#  distributions: sdist bdist_wheel
-#  user: renemarc
-#  password:
-#    secure: PLEASE_REPLACE_ME
-#  on:
-#    tags: true
-#    repo: renemarc/countdoom
-#    python: 3.6
+# Build Python wheel and submit it to PyPI when new tags are pushed.
+#
+# PyPI's token must be encrypted with Travis-CI CLi tool:
+# $ travis encrypt YOUR_TOKEN_PASSWORD --com --add deploy.password
+deploy:
+ provider: pypi
+ distributions: sdist bdist_wheel
+ user: renemarc
+ password:
+   secure: VC4YuPjvJorYWxjHRfAw5TfdA74XpRE4MkANwFNP3Lx2gU0+6wKP7lBtJNfx5KJtoBd77qMYOOIsNkUv5AY9O1taXv/C5ZHIQdLPFnqk6G1+N5n0pHhSEMhFro/70uMCxBJw15GsYdRnUZ6WbNiqk3VeBlL9DpO3CT32ftqDqePtQ0B3A0AU3pHi3B7AW91YTFFgbZj6sec0sY3WQ+gW9oQLp8CrPRghbZDRBIskgPSGoImoXMD+2EzRcYeG7A0gF36uzp6j+8X+CYQoYtKUOzxzOxLxiOPz6DKjvtId+PxpxWXfbFVg17n8DpCpVQa72RDBJzKCTFMfDueUiq+B3SypzLHBrmKZusJhDUlfR7bxxfiahKJPwgDGreY1YgzXYsLwjNxY/0SGqkvPJuUA5+pHf2pU5YQJilPpXGesj7Tgy4tbbPBzOtO2fp7LB75glHFGZuqiPZRS+hTbZnoiJPTgjGHI64c3nE2aT/UMe1Jve1jFlsPYCaksmMUThsach5ml4lUpn9lhBE7omSOMf1MolU8LBTcODxPBNySq7HeAJDO+RgAwOi9nEjaiqRVkjCOLxjafuuUlkHye9lLdbtWc5uH5eOSdCovTv+CWWK9+HWfnrR4jgwvHzZOAyRb7AJm3hxpTNFMEvkKVWh1a0gacw3Q3NXp+LwhpZg5/QEc=
+ on:
+   tags: true
+   repo: renemarc/countdoom
+   python: "3.6"
