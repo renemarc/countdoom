@@ -197,7 +197,8 @@ async def test_valid_sentence(httpserver: HTTPServer, sentence: str) -> None:
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
     assert data is not None
@@ -222,7 +223,8 @@ async def test_valid_countdown(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
     assert data is not None
@@ -247,7 +249,8 @@ async def test_valid_minutes(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
     assert data is not None
@@ -272,7 +275,8 @@ async def test_valid_clock(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
     assert data is not None
@@ -298,7 +302,8 @@ async def test_valid_time(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
     assert data is not None
@@ -324,7 +329,8 @@ async def test_invalid_minutes(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
@@ -350,7 +356,8 @@ async def test_invalid_clock(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
@@ -376,7 +383,8 @@ async def test_invalid_time(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
@@ -400,8 +408,10 @@ async def test_invalid_selector(httpserver: HTTPServer) -> None:
     )
 
     client = CountdoomClient()
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
-    client.SELECTOR = '.wrong-id-' + str(random.randint(0, 100000000))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    selector = '.wrong-id-' + str(random.randint(0, 100000000))
+    setattr(client, 'CLOCK_URL', clock_url)
+    setattr(client, 'SELECTOR', selector)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
@@ -424,7 +434,8 @@ async def test_htmlized_sentence(httpserver: HTTPServer) -> None:
     )
 
     client = CountdoomClient()
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
     assert data is not None
@@ -448,7 +459,8 @@ async def test_empty_sentence(httpserver: HTTPServer) -> None:
     )
 
     client = CountdoomClient()
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
@@ -497,7 +509,8 @@ async def test_formatted_time(httpserver: HTTPServer) -> None:
     )
 
     client = CountdoomClient()
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
     assert '23:44:00' == data['time']
@@ -513,7 +526,8 @@ async def test_url_not_found(httpserver: HTTPServer) -> None:
     """
     path = 'test_url_not_found'
     client = CountdoomClient()
-    client.CLOCK_URL = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for('/{}'.format(path))
+    setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
@@ -524,7 +538,8 @@ async def test_url_not_found(httpserver: HTTPServer) -> None:
 async def test_server_not_found() -> None:
     """Test fetching wrong server."""
     client = CountdoomClient()
-    client.CLOCK_URL = 'http://website.that-should.never-resolve'
+    clock_url = 'http://website.that-should.never-resolve'
+    setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
 
