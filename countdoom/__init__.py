@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
-"""Top-level package for Countdoom."""
+"""
+Top-level package for Countdoom.
+
+SPDX-License-Identifier: MIT
+"""
 
 __author__ = """René-Marc Simard"""
 __email__ = 'renemarc@gmail.com'

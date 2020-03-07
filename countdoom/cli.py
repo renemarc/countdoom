@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
-"""Console script for Countdoom."""
+"""
+Console script for Countdoom.
+
+SPDX-License-Identifier: MIT
+"""
 
 import argparse
 import asyncio

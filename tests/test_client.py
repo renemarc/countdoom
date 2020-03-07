@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `client` module."""
+"""
+Tests for `client` module.
+
+SPDX-License-Identifier: MIT
+"""
 
 import random
 from typing import List, Optional, Tuple, Union

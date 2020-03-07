@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `countdoom` package."""
+"""
+Tests for `countdoom` package.
+
+SPDX-License-Identifier: MIT
+"""
 
 import subprocess
 

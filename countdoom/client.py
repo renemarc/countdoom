@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
-"""Client module."""
+"""
+Client module.
+
+SPDX-License-Identifier: MIT
+"""
 
 import datetime
 import logging

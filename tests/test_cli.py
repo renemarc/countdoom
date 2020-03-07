@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `command-line interface` module."""
+"""
+Tests for `command-line interface` module.
+
+SPDX-License-Identifier: MIT
+"""
 
 import json
 
