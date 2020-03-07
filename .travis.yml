@@ -56,14 +56,15 @@ after_success:
 # Build Python wheel and submit it to PyPI when new tags are pushed.
 #
 # PyPI's token must be encrypted with Travis-CI CLi tool:
-# $ travis encrypt YOUR_TOKEN_PASSWORD --com --add deploy.password
+# $ echo -n YOUR_PASSWORD | travis encrypt --pro --debug -repo renemarc/countdoom
 deploy:
  provider: pypi
- distributions: sdist bdist_wheel
- user: renemarc
+ user: __token__
  password:
-   secure: VC4YuPjvJorYWxjHRfAw5TfdA74XpRE4MkANwFNP3Lx2gU0+6wKP7lBtJNfx5KJtoBd77qMYOOIsNkUv5AY9O1taXv/C5ZHIQdLPFnqk6G1+N5n0pHhSEMhFro/70uMCxBJw15GsYdRnUZ6WbNiqk3VeBlL9DpO3CT32ftqDqePtQ0B3A0AU3pHi3B7AW91YTFFgbZj6sec0sY3WQ+gW9oQLp8CrPRghbZDRBIskgPSGoImoXMD+2EzRcYeG7A0gF36uzp6j+8X+CYQoYtKUOzxzOxLxiOPz6DKjvtId+PxpxWXfbFVg17n8DpCpVQa72RDBJzKCTFMfDueUiq+B3SypzLHBrmKZusJhDUlfR7bxxfiahKJPwgDGreY1YgzXYsLwjNxY/0SGqkvPJuUA5+pHf2pU5YQJilPpXGesj7Tgy4tbbPBzOtO2fp7LB75glHFGZuqiPZRS+hTbZnoiJPTgjGHI64c3nE2aT/UMe1Jve1jFlsPYCaksmMUThsach5ml4lUpn9lhBE7omSOMf1MolU8LBTcODxPBNySq7HeAJDO+RgAwOi9nEjaiqRVkjCOLxjafuuUlkHye9lLdbtWc5uH5eOSdCovTv+CWWK9+HWfnrR4jgwvHzZOAyRb7AJm3hxpTNFMEvkKVWh1a0gacw3Q3NXp+LwhpZg5/QEc=
+   secure: "Sy2Ol4iYXmC/1OycIS9+7aqXOxREM7QMO2Rs5iWojAAsKDf6U+0mSf/659GjMTJSgZqtxu3OHbYU/Daq+Rv5MXFbAa1bPKqScUqulvTAFtRG/7toKIxKy8TZbnJiODQ14XX8y3Ervwg6z5IohPjgpvdLIZqHt6kc24ad6lKrqUONCwUPDZ2wvOdhUbv7ZvNZu2dWeWFwowIDHXph3Enx+ozRmbpsCfXUWuCu9VeOVqgddza/3OXeDggwp4eqFNHQgFOQ8rKyId26W66lUDm5jgc+8qeIa50QSLQBQj4t77CzWG7HqiPb87T3BhJT9c8zUAbcfFA9YU3nX5qJMvYQaZMCkrwektvzGS2fUftL4AFNX3JnOIg/r3/rKrB0YQKp6ie6uzjErhbsVirOVpfCQvRM0ClQ4hA0nRw+iYm7InIr6izKfnuC5RekunIAAFC+79gt+mpt3H+4GjTe/irrLEYQlzbClD5Xy/uAXa6542i6zmsKNDoYkuMZ1o/UR2Yl9XP1UwH7xNPX6LI8GhhQuaQ3YiW8IpbJfieh0uPzTYsZ3UnDY78vOMJy3i7bMbE7t3NuxYVtqVdYLtQNg56S3BZzmHyyoJUM6K/vFClzJpDX9qVqCmOf5SgZgE3s0/qajxyt2r1mhN325m3XxMG5H4IXa/UT6ATJbcaTQRqnafA="
+ distributions: sdist bdist_wheel
  on:
    tags: true
+   branch: master
    repo: renemarc/countdoom
    python: "3.6"

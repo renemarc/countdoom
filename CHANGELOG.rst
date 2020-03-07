@@ -9,10 +9,16 @@ format is based on `Keep a Changelog`_, and this project adheres to
 `Unreleased`_ |badge-commits-since-release|
 ===========================================
 
+*No documented unreleased changes*
+
+
+`v0.2.1`_ — 2020-03-07
+======================
+
 Added
 -----
 
-- Add Code of Conduct based on `Contributor Covenant`_.
+- `Code of Conduct`_ based on `Contributor Covenant`_.
 - Continuous deployment to PyPI when new versions are pushed to the repo.
 
 Fixed
@@ -20,7 +26,7 @@ Fixed
 
 - Spelling, links and images in documentation.
 
-
+.. _Code of Conduct: https://github.com/renemarc/countdoom/blob/master/CODE_OF_CONDUCT.md
 .. _Contributor Covenant: https://www.contributor-covenant.org/version/2/0/code_of_conduct/
 
 `v0.2.0`_ — 2020-03-03
@@ -148,7 +154,8 @@ Added
 .. _Travis-CI: https://travis-ci.com/renemarc/countdoom
 
 
-.. _Unreleased: https://github.com/renemarc/countdoom/compare/v0.2.0...master
+.. _Unreleased: https://github.com/renemarc/countdoom/compare/v0.2.1...master
+.. _v0.2.1: https://github.com/renemarc/countdoom/releases/tag/v0.2.1
 .. _v0.2.0: https://github.com/renemarc/countdoom/releases/tag/v0.2.0
 .. _v0.1.0: https://github.com/renemarc/countdoom/releases/tag/v0.1.0
 

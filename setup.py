@@ -132,6 +132,6 @@ setup(
     test_suite='tests',
     tests_require=TESTS_REQUIRE,
     url=REPO_URL,
-    version='0.2.0',
+    version='0.2.1',
     zip_safe=False,
 )
