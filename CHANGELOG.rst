@@ -12,6 +12,7 @@ format is based on `Keep a Changelog`_, and this project adheres to
 Added
 -----
 
+- Add Code of Conduct based on `Contributor Covenant`_.
 - Continuous deployment to PyPI when new versions are pushed to the repo.
 
 Fixed
@@ -19,6 +20,8 @@ Fixed
 
 - Spelling, links and images in documentation.
 
+
+.. _Contributor Covenant: https://www.contributor-covenant.org/version/2/0/code_of_conduct/
 
 `v0.2.0`_ — 2020-03-03
 ======================

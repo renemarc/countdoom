@@ -226,9 +226,9 @@ Then run:
         :target: https://www.codetriage.com/renemarc/countdoom
         :alt: CodeTriage helpers
 
-.. |badge-conduct| image:: https://img.shields.io/badge/contributor_covenant-v2.0.0-blue.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmIiBkPSJNMTIsMjEuMzVMMTAuNTUsMjAuMDNDNS40LDE1LjM2IDIsMTIuMjcgMiw4LjVDMiw1LjQxIDQuNDIsMyA3LjUsM0M5LjI0LDMgMTAuOTEsMy44MSAxMiw1LjA4QzEzLjA5LDMuODEgMTQuNzYsMyAxNi41LDNDMTkuNTgsMyAyMiw1LjQxIDIyLDguNUMyMiwxMi4yNyAxOC42LDE1LjM2IDEzLjQ1LDIwLjAzTDEyLDIxLjM1WiIgLz4KPC9zdmc+&cacheSeconds=86400
-        :target: `Contributor Covenant`_
-        :alt: Contributor Convenant v2.0.0
+.. |badge-conduct| image:: https://img.shields.io/badge/code_of_conduct-Contributor_Covenant_v2.0-purple.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmIiBkPSJNMTIsMjEuMzVMMTAuNTUsMjAuMDNDNS40LDE1LjM2IDIsMTIuMjcgMiw4LjVDMiw1LjQxIDQuNDIsMyA3LjUsM0M5LjI0LDMgMTAuOTEsMy44MSAxMiw1LjA4QzEzLjA5LDMuODEgMTQuNzYsMyAxNi41LDNDMTkuNTgsMyAyMiw1LjQxIDIyLDguNUMyMiwxMi4yNyAxOC42LDE1LjM2IDEzLjQ1LDIwLjAzTDEyLDIxLjM1WiIgLz4KPC9zdmc+&cacheSeconds=86400
+        :target: `Contributor Code of Conduct`_
+        :alt: Contributor Convenant v2.0 Code of Conduct
 
 .. |badge-contributors| image:: https://img.shields.io/badge/all_contributors-welcome-orange.svg?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiICB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xNiAxN1YxOUgyVjE3UzIgMTMgOSAxMyAxNiAxNyAxNiAxN00xMi41IDcuNUEzLjUgMy41IDAgMSAwIDkgMTFBMy41IDMuNSAwIDAgMCAxMi41IDcuNU0xNS45NCAxM0E1LjMyIDUuMzIgMCAwIDEgMTggMTdWMTlIMjJWMTdTMjIgMTMuMzcgMTUuOTQgMTNNMTUgNEEzLjM5IDMuMzkgMCAwIDAgMTMuMDcgNC41OUE1IDUgMCAwIDEgMTMuMDcgMTAuNDFBMy4zOSAzLjM5IDAgMCAwIDE1IDExQTMuNSAzLjUgMCAwIDAgMTUgNFoiIC8+Cjwvc3ZnPg==&cacheSeconds=86400
         :target: `all-contributors`_
@@ -267,7 +267,7 @@ Then run:
         :alt: Travis CI build status
 
 .. _all-contributors: https://allcontributors.org/docs/en/specification
-.. _Contributor Code of Conduct: https://github.com/renemarc/.github/blob/master/CODE_OF_CONDUCT.md
+.. _Contributor Code of Conduct: https://github.com/renemarc/countdoom/blob/master/CODE_OF_CONDUCT.md
 .. _Contributor Covenant: https://www.contributor-covenant.org/version/2/0/code_of_conduct/
 .. _Conventional Commits: https://www.conventionalcommits.org/en/v1.0.0/
 .. _GitHub issues: https://github.com/renemarc/countdoom/issues
