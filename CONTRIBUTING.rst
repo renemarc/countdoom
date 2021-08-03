@@ -30,17 +30,12 @@ If you are reporting a bug, please include:
 * Any details about your local setup that might be helpful in troubleshooting.
 * Detailed steps to reproduce the bug.
 
-Fix bugs
-~~~~~~~~
+Fix bugs or Implement features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Look through the `GitHub issues`_ for bugs. Anything tagged with ``bug`` and
-``help wanted`` is open to whoever wants to implement it.
-
-Implement features
-~~~~~~~~~~~~~~~~~~
-
-Look through the `GitHub issues`_ for features. Anything tagged with
-``enhancement`` and ``help wanted`` is open to whoever wants to implement it.
+Look through the `GitHub issues`_ for bugs or features. Anything tagged with
+``bug``, ``enhancement`` and ``help wanted`` is open to whoever wants to
+implement it. You rock!
 
 Write documentation
 ~~~~~~~~~~~~~~~~~~~
@@ -65,10 +60,6 @@ If you are proposing a feature:
 
 Get started! |badge-github| |badge-conventional-commits| |badge-codetriage|
 ---------------------------------------------------------------------------
-
-.. |badge-github| image:: https://img.shields.io/badge/fork_me_on-GitHub-blue?logo=github&logoColor=white&cacheSeconds=86400
-        :target: https://github.com/renemarc/countdoom
-        :alt: GitHub
 
 Ready to contribute? Here's how to set up |Countdoom| for local
 development.
@@ -176,7 +167,7 @@ your changes pass this opinionated code quality gauntlet 🛡️:
           $ pytest tests/test_client.py
           $ pytest tests/test_client.py::test_valid_countdown
 
-8. Commit your changes using `Conventional Commits`_ comment style and push your
+8. Commit your changes ideally using `Conventional Commits`_ comment style and push your
 branch to GitHub. To help catch any gotchas, `pre-commit
 <https://pre-commit.com/>`_ will automatically run various code quality
 linters on any modified files:
@@ -184,11 +175,11 @@ linters on any modified files:
   .. code-block:: console
 
         $ git add .
-        $ git commit -m "type(scope): detailed description of your changes."
+        $ git commit -m "type(scope): active voice summary of changes"
         $ git push origin name-of-your-bugfix-or-feature
 
 9. `Submit a pull request
-<https://github.com/renemarc/countdoom/pulls>`_ through the GitHub website.
+<https://github.com/renemarc/countdoom/pulls>`_ through GitHub.
 
 
 Pull request guidelines |badge-pulls|
@@ -242,6 +233,10 @@ Then run:
         :target: https://countdoom.readthedocs.io/en/latest/
         :alt: Documentation Status
 
+.. |badge-github| image:: https://img.shields.io/badge/fork_me_on-GitHub-blue?logo=github&logoColor=white&cacheSeconds=86400
+        :target: https://github.com/renemarc/countdoom
+        :alt: Fork me on GitHub
+
 .. |badge-issues| image:: https://img.shields.io/github/issues-raw/renemarc/countdoom?logo=github
         :target: `GitHub issues`_
         :alt: GitHub issues
@@ -252,7 +247,7 @@ Then run:
 
 .. |badge-pulls| image:: https://img.shields.io/github/issues-pr/renemarc/countdoom?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYsM0EzLDMgMCAwLDEgOSw2QzksNy4zMSA4LjE3LDguNDIgNyw4LjgzVjE1LjE3QzguMTcsMTUuNTggOSwxNi42OSA5LDE4QTMsMyAwIDAsMSA2LDIxQTMsMyAwIDAsMSAzLDE4QzMsMTYuNjkgMy44MywxNS41OCA1LDE1LjE3VjguODNDMy44Myw4LjQyIDMsNy4zMSAzLDZBMywzIDAgMCwxIDYsM002LDVBMSwxIDAgMCwwIDUsNkExLDEgMCAwLDAgNiw3QTEsMSAwIDAsMCA3LDZBMSwxIDAgMCwwIDYsNU02LDE3QTEsMSAwIDAsMCA1LDE4QTEsMSAwIDAsMCA2LDE5QTEsMSAwIDAsMCA3LDE4QTEsMSAwIDAsMCA2LDE3TTIxLDE4QTMsMyAwIDAsMSAxOCwyMUEzLDMgMCAwLDEgMTUsMThDMTUsMTYuNjkgMTUuODMsMTUuNTggMTcsMTUuMTdWN0gxNVYxMC4yNUwxMC43NSw2TDE1LDEuNzVWNUgxN0EyLDIgMCAwLDEgMTksN1YxNS4xN0MyMC4xNywxNS41OCAyMSwxNi42OSAyMSwxOE0xOCwxN0ExLDEgMCAwLDAgMTcsMThBMSwxIDAgMCwwIDE4LDE5QTEsMSAwIDAsMCAxOSwxOEExLDEgMCAwLDAgMTgsMTdaIiBmaWxsPSIjZmZmZmZmIiAvPjwvc3ZnPgo=&cacheSeconds=300
         :target: https://github.com/renemarc/countdoom/pulls
-        :alt: GitHub issues
+        :alt: GitHub pull requests
 
 .. |badge-pypi| image:: https://img.shields.io/pypi/v/countdoom.svg?logo=pypi&logoColor=white&cacheSeconds=21600
         :target: `Python Package Index`_
