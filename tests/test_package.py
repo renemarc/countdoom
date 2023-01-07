@@ -26,4 +26,4 @@ def test_package_main() -> None:
     )
     stdout = process.communicate()[0]
 
-    assert 'countdoom {}'.format(countdoom.__version__) in str(stdout)
+    assert f'countdoom {countdoom.__version__}' in str(stdout)
