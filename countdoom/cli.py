@@ -105,7 +105,7 @@ def create_parser() -> ArgumentParser:
         int_value = int(value)
         if int_value <= 0:
             raise argparse.ArgumentTypeError(
-                "{} is an invalid positive integer value".format(value)
+                "{%value} is an invalid positive integer value"
             )
         return int_value
 
@@ -127,7 +127,7 @@ def create_parser() -> ArgumentParser:
         '--v',
         '--version',
         action='version',
-        version='%(prog)s {version}'.format(version=countdoom.__version__),
+        version='%(prog)s {%countdoom.__version__}',
     )
     parser.add_argument(
         '-h',
