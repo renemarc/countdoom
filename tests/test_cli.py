@@ -23,7 +23,7 @@ def _setup_mock_server(mocked: aioresponses) -> None:
 
     :param mocked: aiohttp response
     """
-    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
+    prefix = '<h3 class="%CountdoomClient.SELECTOR[1:]">'
     suffix = '</h3>'
     string = "IT IS 1 MINUTE TO MIDNIGHT"
     mocked.get(
@@ -119,7 +119,7 @@ async def test_cli_request_version(capsys: CaptureFixture) -> None:
 
     assert exception.type == SystemExit
     assert exception.value.code == 0
-    assert "countdoom {}".format(countdoom.__version__) in output[0]
+    assert "countdoom {%countdoom.__version__}" in output[0]
 
 
 @pytest.mark.asyncio
@@ -271,7 +271,7 @@ async def test_cli_request_internal_error(capsys: CaptureFixture) -> None:
     :param capsys: System-level capture fixture
     """
     with aioresponses() as mocked:
-        prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
+        prefix = '<h3 class="{%CountdoomClient.SELECTOR[1:]}">'
         suffix = '</h3>'
         string = ' '
         mocked.get(
