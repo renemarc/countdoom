@@ -172,7 +172,7 @@ class CountdoomClient:
             await self.close()
             raise CountdoomClientError(
                 "Cannot connect to website. Check URL."
-                ) from exc
+            ) from exc
 
     async def _extract_sentence(self) -> None:
         """
