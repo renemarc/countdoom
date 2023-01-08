@@ -160,17 +160,21 @@ class CountdoomClient:
             raise CountdoomClientError("Session not started.")
 
         try:
-            async with async_timeout.timeout(timeout):
-                async with self._session.get(url, timeout=timeout) as resp:
-                    if resp.status != 200:
-                        raise AssertionError
-                    return await resp.text()
-        except AssertionError:
+            async with (
+                async_timeout.timeout(timeout),
+                self._session.get(url, timeout=timeout) as resp
+            ):
+                if resp.status != 200:
+                    raise AssertionError
+                return await resp.text()
+        except AssertionError as exc:
             await self.close()
-            raise CountdoomClientError("Page not found.")
-        except OSError:
+            raise CountdoomClientError("Page not found.") from exc
+        except OSError as exc:
             await self.close()
-            raise CountdoomClientError("Cannot connect to website. Check URL.")
+            raise CountdoomClientError(
+                "Cannot connect to website. Check URL."
+            ) from exc
 
     async def _extract_sentence(self) -> None:
         """
@@ -187,20 +191,20 @@ class CountdoomClient:
             self._sentence = re.sub(r'\s+', ' ', sentence).strip()
             if not self._sentence:
                 raise ValueError()
-        except IndexError:
+        except IndexError as exc:
             _LOGGER.error(
                 "No sentence found using selector %s. Check for source "
                 "website design changes.",
                 self.SELECTOR,
             )
-            raise CountdoomClientError("No sentence found.")
-        except ValueError:
+            raise CountdoomClientError("No sentence found.") from exc
+        except ValueError as exc:
             _LOGGER.error(
                 "Empty sentence found using selector %s. Check for source "
                 "website design changes.",
                 self.SELECTOR,
             )
-            raise CountdoomClientError("Empty sentence found.")
+            raise CountdoomClientError("Empty sentence found.") from exc
         _LOGGER.debug("Sentence found: %s", self._sentence)
 
     async def close(self) -> None:
@@ -223,11 +227,11 @@ class CountdoomClient:
 
         try:
             self._countdown = self.sentence_to_countdown(self._sentence)
-        except AttributeError:
+        except AttributeError as exc:
             _LOGGER.error(
                 "Regex pattern yielded no result for : %s", self._sentence
             )
-            raise CountdoomClientError("Sentence not parsable.")
+            raise CountdoomClientError("Sentence not parsable.") from exc
         _LOGGER.debug("Countdown value: %s", self._countdown)
 
     @classmethod

@@ -15,10 +15,10 @@ from typing import Dict, List
 from setuptools import find_packages, setup
 
 # Load documentation for PyPI.
-with open('README.rst') as readme_file:
+with open('README.rst', encoding="utf-8") as readme_file:
     README = readme_file.read()
 
-with open('CHANGELOG.rst') as history_file:
+with open('CHANGELOG.rst', encoding="utf-8") as history_file:
     HISTORY = history_file.read()
 
 # Define extra requirements for different installation environments.
@@ -88,9 +88,9 @@ TESTS_REQUIRE = [
 
 # Define URLs.
 DOCS_URL = 'https://countdoom.readthedocs.io/'
-HISTORY_URL = '{}en/latest/changelog.html'.format(DOCS_URL)
+HISTORY_URL = f'{DOCS_URL}en/latest/changelog.html'
 REPO_URL = 'https://github.com/renemarc/countdoom'
-ISSUES_URL = '{}/issues'.format(REPO_URL)
+ISSUES_URL = f'{REPO_URL}/issues'
 
 setup(
     author='René-Marc Simard',

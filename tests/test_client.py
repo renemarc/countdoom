@@ -122,7 +122,7 @@ def response() -> Response:
 
     :return: Request response
     """
-    return requests.get(CountdoomClient.CLOCK_URL)
+    return requests.get(CountdoomClient.CLOCK_URL, timeout=5)
 
 
 def _get_path(string: str) -> str:
@@ -142,16 +142,13 @@ def _setup_servers(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
+    prefix = f'<h3 class="{CountdoomClient.SELECTOR[1:]}">'
     suffix = '</h3>'
 
     sentences = SENTENCES_VALID + SENTENCES_INVALID
-    # sentences = SENTENCES_VALID
-    # for sentence in SENTENCES_INVALID:
-    #     sentences.append(sentence)
     for sentence in sentences:
         path = _get_path(sentence[0])
-        httpserver.expect_request('/{}'.format(path)).respond_with_data(
+        httpserver.expect_request(f'/{path}').respond_with_data(
             prefix + sentence[0] + suffix
         )
 
@@ -197,7 +194,7 @@ async def test_valid_sentence(httpserver: HTTPServer, sentence: str) -> None:
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
@@ -223,7 +220,7 @@ async def test_valid_countdown(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
@@ -249,7 +246,7 @@ async def test_valid_minutes(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
@@ -275,7 +272,7 @@ async def test_valid_clock(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
@@ -302,7 +299,7 @@ async def test_valid_time(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
@@ -329,7 +326,7 @@ async def test_invalid_minutes(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
@@ -356,7 +353,7 @@ async def test_invalid_clock(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
@@ -383,7 +380,7 @@ async def test_invalid_time(
 
     client = CountdoomClient()
     path = _get_path(sentence)
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
@@ -399,16 +396,16 @@ async def test_invalid_selector(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
+    prefix = f'<h3 class="{CountdoomClient.SELECTOR[1:]}">'
     suffix = '</h3>'
     string = "IT IS 1 AND A HALF MINUTE TO MIDNIGHT"
     path = 'test_invalid_selector'
-    httpserver.expect_request('/{}'.format(path)).respond_with_data(
+    httpserver.expect_request(f'/{path}').respond_with_data(
         prefix + string + suffix
     )
 
     client = CountdoomClient()
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     selector = '.wrong-id-' + str(random.randint(0, 100000000))
     setattr(client, 'CLOCK_URL', clock_url)
     setattr(client, 'SELECTOR', selector)
@@ -425,16 +422,16 @@ async def test_htmlized_sentence(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
+    prefix = f'<h3 class="{CountdoomClient.SELECTOR[1:]}">'
     suffix = '</h3>'
     string = " IT  IS <em>STILL</em> 1 <b>MINUTE</b> TO  MIDNIGHT"
     path = 'test_htmlized_sentence'
-    httpserver.expect_request('/{}'.format(path)).respond_with_data(
+    httpserver.expect_request(f'/{path}').respond_with_data(
         prefix + string + suffix
     )
 
     client = CountdoomClient()
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
@@ -450,16 +447,16 @@ async def test_empty_sentence(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
+    prefix = f'<h3 class="{CountdoomClient.SELECTOR[1:]}">'
     suffix = '</h3>'
     string = ' '
     path = 'test_empty_sentence'
-    httpserver.expect_request('/{}'.format(path)).respond_with_data(
+    httpserver.expect_request(f'/{path}').respond_with_data(
         prefix + string + suffix
     )
 
     client = CountdoomClient()
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
@@ -500,16 +497,16 @@ async def test_formatted_time(httpserver: HTTPServer) -> None:
 
     :param httpserver: HTTP Server
     """
-    prefix = '<h3 class="{}">'.format(CountdoomClient.SELECTOR[1:])
+    prefix = f'<h3 class="{CountdoomClient.SELECTOR[1:]}">'
     suffix = '</h3>'
     string = "IT IS 16 MINUTES TO MIDNIGHT"
     path = 'test_formatted_time'
-    httpserver.expect_request('/{}'.format(path)).respond_with_data(
+    httpserver.expect_request(f'/{path}').respond_with_data(
         prefix + string + suffix
     )
 
     client = CountdoomClient()
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     data = await client.fetch_data()
 
@@ -526,7 +523,7 @@ async def test_url_not_found(httpserver: HTTPServer) -> None:
     """
     path = 'test_url_not_found'
     client = CountdoomClient()
-    clock_url = httpserver.url_for('/{}'.format(path))
+    clock_url = httpserver.url_for(f'/{path}')
     setattr(client, 'CLOCK_URL', clock_url)
     with pytest.raises(CountdoomClientError) as err:
         await client.fetch_data()
