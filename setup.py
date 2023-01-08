@@ -88,9 +88,9 @@ TESTS_REQUIRE = [
 
 # Define URLs.
 DOCS_URL = 'https://countdoom.readthedocs.io/'
-HISTORY_URL = '{}en/latest/changelog.html'.format(DOCS_URL)
+HISTORY_URL = f'{DOCS_URL}en/latest/changelog.html'
 REPO_URL = 'https://github.com/renemarc/countdoom'
-ISSUES_URL = '{}/issues'.format(REPO_URL)
+ISSUES_URL = f'{REPO_URL}/issues'
 
 setup(
     author='René-Marc Simard',
