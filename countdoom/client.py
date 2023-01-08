@@ -170,7 +170,9 @@ class CountdoomClient:
             raise CountdoomClientError("Page not found.") from exc
         except OSError as exc:
             await self.close()
-            raise CountdoomClientError("Cannot connect to website. Check URL.") from exc
+            raise CountdoomClientError(
+                "Cannot connect to website. Check URL."
+                ) from exc
 
     async def _extract_sentence(self) -> None:
         """
