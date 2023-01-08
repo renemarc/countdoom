@@ -160,11 +160,10 @@ class CountdoomClient:
             raise CountdoomClientError("Session not started.")
 
         try:
-            async with async_timeout.timeout(timeout):
-                async with self._session.get(url, timeout=timeout) as resp:
-                    if resp.status != 200:
-                        raise AssertionError
-                    return await resp.text()
+            async with async_timeout.timeout(timeout), self._session.get(url, timeout=timeout) as resp:
+                if resp.status != 200:
+                    raise AssertionError
+                return await resp.text()
         except AssertionError as exc:
             await self.close()
             raise CountdoomClientError("Page not found.") from exc
