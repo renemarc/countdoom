@@ -15,10 +15,10 @@ from typing import Dict, List
 from setuptools import find_packages, setup
 
 # Load documentation for PyPI.
-with open('README.rst') as readme_file:
+with open('README.rst', encoding="utf-8") as readme_file:
     README = readme_file.read()
 
-with open('CHANGELOG.rst') as history_file:
+with open('CHANGELOG.rst', encoding="utf-8") as history_file:
     HISTORY = history_file.read()
 
 # Define extra requirements for different installation environments.
