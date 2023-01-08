@@ -122,7 +122,7 @@ def response() -> Response:
 
     :return: Request response
     """
-    return requests.get(CountdoomClient.CLOCK_URL)
+    return requests.get(CountdoomClient.CLOCK_URL, timeout=5)
 
 
 def _get_path(string: str) -> str:
