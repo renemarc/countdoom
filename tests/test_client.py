@@ -146,9 +146,6 @@ def _setup_servers(httpserver: HTTPServer) -> None:
     suffix = '</h3>'
 
     sentences = SENTENCES_VALID + SENTENCES_INVALID
-    # sentences = SENTENCES_VALID
-    # for sentence in SENTENCES_INVALID:
-    #     sentences.append(sentence)
     for sentence in sentences:
         path = _get_path(sentence[0])
         httpserver.expect_request(f'/{path}').respond_with_data(
